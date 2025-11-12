@@ -1,0 +1,770 @@
+{
+  "mainWrapper": {
+    "title": "October Task Report - October 1-31, 2025",
+    "handler": {
+      "name": "Vothana CHY",
+      "avatar": "/src/assets/images/vothana.jpg",
+      "role": "Developer"
+    },
+    "teamLeader": {
+      "name": "TL: Daro SAY",
+      "avatar": "/src/assets/images/teamLead.jpg",
+      "role": "Team Leader"
+    },
+    "period": "October 1-31, 2025",
+    "statistics": {
+      "totalTasks": 0,
+      "completedTasks": 0,
+      "features": 13,
+      "refactorings": 7
+    }
+  },
+  "slides": [
+    {
+      "title": "Welcome, Vothana CHY!",
+      "subtitle": [
+        "Monthly Report - October 1-31, 2025",
+        "October 2025 Work Summary"
+      ],
+      "content": "\n      <div class=\"text-center space-y-4\">\n        <p class=\"text-xl text-gray-700\">This report showcases the comprehensive work completed during October 1-31, 2025.</p>\n        <div class=\"grid grid-cols-2 gap-4 mt-8\">\n          <div class=\"bg-primary/10 p-4 rounded-lg\">\n            <div class=\"text-3xl font-bold text-primary\">13</div>\n            <div class=\"text-sm text-gray-600\">Features</div>\n          </div>\n          <div class=\"bg-primary/10 p-4 rounded-lg\">\n            <div class=\"text-3xl font-bold text-primary\">7</div>\n            <div class=\"text-sm text-gray-600\">Types</div>\n          </div>\n        </div>\n      </div>\n    ",
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+          "alt": "Welcome illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 40,
+      "animationIn": [
+        "fade",
+        "scale",
+        "slideUp"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 0,
+      "type": "Introduction"
+    },
+    {
+      "title": "Video Player Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Handle no video to play</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Implemented proper error handling when no video is available</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Check video can be play or not</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Added video playback validation and privilege checks</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Next button functionality</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Proper access control</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Video playback validation</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Prompt on lock video/quiz</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Added user prompts when content is locked</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Add to cart functionality integration</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Video listing and filtering</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Enhanced video listing with filtering capabilities</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Video listing refactoring and improvement</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Code improvements and optimizations</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Videos in package listing</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Package-based video organization</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Videos in module listing</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Module-based video organization</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Course detail and videos playlist</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Integrated playlist functionality</p>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
+          "alt": "video illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800",
+          "alt": "quiz illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800",
+          "alt": "course illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
+          "alt": "cart illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800",
+          "alt": "profile illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+          "alt": "refactoring illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800",
+          "alt": "composable illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800",
+          "alt": "security illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
+          "alt": "ui illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "fade",
+        "slideDown"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 1,
+      "type": "Feature"
+    },
+    {
+      "title": "Video Player Feature (Continued)",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Hide/display packages on user scroll-up/down</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">UX enhancement for package visibility</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Add on start typing sensor and handle no data display</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Search functionality with real-time feedback</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Remove all unused components</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Code cleanup and optimization</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Make useVideoPlayer isolate and compose</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Refactored to reusable composable</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Can be used across most screens</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Better separation of concerns</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
+          "alt": "video illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800",
+          "alt": "quiz illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800",
+          "alt": "course illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
+          "alt": "cart illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800",
+          "alt": "profile illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+          "alt": "refactoring illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800",
+          "alt": "composable illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800",
+          "alt": "security illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
+          "alt": "ui illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "fade",
+        "scale"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 2,
+      "type": "Feature"
+    },
+    {
+      "title": "Quiz System Feature",
+      "subtitle": [
+        "Status: Almost Done"
+      ],
+      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Implement quiz system</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Core quiz system implementation</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Implement quiz component, data handle, rich features</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Comprehensive quiz functionality</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Generic quiz components</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Reusable quiz logic</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Flexible quiz system architecture</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Rich feature set</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Data handling and state management</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800",
+          "alt": "quiz illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
+          "alt": "ui illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "slideLeft",
+        "fade"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 3,
+      "type": "Feature"
+    },
+    {
+      "title": "Forum Feature",
+      "subtitle": [
+        "Status: Almost Done"
+      ],
+      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Designing and Integration API forum</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">New UI implementation</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Forum API integration</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Modern UI design</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Collaboration with B Chakriya</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800",
+          "alt": "forum illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
+          "alt": "ui illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "slideRight",
+        "fade"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 4,
+      "type": "Feature"
+    },
+    {
+      "title": "Zoom Feature",
+      "subtitle": [
+        "Status: Almost Done"
+      ],
+      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Zoom Videos</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Video listing and management</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Zoom listing functionality</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Video integration</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
+          "alt": "video illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800",
+          "alt": "zoom illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "fade",
+        "scale",
+        "slideUp"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 5,
+      "type": "Feature"
+    },
+    {
+      "title": "Library Feature",
+      "subtitle": [
+        "Status: Todo"
+      ],
+      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-yellow-400 flex-shrink-0 mt-0.5\">⏳</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Library Page</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Initial planning and setup</p>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800",
+          "alt": "library illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "rotate",
+        "fade"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 6,
+      "type": "Feature"
+    },
+    {
+      "title": "Course Feature",
+      "subtitle": [
+        "Status: Mostly Done"
+      ],
+      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Course detail, module and video listing</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Comprehensive course detail page</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Module organization</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Video listing integration</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Course detail, video listing and enhance video player</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Enhanced video player integration</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Go course detail in course package list</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Navigation from package to detail</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Clickable course to detail</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Navigation improvements</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Add tooltip to each icon of course</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">UX enhancements</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Improve add cart button, back button, title of course</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">UI/UX improvements</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Course Package</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Package management</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Recommended Course</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Course recommendations</p>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
+          "alt": "video illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800",
+          "alt": "zoom illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800",
+          "alt": "course illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
+          "alt": "cart illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+          "alt": "refactoring illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
+          "alt": "ui illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "slideUp",
+        "scale"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 7,
+      "type": "Feature"
+    },
+    {
+      "title": "Course Feature (Continued)",
+      "subtitle": [
+        "Status: Mostly Done"
+      ],
+      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Refactor components to be reusable/dynamic</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Component reusability</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>For video/package/zoom and more</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Re-structuring video views to features</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Architecture improvements</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-yellow-400 flex-shrink-0 mt-0.5\">⏳</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Add new tab for course Overview</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">New tab implementation</p>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
+          "alt": "video illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800",
+          "alt": "zoom illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800",
+          "alt": "course illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
+          "alt": "cart illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+          "alt": "refactoring illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
+          "alt": "ui illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "fade",
+        "slideUp"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 8,
+      "type": "Feature"
+    },
+    {
+      "title": "Story Feature",
+      "subtitle": [
+        "Status: Partially Done"
+      ],
+      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Story listing, Animation, Tooltip</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Enhanced story listing with animations</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Auto fill out stories</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Automatic story population</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Story List</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Story listing functionality</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Story view</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Story viewing with full screen image</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Story View improve</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Enhanced viewing experience</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Your story view</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Personal story management</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Dynamic viewing stories</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Dynamic story viewing</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>New route accepting userId</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>View all stories</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>View own stories (can delete)</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Auto scroll to full-visible viewing story element</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Enhanced UX</p>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800",
+          "alt": "story illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800",
+          "alt": "profile illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
+          "alt": "interaction illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+          "alt": "refactoring illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
+          "alt": "ui illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "fade",
+        "slideDown"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 9,
+      "type": "Feature"
+    },
+    {
+      "title": "Story Feature (Continued)",
+      "subtitle": [
+        "Status: Partially Done"
+      ],
+      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Reactive story deleted/added</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Real-time updates</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>If user deleted viewing story =&gt; not re-render</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Add new to the first index of story</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Refactor/Replace modern UI &amp; handle actions</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">UI modernization</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Story &amp; Gallery refactoring</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-yellow-400 flex-shrink-0 mt-0.5\">⏳</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Viewed and reaction story</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Analytics and reactions</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-yellow-400 flex-shrink-0 mt-0.5\">⏳</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Create story</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Story creation functionality</p>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800",
+          "alt": "story illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800",
+          "alt": "profile illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
+          "alt": "interaction illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+          "alt": "refactoring illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
+          "alt": "ui illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "fade",
+        "scale"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 10,
+      "type": "Feature"
+    },
+    {
+      "title": "Cart Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Implement composable on cart mutation, global access popover</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Code organization</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Composable cart mutation</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Global popover access</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Transform cart from vuex to pinia</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">State management migration</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Add to cart button</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Button implementation</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Implement add package to cart</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Handle no auth on add to cart button</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>If user not login yet, click add cart will prompt user to login</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Video Add to cart button improvement</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">UX enhancements</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Info user course has been cart</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Disable add to cart button when already in cart</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Cart total not init</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Bug fix</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Refactor cart store</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Store improvements</p>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
+          "alt": "video illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800",
+          "alt": "course illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
+          "alt": "cart illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800",
+          "alt": "profile illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+          "alt": "refactoring illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800",
+          "alt": "composable illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800",
+          "alt": "security illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
+          "alt": "ui illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800",
+          "alt": "bug illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "slideLeft",
+        "fade"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 11,
+      "type": "Feature"
+    },
+    {
+      "title": "Home Page Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">HomePage Layout improvements</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Layout enhancements</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Re structure story, social, user profile</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Architecture improvements</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Integrate with generic comment listing</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Comment system integration</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Story listing, Animation, Tooltip</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Enhanced story features</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Styling improvements</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">UI polish</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">SVG Component reusable</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Component reusability</p>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800",
+          "alt": "forum illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800",
+          "alt": "story illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=800",
+          "alt": "home illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800",
+          "alt": "profile illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
+          "alt": "ui illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "slideRight",
+        "fade"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 12,
+      "type": "Feature"
+    },
+    {
+      "title": "Profile Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Generic entity header, profile</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Reusable profile components</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Generic header implementation</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Profile display components</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800",
+          "alt": "profile illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "fade",
+        "scale",
+        "slideUp"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 13,
+      "type": "Feature"
+    },
+    {
+      "title": "Splash Screen Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Separate window splash screen</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Splash screen implementation</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Separate window approach</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Improved loading experience</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1557683316-973673baf926?w=800",
+          "alt": "splash illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "rotate",
+        "fade"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 14,
+      "type": "Feature"
+    },
+    {
+      "title": "Comment Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Implement comment listing and replying</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Core comment functionality</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Comment listing</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Reply functionality</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Integration with generic system</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800",
+          "alt": "forum illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "slideUp",
+        "scale"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 15,
+      "type": "Feature"
+    },
+    {
+      "title": "Interaction & Reaction Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Implement interaction and reaction button be generic</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Reusable interaction system</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Generic like, comment, view buttons</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Reusable across features</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800",
+          "alt": "forum illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
+          "alt": "interaction illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 50,
+      "animationIn": [
+        "fade",
+        "slideUp"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 16,
+      "type": "Feature"
+    },
+    {
+      "title": "Project Showcase",
+      "subtitle": [],
+      "content": "",
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200",
+          "alt": "Project showcase image",
+          "local": false
+        }
+      ],
+      "imageAlignment": "left",
+      "imageContainerWidth": 90,
+      "animationIn": [
+        "fade",
+        "scale"
+      ],
+      "animationOut": [
+        "fade",
+        "scale"
+      ],
+      "pageIndex": 17,
+      "type": "Image"
+    },
+    {
+      "title": "Thank You",
+      "subtitle": [
+        "For Your Time and Review"
+      ],
+      "content": "\n      <div class=\"text-center space-y-6\">\n        <p class=\"text-2xl text-gray-700\">Thank you for reviewing this comprehensive report.</p>\n        <p class=\"text-lg text-gray-600\">Looking forward to continued collaboration and success.</p>\n        <div class=\"mt-8 text-primary font-semibold\">2025 - E-School Cambodia</div>\n      </div>\n    ",
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800",
+          "alt": "Thank you illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "left",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "fade",
+        "scale"
+      ],
+      "animationOut": [
+        "fade",
+        "scale"
+      ],
+      "pageIndex": 18,
+      "type": "Closing"
+    }
+  ]
+}

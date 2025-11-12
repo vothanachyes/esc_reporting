@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    @apply border-gray-200 dark:border-gray-700;
+  }
+  body {
+    @apply bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  /* Dark mode prose styles */
+  .dark .prose strong {
+    @apply text-white;
+  }
+  
+  .dark .prose p {
+    @apply text-gray-100;
+  }
+  
+  .dark .prose ul li {
+    @apply text-gray-200;
+  }
+  
+  /* Ensure primary color text is visible on dark bg */
+  .dark .prose .text-primary {
+    color: rgb(79 167 202); /* primary-300 equivalent */
+  }
+  
+  .dark .prose .bg-primary\/10 {
+    background-color: rgb(4 81 116 / 0.2); /* primary-500/20 */
+  }
+  
+  /* Hide scrollbars but keep scrolling functionality */
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+  
+  /* Style scrollbars - only shows when content overflows (handled by overflow-* classes) */
+  .scrollbar-auto::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .scrollbar-auto::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-auto::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+  
+  .scrollbar-auto::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+  .dark .scrollbar-auto::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .dark .scrollbar-auto::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+}
+

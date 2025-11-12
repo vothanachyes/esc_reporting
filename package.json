@@ -1,0 +1,41 @@
+{
+  "name": "monthly-report-slideshow",
+  "version": "1.0.0",
+  "type": "module",
+  "packageManager": "pnpm@10.11.1+sha512.e519b9f7639869dc8d5c3c5dfef73b3f091094b0a006d7317353c72b124e80e1afd429732e28705ad6bfa1ee879c1fce46c128ccebd3192101f43dd67c667912",
+  "description": "Professional slideshow presentation system for monthly work reports",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+  },
+  "engines": {
+    "node": ">=22.18.0 <23",
+    "pnpm": ">=10.11.1"
+  },
+  "dependencies": {
+    "vue": "^3.5.17",
+    "gsap": "^3.13.0",
+    "marked": "^12.0.0",
+    "@vueuse/core": "^13.4.0",
+    "primevue": "^4.3.5",
+    "@primeuix/themes": "^1.1.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.0",
+    "vite": "^7.1.3",
+    "typescript": "~5.8.0",
+    "vue-tsc": "^2.2.10",
+    "tailwindcss": "^4.1.12",
+    "@tailwindcss/vite": "^4.1.12",
+    "@types/node": "^22.15.32",
+    "@types/marked": "^6.0.0",
+    "eslint": "^9.29.0",
+    "eslint-plugin-vue": "~10.2.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "vue-eslint-parser": "^9.4.0"
+  }
+}
+

@@ -1,0 +1,74 @@
+# Monthly Report Slideshow Project - Cursor Rules
+
+## Project Context
+
+This project is a professional slideshow presentation system for monthly work reports, built as a completely isolated sub-project in `v_repor_/`.
+
+## Project Origins & Acknowledgments
+
+This project was built based on the following sources:
+
+### Planning Documents
+
+1. **Project Plan**: `docs/monthly-report-slideshow-project.plan.md`
+   - Comprehensive phased implementation plan (11 phases)
+   - Defines project structure, components, animations, and deployment strategy
+   - Includes detailed specifications for all features and components
+   - Animation system with 7 base types (fade, slideUp, slideDown, slideLeft, slideRight, scale, rotate)
+   - Combination system for multiple simultaneous animations
+
+2. **Raw Plan**: `docs/my_raw_plan.md`
+   - Initial requirements and specifications
+   - Original design concepts and feature requests
+   - Component requirements and animation specifications
+   - Design requirements (header, footer, grid view, etc.)
+
+### Data Source
+
+3. **Report Data**: `docs/October_2025_Report.md`
+   - October 2025 work report used as JSON data source
+   - Contains feature summaries, task lists, and statistics
+   - Structured by Feature and Type categories
+   - Handler: Vothana CHY
+   - Period: October 1-31, 2025
+
+## Project Architecture
+
+- **Framework**: Vue 3 + TypeScript + Vite
+- **UI Libraries**: PrimeVue, Tailwind CSS v4
+- **Animations**: GSAP
+- **Package Manager**: pnpm
+- **Module System**: ES Modules (`"type": "module"` in package.json)
+- **Deployment**: Vercel
+
+## Key Design Principles
+
+1. **Reusability**: Designed to be reusable for future monthly reports
+2. **Data-Driven**: Architecture allows easy integration of new report data
+3. **Animation System**: Flexible animation system with combinable base types
+4. **Responsive**: Grid view with responsive columns (sm:3, md:4, lg:5, xl:6)
+5. **Professional**: Custom theme with primary color #045174
+
+## Component Structure
+
+- **Layout Components**: AppHeader, AppFooter, MainWrapper, ContentTypeTag
+- **Slide Components**: SlideCard, SlideImageContainer, SlideTextContainer, SlidesContainer
+- **UI Components**: GridView
+- **Composables**: useSlideshow, useGSAPAnimations, useSlideNavigation, useDarkMode
+
+## Data Structure
+
+- Report data parsed from markdown into structured JSON
+- Slide cards with configurable animations, backgrounds, images, and content
+- Support for intro card, content cards, and thank you card
+- Image support (URL and local paths) with multiple layout options
+
+## When Working on This Project
+
+- Always refer to the original plan documents for context
+- Maintain the data-driven architecture for reusability
+- Follow the animation system specifications (7 base types, combinable)
+- Keep the project isolated (own dependencies, no sharing with parent project)
+- Use ES module syntax throughout
+- Maintain professional design standards with theme color #045174
+
