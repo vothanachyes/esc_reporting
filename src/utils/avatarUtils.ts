@@ -1,7 +1,25 @@
 /**
  * Utility function to resolve avatar image URLs for Vite builds
  * Handles both local assets (processed by Vite) and external URLs
+ * 
+ * Uses static imports to ensure Vite processes assets correctly in production builds
  */
+
+// Static imports - Vite will process these at build time and generate correct production paths
+import vothanaAvatar from '@/assets/images/vothana.jpg';
+import teamLeadAvatar from '@/assets/images/teamLead.jpg';
+
+// Mapping of avatar paths to imported URLs
+// This allows Vite to statically analyze and process the imports
+const avatarMap: Record<string, string> = {
+  '/src/assets/images/vothana.jpg': vothanaAvatar,
+  'src/assets/images/vothana.jpg': vothanaAvatar,
+  'assets/images/vothana.jpg': vothanaAvatar,
+  '/src/assets/images/teamLead.jpg': teamLeadAvatar,
+  'src/assets/images/teamLead.jpg': teamLeadAvatar,
+  'assets/images/teamLead.jpg': teamLeadAvatar,
+};
+
 export function getAvatarUrl(avatarPath: string | undefined): string {
   if (!avatarPath) return '';
   
@@ -16,31 +34,23 @@ export function getAvatarUrl(avatarPath: string | undefined): string {
     return avatarPath;
   }
   
-  // For src/assets paths, use dynamic import with new URL()
-  // This allows Vite to process the asset at build time
-  if (avatarPath.includes('/src/assets/') || avatarPath.includes('assets/')) {
-    // Extract the filename from the path
-    // Handle both "/src/assets/images/vothana.jpg" and "assets/images/vothana.jpg"
-    let cleanPath = avatarPath
-      .replace(/^\/src\//, '')
-      .replace(/^src\//, '')
-      .replace(/^\//, '');
-    
-    // Create a relative path from utils directory to assets
-    // utils/ -> assets/images/filename.jpg
-    const relativePath = `../${cleanPath}`;
-    
-    try {
-      // Use new URL() with import.meta.url to let Vite process this at build time
-      // This will be transformed by Vite to the correct production path
-      return new URL(relativePath, import.meta.url).href;
-    } catch (error) {
-      console.warn(`Failed to resolve avatar path: ${avatarPath}`, error);
-      return avatarPath;
-    }
+  // Check if we have a static import for this path
+  if (avatarMap[avatarPath]) {
+    return avatarMap[avatarPath];
   }
   
-  // Fallback: return as-is
+  // For other src/assets paths, try to match by filename
+  // Extract just the filename and check if it matches our known avatars
+  const filename = avatarPath.split('/').pop() || '';
+  if (filename === 'vothana.jpg') {
+    return vothanaAvatar;
+  }
+  if (filename === 'teamLead.jpg') {
+    return teamLeadAvatar;
+  }
+  
+  // Fallback: return as-is (might not work in production, but better than breaking)
+  console.warn(`Avatar path not found in static imports: ${avatarPath}`);
   return avatarPath;
 }
 
