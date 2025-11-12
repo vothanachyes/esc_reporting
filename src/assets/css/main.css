@@ -1,73 +1,153 @@
 @import "tailwindcss";
+@import "tailwindcss-primeui";
+@import "primeicons/primeicons.css";
 
 @layer base {
-  * {
-    @apply border-gray-200 dark:border-gray-700;
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
   }
-  body {
-    @apply bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100;
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
+}
+
+@theme {
+  --font-heading: "Bricolage Grotesque";
+  --breakpoint-xs: 30rem;
+  --breakpoint-3xl: 120rem;
+  --breakpoint-4xl: 150rem;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --primary-color: var(--p-primary-color);
+  --content-background: #ffffff;
+  --card-background: #ffffff;
+  --border-color: var(--p-surface-200);
+  --ground-background: var(--p-surface-50);
+  --overlay-background: #ffffff;
+  --nav-item-color: #ffffff;
+
+  --p-paginator-nav-button-width: 2rem;
+  --p-paginator-nav-button-height: 2rem;
+
+  /* --p-multiselect-border-radius: 10px;
+  --p-inputtext-border-radius: 10px;
+  --p-inputtext-padding-x: 18px;
+  --p-inputtext-padding-y: 12px;
+  --p-multiselect-padding-y: 10px;
+  --p-multiselect-padding-x: 14px;
+  --p-inputtext-padding-y: 10px;
+  --p-inputtext-padding-x: 14px;
+  --p-button-border-radius: 10px; */
+
+  background-color: #f2f3f5;
+  color: #000000;
+}
+
+:root.dark {
+  --primary-color: var(--p-primary-color);
+  --content-background: var(--p-surface-950);
+  --card-background: var(--p-surface-900);
+  --border-color: var(--p-surface-700);
+  --ground-background: var(--p-surface-950);
+  --overlay-background: var(--p-surface-900);
+  --nav-item-color: var(--p-surface-950);
+
+  --p-paginator-nav-button-width: 2rem;
+  --p-paginator-nav-button-height: 2rem;
+
+  background-color: var(--color-stone-900);
+  color: #e5e5e5;
+}
+
+html[lang="en"] {
+  font-family: "Outfit", sans-serif;
+}
+
+html[lang="kh"] {
+  font-family: "Kantumruy Pro", sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  @apply bg-white dark:bg-[#292422];
+}
+
+.p-password {
+  width: 100% !important;
+}
+
+.p-password-input {
+  width: 100% !important;
+}
+
+div#profile {
+  left: 12px !important;
+  top: 30px !important;
+}
+
+.box-shadow {
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1) !important;
+}
+
+body {
+  overflow-y: hidden !important;
+}
+
+[class^="v-hl-btn"] {
+  display: none !important;
+}
+
+.block {
+  z-index: 100 !important;
+}
+
+.overflow-y-scroll::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
+
+
+.bg-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(12, 74, 110, 0.1) 0%,
+    rgba(186, 209, 224, 0.2) 8%,
+    rgba(255, 255, 255, 0.15) 92%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(
+    180deg,
+    rgba(120, 206, 255, 0.18) 0%,
+    rgba(150, 200, 233, 0.2) 8%,
+    rgba(255, 255, 255, 0.15) 92%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 @layer utilities {
-  /* Dark mode prose styles */
-  .dark .prose strong {
-    @apply text-white;
+  .bg-gray-simple {
+    background-color: #f4f4f4;
   }
-  
-  .dark .prose p {
-    @apply text-gray-100;
-  }
-  
-  .dark .prose ul li {
-    @apply text-gray-200;
-  }
-  
-  /* Ensure primary color text is visible on dark bg */
-  .dark .prose .text-primary {
-    color: rgb(79 167 202); /* primary-300 equivalent */
-  }
-  
-  .dark .prose .bg-primary\/10 {
-    background-color: rgb(4 81 116 / 0.2); /* primary-500/20 */
-  }
-  
-  /* Hide scrollbars but keep scrolling functionality */
-  .hide-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
-  
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;  /* Chrome, Safari and Opera */
-  }
-  
-  /* Style scrollbars - only shows when content overflows (handled by overflow-* classes) */
-  .scrollbar-auto::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-  
-  .scrollbar-auto::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  
-  .scrollbar-auto::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-  }
-  
-  .scrollbar-auto::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.3);
-  }
-  
-  .dark .scrollbar-auto::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
-  }
-  
-  .dark .scrollbar-auto::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.3);
+
+  .bg-gray-simple-dark {
+    background-color: #333333;
   }
 }
-

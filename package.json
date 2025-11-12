@@ -20,7 +20,9 @@
     "marked": "^12.0.0",
     "@vueuse/core": "^13.4.0",
     "primevue": "^4.3.5",
-    "@primeuix/themes": "^1.1.2"
+    "@primeuix/themes": "^1.1.2",
+    "primeicons": "^7.0.0",
+    "tailwindcss-primeui": "^0.6.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.0",
@@ -29,6 +31,8 @@
     "vue-tsc": "^2.2.10",
     "tailwindcss": "^4.1.12",
     "@tailwindcss/vite": "^4.1.12",
+    "@primevue/auto-import-resolver": "^4.3.5",
+    "unplugin-vue-components": "^0.28.0",
     "@types/node": "^22.15.32",
     "@types/marked": "^6.0.0",
     "eslint": "^9.29.0",

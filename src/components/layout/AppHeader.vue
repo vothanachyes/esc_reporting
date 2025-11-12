@@ -177,7 +177,7 @@ const headerStyle = computed(() => {
     ? "linear-gradient(135deg, #022f40 0%, #011e26 100%)"
     : "linear-gradient(135deg, #045174 0%, #022f40 100%)";
   return {
-    height: "5vh",
+    height: "45px",
     background: gradient,
     opacity: "0.95",
   };

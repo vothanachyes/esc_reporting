@@ -1,8 +1,8 @@
 <template>
-  <div class="min-h-screen flex flex-col">
+  <div class="relative min-h-screen flex flex-col">
     <AppHeader :data="mainWrapperData" />
     <ContentTypeTag v-if="currentSlideType" :type="currentSlideType" />
-    <div class="flex-1 overflow-hidden">
+    <div class="flex-1 overflow-y-auto">
       <SlidesContainer
         v-if="!isGridView"
         :slides="slides"
@@ -11,7 +11,9 @@
       />
       <GridView v-else :slides="slides" @card-click="handleCardClick" />
     </div>
+    <div class="absolute bottom-0 left-0 right-0">
     <AppFooter :active-report-path="activeReportPath" @toggle-view="toggleView" @change-report="handleReportChange" />
+  </div>
   </div>
 </template>
 

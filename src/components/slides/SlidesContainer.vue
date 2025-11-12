@@ -1,7 +1,7 @@
 <template>
   <div
     ref="containerRef"
-    class="w-full h-full overflow-hidden hide-scrollbar p-5"
+    class="w-full h-[80vh] overflow-hidden hide-scrollbar p-5"
     tabindex="0"
     @keydown="handleKeyDown"
   >
@@ -49,8 +49,6 @@ const currentIndex = ref(props.initialIndex ?? 0);
 const isInitialized = ref(false);
 // GSAP Observer instance
 let observer: Observer | null = null;
-// GSAP scroll animation timeline
-let scrollAnimation: gsap.core.Tween | null = null;
 // Debounce timer for touch gestures to prevent rapid slide changes
 let touchDebounceTimer: ReturnType<typeof setTimeout> | null = null;
 
@@ -96,27 +94,10 @@ const getSlideWidth = (): number => {
 };
 
 /**
- * Calculate current slide index from wrapper position
- * Uses GSAP x transform value to determine which slide is active
+ * Scroll to a specific slide index using instant positioning
+ * Provides instant slide transitions without animation
  */
-const calculateIndexFromPosition = (x: number): number => {
-  const slideWidth = getSlideWidth();
-  if (slideWidth <= 0 || !Number.isFinite(slideWidth) || !Number.isFinite(x)) {
-    return currentIndex.value;
-  }
-
-  // Calculate index based on negative x position (GSAP uses negative values for left movement)
-  const newIndex = Math.round(Math.abs(x) / slideWidth);
-  const clampedIndex = Math.max(0, Math.min(newIndex, props.slides.length - 1));
-
-  return clampedIndex;
-};
-
-/**
- * Scroll to a specific slide index using GSAP animation
- * Provides smooth, performant scrolling with GSAP
- */
-const scrollToIndex = (index: number, useSmooth = true) => {
+const scrollToIndex = (index: number) => {
   if (!slidesWrapperRef.value) return;
 
   // Force numeric conversion and clamp index to valid range
@@ -133,40 +114,18 @@ const scrollToIndex = (index: number, useSmooth = true) => {
     // Calculate target position (negative for left movement)
     const targetX = -(clampedIndex * slideWidth);
 
-    // Kill any existing scroll animation
-    if (scrollAnimation) {
-      scrollAnimation.kill();
-    }
+    // Set position instantly without animation
+    gsap.set(slidesWrapperRef.value, { x: targetX });
 
-    // Animate to target position
-    scrollAnimation = gsap.to(slidesWrapperRef.value, {
-      x: targetX,
-      duration: useSmooth ? 0.8 : 0.3,
-      ease: useSmooth ? "power2.out" : "power1.out",
-      onUpdate: () => {
-        // Update current index during animation
-        if (slidesWrapperRef.value) {
-          const currentX = gsap.getProperty(slidesWrapperRef.value, "x") as number;
-          const newIndex = calculateIndexFromPosition(currentX);
-          if (newIndex !== currentIndex.value) {
-            currentIndex.value = newIndex;
-            emit("slide-change", newIndex);
-          }
-        }
-      },
-      onComplete: () => {
-        // Ensure final index is correct
-        currentIndex.value = clampedIndex;
-        emit("slide-change", clampedIndex);
-        scrollAnimation = null;
-      },
-    });
+    // Update current index and emit event immediately
+    currentIndex.value = clampedIndex;
+    emit("slide-change", clampedIndex);
   }
 };
 
 /**
  * Handle keyboard navigation
- * Uses GSAP smooth scroll for better UX when user presses keys
+ * Provides instant slide transitions when user presses keys
  */
 const handleKeyDown = (e: KeyboardEvent) => {
   // Don't handle if user is typing in an input/textarea
@@ -182,14 +141,14 @@ const handleKeyDown = (e: KeyboardEvent) => {
     const maxIndex = props.slides.length - 1;
     const nextIndex = Math.min(currentIndex.value + 1, maxIndex);
     if (nextIndex !== currentIndex.value) {
-      scrollToIndex(nextIndex, true);
+      scrollToIndex(nextIndex);
     }
   } else if (e.key === "ArrowLeft") {
     e.preventDefault();
     e.stopPropagation();
     const prevIndex = Math.max(currentIndex.value - 1, 0);
     if (prevIndex !== currentIndex.value) {
-      scrollToIndex(prevIndex, true);
+      scrollToIndex(prevIndex);
     }
   }
 };
@@ -218,7 +177,7 @@ watch(
       // Use nextTick to ensure DOM is ready
       nextTick(() => {
         // Use instant scroll to avoid flicker when clicking from grid view
-        scrollToIndex(clampedIndex, false);
+        scrollToIndex(clampedIndex);
       });
     }
   },
@@ -257,7 +216,7 @@ onMounted(() => {
         gsap.set(slidesWrapperRef.value, { x: initialX });
       }
 
-      // Initialize GSAP Observer for smooth scroll-driven animations
+      // Initialize GSAP Observer for touch/pointer gestures
       // Only touch and pointer (no wheel scroll)
       // Increased tolerance to prevent accidental multi-slide scrolling
       observer = Observer.create({
@@ -272,7 +231,7 @@ onMounted(() => {
           }, 500); // 500ms debounce
           const prevIndex = Math.max(currentIndex.value - 1, 0);
           if (prevIndex !== currentIndex.value) {
-            scrollToIndex(prevIndex, true);
+            scrollToIndex(prevIndex);
           }
         },
         onDown: () => {
@@ -285,7 +244,7 @@ onMounted(() => {
           const maxIndex = props.slides.length - 1;
           const nextIndex = Math.min(currentIndex.value + 1, maxIndex);
           if (nextIndex !== currentIndex.value) {
-            scrollToIndex(nextIndex, true);
+            scrollToIndex(nextIndex);
           }
         },
         onLeft: () => {
@@ -297,7 +256,7 @@ onMounted(() => {
           }, 500); // 500ms debounce
           const prevIndex = Math.max(currentIndex.value - 1, 0);
           if (prevIndex !== currentIndex.value) {
-            scrollToIndex(prevIndex, true);
+            scrollToIndex(prevIndex);
           }
         },
         onRight: () => {
@@ -310,7 +269,7 @@ onMounted(() => {
           const maxIndex = props.slides.length - 1;
           const nextIndex = Math.min(currentIndex.value + 1, maxIndex);
           if (nextIndex !== currentIndex.value) {
-            scrollToIndex(nextIndex, true);
+            scrollToIndex(nextIndex);
           }
         },
         tolerance: 100, // Increased from 10 to require more significant swipe (100px)
@@ -337,12 +296,6 @@ onUnmounted(() => {
   if (observer) {
     observer.kill();
     observer = null;
-  }
-
-  // Kill any active scroll animations
-  if (scrollAnimation) {
-    scrollAnimation.kill();
-    scrollAnimation = null;
   }
 
   // Clear touch debounce timer
