@@ -1,6 +1,6 @@
 {
-  "buildCommand": "pnpm build",
-  "installCommand": "npm install -g pnpm@10.11.1 && pnpm install",
+  "buildCommand": "npx -y pnpm@10.11.1 build",
+  "installCommand": "npx -y pnpm@10.11.1 install",
   "outputDirectory": "dist",
   "framework": "vite",
   "rewrites": [
