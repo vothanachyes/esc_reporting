@@ -52,7 +52,7 @@
         <PrimeButton
           label="I Understand"
           @click="handleDismiss"
-          class="px-6"
+          class="px-6 cursor-pointer"
         />
       </div>
     </template>

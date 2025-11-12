@@ -1,34 +1,73 @@
 <template>
   <div
-    class="h-full flex items-start md:items-center w-full overflow-hidden image-container-responsive"
+    class="flex items-start md:items-center w-full overflow-hidden image-container-responsive"
     :class="containerClass"
     :style="containerStyle"
+    ref="containerRef"
   >
     <!-- Single Image -->
-    <div v-if="layout === 'single' && images.length === 1" class="w-full h-full">
-      <img
-        :src="getImageUrl(images[0].url)"
+    <div v-if="layout === 'single' && images.length === 1" class="w-full h-full cursor-pointer flex items-center justify-center">
+      <Image
+        :src="getImageUrl(images[0])"
         :alt="images[0].alt || 'Slide image'"
-        class="w-full h-full object-contain rounded-lg"
+        class="w-full h-full object-contain rounded-md"
+        preview
+        :pt="{
+          root: { class: 'h-full w-full rounded-md overflow-hidden' },
+          image: { class: 'rounded-md w-full h-full object-contain overflow-hidden' },
+          mask: { class: '!bg-black/90 rounded-md' },
+          previewMask: { class: '!bg-black/5 rounded-md' },
+        }"
       />
     </div>
 
-    <!-- Pinterest-style Masonry Layout -->
+    <!-- Grid Layout for Multiple Images -->
     <div
-      v-else-if="layout === 'grid' || layout === 'scrollable'"
-      class="w-full h-full overflow-y-auto overflow-x-hidden scrollbar-auto pinterest-masonry"
-      :style="masonryStyle"
+      v-else-if="layout === 'grid'"
+      class="w-full h-full min-h-0 overflow-y-auto overflow-x-hidden scrollbar-auto image-grid"
+      :style="gridStyle"
     >
       <div
         v-for="(image, index) in images"
         :key="index"
-        class="pinterest-item break-inside-avoid mb-2"
+        class="image-grid-item cursor-pointer"
       >
-        <img
-          :src="getImageUrl(image.url)"
+        <Image
+          :src="getImageUrl(image)"
           :alt="image.alt || `Slide image ${index + 1}`"
-          class="w-full h-auto rounded-lg object-cover"
-          loading="lazy"
+          class="w-full h-auto rounded-md object-cover"
+          preview
+          :pt="{
+            root: { class: 'w-full rounded-md overflow-hidden' },
+            image: { class: 'rounded-md w-full h-auto overflow-hidden' },
+            mask: { class: '!bg-black/90 rounded-md' },
+            previewMask: { class: '!bg-black/5 rounded-md' },
+          }"
+        />
+      </div>
+    </div>
+
+    <!-- Scrollable Layout for Many Images -->
+    <div
+      v-else-if="layout === 'scrollable'"
+      class="w-full h-full min-h-0 overflow-y-auto overflow-x-hidden scrollbar-auto image-scrollable"
+    >
+      <div
+        v-for="(image, index) in images"
+        :key="index"
+        class="image-scrollable-item mb-2 cursor-pointer"
+      >
+        <Image
+          :src="getImageUrl(image)"
+          :alt="image.alt || `Slide image ${index + 1}`"
+          class="w-full h-auto rounded-md object-cover"
+          preview
+          :pt="{
+            root: { class: 'w-full rounded-md' },
+            image: { class: 'rounded-md w-full h-auto' },
+            mask: { class: '!bg-black/90 rounded-md' },
+            previewMask: { class: '!bg-black/5 rounded-md' },
+          }"
         />
       </div>
     </div>
@@ -36,14 +75,20 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, ref } from "vue";
+import Image from "primevue/image";
 import type { ImageConfig, ImageAlignment, ImageLayout } from "@/data/types";
+
+const containerRef = ref<HTMLElement | null>(null);
 
 const props = defineProps<{
   images: ImageConfig[];
   alignment: ImageAlignment;
-  containerWidth: number;
+  containerWidth?: number; // Deprecated: kept for backward compatibility, ignored
   layout: ImageLayout;
+  availableHeight?: number; // Available height for image container
+  aspectRatios?: number[]; // Aspect ratios for all images
+  cardHeight?: number; // Card height for max-height constraint
 }>();
 
 const containerClass = computed(() => {
@@ -56,44 +101,200 @@ const containerClass = computed(() => {
   return baseClass;
 });
 
-const containerStyle = computed(() => {
-  // Mobile: full width (handled by w-full class)
-  // Desktop: use configured width percentage via inline style
+/**
+ * Calculate optimal column count for grid layout (helper function, doesn't depend on calculated dimensions)
+ */
+const calculateGridColumns = (imageCount: number): number => {
+  if (imageCount <= 2) {
+    return imageCount;
+  }
+  if (imageCount <= 4) {
+    return 2;
+  }
+  if (imageCount <= 9) {
+    return 3;
+  }
+  return 4;
+};
+
+/**
+ * Check if images are positioned above content (mobile with right alignment)
+ */
+const isImagesAboveContent = computed(() => {
+  const isMobile = window.innerWidth < 768;
+  // Right alignment on mobile means images come first (order-first), so they're above content
+  return isMobile && props.alignment === "right";
+});
+
+/**
+ * Calculate optimal container dimensions based on available height and image aspect ratios
+ */
+const calculatedDimensions = computed(() => {
+  // If no available height or aspect ratios provided, fall back to old behavior
+  if (!props.availableHeight || !props.aspectRatios || props.aspectRatios.length === 0) {
+    return {
+      width: props.containerWidth ? `${props.containerWidth}%` : "40%",
+      height: "100%",
+    };
+  }
+
+  let availableH = props.availableHeight;
+  const isMobile = window.innerWidth < 768;
+
+  // If images are above content, constrain height to max 60% of card height
+  if (isImagesAboveContent.value && props.cardHeight) {
+    const maxHeight = props.cardHeight * 0.6;
+    availableH = Math.min(availableH, maxHeight);
+  }
+
+  // On mobile, use full width
+  if (isMobile) {
+    return {
+      width: "100%",
+      height: `${availableH}px`,
+      maxHeight: isImagesAboveContent.value && props.cardHeight ? `${props.cardHeight * 0.6}px` : undefined,
+      minHeight: `${availableH}px`,
+    };
+  }
+
+  // On desktop, calculate width based on aspect ratio and available height
+  let calculatedWidth: number;
+
+  if (props.layout === "single" && props.aspectRatios.length > 0) {
+    // Single image: width = height * aspectRatio
+    const aspectRatio = props.aspectRatios[0];
+    calculatedWidth = availableH * aspectRatio;
+  } else if (props.layout === "grid" && props.aspectRatios.length > 0) {
+    // Grid layout: calculate based on first image and grid structure
+    const aspectRatio = props.aspectRatios[0];
+    const columnCount = calculateGridColumns(props.images.length);
+    
+    // For grid, we want to ensure at least one row is visible
+    // Calculate width per column, then multiply by column count
+    const heightPerRow = availableH / Math.ceil(props.images.length / columnCount);
+    const widthPerColumn = heightPerRow * aspectRatio;
+    calculatedWidth = widthPerColumn * columnCount;
+  } else if (props.layout === "scrollable" && props.aspectRatios.length > 0) {
+    // Scrollable layout: ensure first image fits, calculate width from its aspect ratio
+    const aspectRatio = props.aspectRatios[0];
+    // Use available height for first image
+    calculatedWidth = availableH * aspectRatio;
+  } else {
+    // Fallback: use first aspect ratio or default
+    const aspectRatio = props.aspectRatios[0] || 16 / 9;
+    calculatedWidth = availableH * aspectRatio;
+  }
+
+  // Constrain width to not exceed 60% of container (leave space for text)
+  const maxWidth = window.innerWidth * 0.6;
+  calculatedWidth = Math.min(calculatedWidth, maxWidth);
+
+  // Ensure minimum width
+  const minWidth = 200;
+  calculatedWidth = Math.max(calculatedWidth, minWidth);
+
   return {
-    "--image-container-width": `${props.containerWidth}%`,
+    width: `${calculatedWidth}px`,
+    height: `${availableH}px`,
+    maxHeight: isImagesAboveContent.value && props.cardHeight ? `${props.cardHeight * 0.6}px` : undefined,
+    minHeight: `${availableH}px`,
   };
 });
 
-const masonryStyle = computed(() => {
-  // Pinterest-style: responsive column count based on container width
-  // Mobile: always 2 columns
-  // Desktop: adjust based on container width
-  let columnCount = 2;
+const containerStyle = computed(() => {
+  const dims = calculatedDimensions.value;
   
-  // Only adjust columns on desktop (containerWidth is meaningful on desktop)
-  // For mobile, always use 2 columns (handled by CSS media query)
-  if (props.containerWidth >= 50) {
-    columnCount = 4; // Large containers: 4 columns
-  } else if (props.containerWidth >= 40) {
-    columnCount = 3; // Medium containers: 3 columns
+  // Mobile: full width (handled by w-full class)
+  // Desktop: use calculated width
+  const isMobile = window.innerWidth < 768;
+  
+  if (isMobile) {
+    const style: Record<string, string | undefined> = {
+      height: dims.height,
+      minHeight: dims.minHeight,
+      maxHeight: dims.maxHeight,
+    };
+    return style;
+  }
+
+  const style: Record<string, string | undefined> = {
+    width: dims.width,
+    height: dims.height,
+    minHeight: dims.minHeight,
+    maxHeight: dims.maxHeight,
+    "--image-container-width": dims.width, // Keep for CSS compatibility
+  };
+  return style;
+});
+
+/**
+ * Calculate optimal column count based on number of images and calculated width
+ * Better detection for better visual layout
+ */
+const getOptimalColumns = computed(() => {
+  const imageCount = props.images.length;
+  const dims = calculatedDimensions.value;
+  const calculatedWidthPx = typeof dims.width === "string" 
+    ? parseFloat(dims.width.replace("px", "")) 
+    : 0;
+  const containerWidthPercent = calculatedWidthPx > 0 
+    ? (calculatedWidthPx / window.innerWidth) * 100 
+    : (props.containerWidth || 40);
+  
+  // For small number of images, use fewer columns for better display
+  if (imageCount <= 2) {
+    return imageCount; // 1 or 2 columns
+  }
+  
+  // For medium number of images (3-6), use 2-3 columns
+  if (imageCount <= 4) {
+    // On mobile: 1 column, on desktop: 2 columns
+    return { mobile: 1, desktop: 2 };
+  }
+  
+  // For many images (5-9), use 2-3 columns based on container width
+  if (imageCount <= 9) {
+    if (containerWidthPercent >= 50) {
+      return { mobile: 2, desktop: 3 };
+    } else if (containerWidthPercent >= 40) {
+      return { mobile: 1, desktop: 2 };
+    } else {
+      return { mobile: 1, desktop: 2 };
+    }
+  }
+  
+  // For many images (10+), use more columns
+  if (containerWidthPercent >= 50) {
+    return { mobile: 2, desktop: 4 };
+  } else if (containerWidthPercent >= 40) {
+    return { mobile: 2, desktop: 3 };
   } else {
-    columnCount = 2; // Small/very small containers: 2 columns
+    return { mobile: 1, desktop: 2 };
+  }
+});
+
+const gridStyle = computed(() => {
+  const columns = getOptimalColumns.value;
+  
+  if (typeof columns === 'number') {
+    return {
+      gridTemplateColumns: `repeat(${columns}, 1fr)`,
+    };
   }
   
   return {
-    "--masonry-columns": String(columnCount),
-    columnCount: columnCount,
-    columnGap: "0.5rem",
+    gridTemplateColumns: `repeat(${columns.mobile}, 1fr)`,
+    '--desktop-columns': String(columns.desktop),
   };
 });
 
-const getImageUrl = (url: string): string => {
+const getImageUrl = (image: ImageConfig): string => {
   // Handle local images
-  if (url.startsWith("/") || url.startsWith("./")) {
-    return url;
+  if (image.local) {
+    return image.url.startsWith("/") ? image.url : `/${image.url}`;
   }
   // Handle remote URLs
-  return url;
+  return image.url;
 };
 </script>
 
@@ -108,45 +309,89 @@ const getImageUrl = (url: string): string => {
   }
 }
 
-/* Pinterest-style Masonry Layout */
-.pinterest-masonry {
-  column-fill: balance;
-  column-gap: 0.5rem;
-  /* Mobile: always 2 columns */
-  column-count: 2;
+/* Grid Layout for Multiple Images */
+.image-grid {
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+  min-height: 0;
 }
 
-.pinterest-item {
-  display: inline-block;
+.image-grid-item {
   width: 100%;
-  margin-bottom: 0.5rem;
-  break-inside: avoid;
-  page-break-inside: avoid;
-}
-
-.pinterest-item img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
+  min-height: 0;
   transition: transform 0.2s ease, opacity 0.2s ease;
-  object-fit: cover;
 }
 
-.pinterest-item:hover img {
+.image-grid-item:hover {
   transform: scale(1.02);
   opacity: 0.9;
 }
 
-/* Desktop: use dynamic column count based on container width */
+.image-grid-item :deep(.p-image) {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.image-grid-item :deep(.p-image img) {
+  width: 100%;
+  height: auto;
+  min-height: 100px;
+  border-radius: 0.375rem;
+  object-fit: cover;
+  aspect-ratio: auto;
+  display: block;
+}
+
+.image-grid-item :deep(.p-image-preview-container) {
+  border-radius: 0.375rem;
+}
+
+/* Desktop: adjust columns */
 @media (min-width: 768px) {
-  .pinterest-masonry {
-    column-count: var(--masonry-columns, 2);
-    column-gap: 0.75rem;
+  .image-grid {
+    grid-template-columns: repeat(var(--desktop-columns, 2), 1fr) !important;
+    gap: 0.75rem;
   }
-  
-  .pinterest-item {
-    margin-bottom: 0.75rem;
+}
+
+/* Scrollable Layout for Many Images */
+.image-scrollable {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.image-scrollable-item {
+  width: 100%;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.image-scrollable-item:hover {
+  transform: scale(1.01);
+  opacity: 0.9;
+}
+
+.image-scrollable-item :deep(.p-image) {
+  width: 100%;
+}
+
+.image-scrollable-item :deep(.p-image img) {
+  width: 100%;
+  height: auto;
+  border-radius: 0.375rem;
+  object-fit: cover;
+  aspect-ratio: auto;
+}
+
+.image-scrollable-item :deep(.p-image-preview-container) {
+  border-radius: 0.375rem;
+}
+
+@media (min-width: 768px) {
+  .image-scrollable {
+    gap: 0.75rem;
   }
 }
 </style>

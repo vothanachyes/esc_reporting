@@ -2,6 +2,7 @@ import { createApp } from "vue";
 import { definePreset } from "@primeuix/themes";
 import Aura from "@primeuix/themes/aura";
 import PrimeVue from "primevue/config";
+import Tooltip from "primevue/tooltip";
 import App from "./App.vue";
 import "./assets/css/main.css";
 
@@ -17,17 +18,17 @@ if (prefersDark) {
 const Noir = definePreset(Aura, {
   semantic: {
     primary: {
-      50: "{sky.50}",
-      100: "{sky.100}",
-      200: "{sky.200}",
-      300: "{sky.300}",
-      400: "{sky.400}",
-      500: "{sky.500}",
-      600: "{sky.600}",
-      700: "{sky.700}",
-      800: "{sky.800}",
-      900: "{sky.900}",
-      950: "{sky.950}",
+      50: "#e0f2f5",
+      100: "#b3d9e0",
+      200: "#80bfcb",
+      300: "#4da5b6",
+      400: "#2692a1",
+      500: "#027f8c",
+      600: "#026d78",
+      700: "#025b64",
+      800: "#024950",
+      900: "#022f40",
+      950: "#011e26",
     },
     colorScheme: {
       light: {
@@ -78,6 +79,9 @@ app.use(PrimeVue, {
   },
   ripple: true,
 });
+
+// Register Tooltip directive globally
+app.directive("tooltip", Tooltip);
 
 app.mount("#app");
 

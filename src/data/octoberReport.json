@@ -4,12 +4,12 @@
     "handler": {
       "name": "Vothana CHY",
       "avatar": "/src/assets/images/vothana.jpg",
-      "role": "Developer"
+      "role": "Desktop Senior Developer"
     },
     "teamLeader": {
-      "name": "TL: Daro SAY",
+      "name": "Daro SAY",
       "avatar": "/src/assets/images/teamLead.jpg",
-      "role": "Team Leader"
+      "role": "Technical Director"
     },
     "period": "October 1-31, 2025",
     "statistics": {
@@ -26,7 +26,20 @@
         "Monthly Report - October 1-31, 2025",
         "October 2025 Work Summary"
       ],
-      "content": "\n      <div class=\"text-center space-y-4\">\n        <p class=\"text-xl text-gray-700\">This report showcases the comprehensive work completed during October 1-31, 2025.</p>\n        <div class=\"grid grid-cols-2 gap-4 mt-8\">\n          <div class=\"bg-primary/10 p-4 rounded-lg\">\n            <div class=\"text-3xl font-bold text-primary\">13</div>\n            <div class=\"text-sm text-gray-600\">Features</div>\n          </div>\n          <div class=\"bg-primary/10 p-4 rounded-lg\">\n            <div class=\"text-3xl font-bold text-primary\">7</div>\n            <div class=\"text-sm text-gray-600\">Types</div>\n          </div>\n        </div>\n      </div>\n    ",
+      "content": {
+        "type": "stats",
+        "text": "This report showcases the comprehensive work completed during October 1-31, 2025.",
+        "stats": [
+          {
+            "value": "13",
+            "label": "Features"
+          },
+          {
+            "value": "7",
+            "label": "Types"
+          }
+        ]
+      },
       "images": [
         {
           "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
@@ -53,7 +66,56 @@
       "subtitle": [
         "Status: Done"
       ],
-      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Handle no video to play</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Implemented proper error handling when no video is available</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Check video can be play or not</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Added video playback validation and privilege checks</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Next button functionality</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Proper access control</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Video playback validation</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Prompt on lock video/quiz</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Added user prompts when content is locked</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Add to cart functionality integration</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Video listing and filtering</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Enhanced video listing with filtering capabilities</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Video listing refactoring and improvement</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Code improvements and optimizations</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Videos in package listing</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Package-based video organization</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Videos in module listing</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Module-based video organization</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Course detail and videos playlist</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Integrated playlist functionality</p>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "content": [
+        {
+          "status": "done",
+          "title": "Handle no video to play",
+          "description": "Implemented proper error handling when no video is available"
+        },
+        {
+          "status": "done",
+          "title": "Check video can be play or not",
+          "description": "Added video playback validation and privilege checks",
+          "points": [
+            "Next button functionality",
+            "Proper access control",
+            "Video playback validation"
+          ]
+        },
+        {
+          "status": "done",
+          "title": "Prompt on lock video/quiz",
+          "description": "Added user prompts when content is locked",
+          "points": [
+            "Add to cart functionality integration"
+          ]
+        },
+        {
+          "status": "done",
+          "title": "Video listing and filtering",
+          "description": "Enhanced video listing with filtering capabilities"
+        },
+        {
+          "status": "done",
+          "title": "Video listing refactoring and improvement",
+          "description": "Code improvements and optimizations"
+        },
+        {
+          "status": "done",
+          "title": "Videos in package listing",
+          "description": "Package-based video organization"
+        },
+        {
+          "status": "done",
+          "title": "Videos in module listing",
+          "description": "Module-based video organization"
+        },
+        {
+          "status": "done",
+          "title": "Course detail and videos playlist",
+          "description": "Integrated playlist functionality"
+        }
+      ],
       "images": [
         {
           "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
@@ -119,7 +181,32 @@
       "subtitle": [
         "Status: Done"
       ],
-      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Hide/display packages on user scroll-up/down</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">UX enhancement for package visibility</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Add on start typing sensor and handle no data display</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Search functionality with real-time feedback</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Remove all unused components</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Code cleanup and optimization</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Make useVideoPlayer isolate and compose</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Refactored to reusable composable</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Can be used across most screens</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Better separation of concerns</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "content": [
+        {
+          "status": "done",
+          "title": "Hide/display packages on user scroll-up/down",
+          "description": "UX enhancement for package visibility"
+        },
+        {
+          "status": "done",
+          "title": "Add on start typing sensor and handle no data display",
+          "description": "Search functionality with real-time feedback"
+        },
+        {
+          "status": "done",
+          "title": "Remove all unused components",
+          "description": "Code cleanup and optimization"
+        },
+        {
+          "status": "done",
+          "title": "Make useVideoPlayer isolate and compose",
+          "description": "Refactored to reusable composable",
+          "points": [
+            "Can be used across most screens",
+            "Better separation of concerns"
+          ]
+        }
+      ],
       "images": [
         {
           "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
@@ -185,7 +272,25 @@
       "subtitle": [
         "Status: Almost Done"
       ],
-      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Implement quiz system</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Core quiz system implementation</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Implement quiz component, data handle, rich features</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Comprehensive quiz functionality</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Generic quiz components</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Reusable quiz logic</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Flexible quiz system architecture</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Rich feature set</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Data handling and state management</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "content": [
+        {
+          "status": "done",
+          "title": "Implement quiz system",
+          "description": "Core quiz system implementation"
+        },
+        {
+          "status": "done",
+          "title": "Implement quiz component, data handle, rich features",
+          "description": "Comprehensive quiz functionality",
+          "points": [
+            "Generic quiz components",
+            "Reusable quiz logic",
+            "Flexible quiz system architecture",
+            "Rich feature set",
+            "Data handling and state management"
+          ]
+        }
+      ],
       "images": [
         {
           "url": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800",
@@ -216,7 +321,18 @@
       "subtitle": [
         "Status: Almost Done"
       ],
-      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Designing and Integration API forum</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">New UI implementation</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Forum API integration</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Modern UI design</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Collaboration with B Chakriya</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "content": [
+        {
+          "status": "done",
+          "title": "Designing and Integration API forum",
+          "description": "New UI implementation",
+          "points": [
+            "Forum API integration",
+            "Modern UI design",
+            "Collaboration with B Chakriya"
+          ]
+        }
+      ],
       "images": [
         {
           "url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800",
@@ -247,7 +363,17 @@
       "subtitle": [
         "Status: Almost Done"
       ],
-      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Zoom Videos</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Video listing and management</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Zoom listing functionality</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Video integration</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "content": [
+        {
+          "status": "done",
+          "title": "Zoom Videos",
+          "description": "Video listing and management",
+          "points": [
+            "Zoom listing functionality",
+            "Video integration"
+          ]
+        }
+      ],
       "images": [
         {
           "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
@@ -279,7 +405,13 @@
       "subtitle": [
         "Status: Todo"
       ],
-      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-yellow-400 flex-shrink-0 mt-0.5\">⏳</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Library Page</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Initial planning and setup</p>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "content": [
+        {
+          "status": "todo",
+          "title": "Library Page",
+          "description": "Initial planning and setup"
+        }
+      ],
       "images": [
         {
           "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800",
@@ -305,7 +437,52 @@
       "subtitle": [
         "Status: Mostly Done"
       ],
-      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Course detail, module and video listing</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Comprehensive course detail page</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Module organization</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Video listing integration</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Course detail, video listing and enhance video player</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Enhanced video player integration</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Go course detail in course package list</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Navigation from package to detail</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Clickable course to detail</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Navigation improvements</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Add tooltip to each icon of course</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">UX enhancements</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Improve add cart button, back button, title of course</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">UI/UX improvements</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Course Package</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Package management</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Recommended Course</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Course recommendations</p>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "content": [
+        {
+          "status": "done",
+          "title": "Course detail, module and video listing",
+          "description": "Comprehensive course detail page",
+          "points": [
+            "Module organization",
+            "Video listing integration"
+          ]
+        },
+        {
+          "status": "done",
+          "title": "Course detail, video listing and enhance video player",
+          "description": "Enhanced video player integration"
+        },
+        {
+          "status": "done",
+          "title": "Go course detail in course package list",
+          "description": "Navigation from package to detail"
+        },
+        {
+          "status": "done",
+          "title": "Clickable course to detail",
+          "description": "Navigation improvements"
+        },
+        {
+          "status": "done",
+          "title": "Add tooltip to each icon of course",
+          "description": "UX enhancements"
+        },
+        {
+          "status": "done",
+          "title": "Improve add cart button, back button, title of course",
+          "description": "UI/UX improvements"
+        },
+        {
+          "status": "done",
+          "title": "Course Package",
+          "description": "Package management"
+        },
+        {
+          "status": "done",
+          "title": "Recommended Course",
+          "description": "Course recommendations"
+        }
+      ],
       "images": [
         {
           "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
@@ -356,7 +533,26 @@
       "subtitle": [
         "Status: Mostly Done"
       ],
-      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Refactor components to be reusable/dynamic</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Component reusability</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>For video/package/zoom and more</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Re-structuring video views to features</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Architecture improvements</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-yellow-400 flex-shrink-0 mt-0.5\">⏳</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Add new tab for course Overview</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">New tab implementation</p>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "content": [
+        {
+          "status": "done",
+          "title": "Refactor components to be reusable/dynamic",
+          "description": "Component reusability",
+          "points": [
+            "For video/package/zoom and more"
+          ]
+        },
+        {
+          "status": "done",
+          "title": "Re-structuring video views to features",
+          "description": "Architecture improvements"
+        },
+        {
+          "status": "todo",
+          "title": "Add new tab for course Overview",
+          "description": "New tab implementation"
+        }
+      ],
       "images": [
         {
           "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
@@ -407,7 +603,53 @@
       "subtitle": [
         "Status: Partially Done"
       ],
-      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Story listing, Animation, Tooltip</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Enhanced story listing with animations</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Auto fill out stories</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Automatic story population</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Story List</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Story listing functionality</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Story view</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Story viewing with full screen image</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Story View improve</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Enhanced viewing experience</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Your story view</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Personal story management</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Dynamic viewing stories</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Dynamic story viewing</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>New route accepting userId</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>View all stories</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>View own stories (can delete)</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Auto scroll to full-visible viewing story element</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Enhanced UX</p>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "content": [
+        {
+          "status": "done",
+          "title": "Story listing, Animation, Tooltip",
+          "description": "Enhanced story listing with animations"
+        },
+        {
+          "status": "done",
+          "title": "Auto fill out stories",
+          "description": "Automatic story population"
+        },
+        {
+          "status": "done",
+          "title": "Story List",
+          "description": "Story listing functionality"
+        },
+        {
+          "status": "done",
+          "title": "Story view",
+          "description": "Story viewing with full screen image"
+        },
+        {
+          "status": "done",
+          "title": "Story View improve",
+          "description": "Enhanced viewing experience"
+        },
+        {
+          "status": "done",
+          "title": "Your story view",
+          "description": "Personal story management"
+        },
+        {
+          "status": "done",
+          "title": "Dynamic viewing stories",
+          "description": "Dynamic story viewing",
+          "points": [
+            "New route accepting userId",
+            "View all stories",
+            "View own stories (can delete)"
+          ]
+        },
+        {
+          "status": "done",
+          "title": "Auto scroll to full-visible viewing story element",
+          "description": "Enhanced UX"
+        }
+      ],
       "images": [
         {
           "url": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800",
@@ -453,7 +695,35 @@
       "subtitle": [
         "Status: Partially Done"
       ],
-      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Reactive story deleted/added</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Real-time updates</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>If user deleted viewing story =&gt; not re-render</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Add new to the first index of story</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Refactor/Replace modern UI &amp; handle actions</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">UI modernization</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Story &amp; Gallery refactoring</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-yellow-400 flex-shrink-0 mt-0.5\">⏳</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Viewed and reaction story</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Analytics and reactions</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-yellow-400 flex-shrink-0 mt-0.5\">⏳</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Create story</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Story creation functionality</p>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "content": [
+        {
+          "status": "done",
+          "title": "Reactive story deleted/added",
+          "description": "Real-time updates",
+          "points": [
+            "If user deleted viewing story =&gt; not re-render",
+            "Add new to the first index of story"
+          ]
+        },
+        {
+          "status": "done",
+          "title": "Refactor/Replace modern UI &amp; handle actions",
+          "description": "UI modernization",
+          "points": [
+            "Story &amp; Gallery refactoring"
+          ]
+        },
+        {
+          "status": "todo",
+          "title": "Viewed and reaction story",
+          "description": "Analytics and reactions"
+        },
+        {
+          "status": "todo",
+          "title": "Create story",
+          "description": "Story creation functionality"
+        }
+      ],
       "images": [
         {
           "url": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800",
@@ -499,7 +769,51 @@
       "subtitle": [
         "Status: Done"
       ],
-      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Implement composable on cart mutation, global access popover</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Code organization</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Composable cart mutation</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Global popover access</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Transform cart from vuex to pinia</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">State management migration</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Add to cart button</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Button implementation</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Implement add package to cart</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Handle no auth on add to cart button</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>If user not login yet, click add cart will prompt user to login</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Video Add to cart button improvement</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">UX enhancements</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Info user course has been cart</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Disable add to cart button when already in cart</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Cart total not init</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Bug fix</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Refactor cart store</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Store improvements</p>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "content": [
+        {
+          "status": "done",
+          "title": "Implement composable on cart mutation, global access popover",
+          "description": "Code organization",
+          "points": [
+            "Composable cart mutation",
+            "Global popover access"
+          ]
+        },
+        {
+          "status": "done",
+          "title": "Transform cart from vuex to pinia",
+          "description": "State management migration"
+        },
+        {
+          "status": "done",
+          "title": "Add to cart button",
+          "description": "Button implementation",
+          "points": [
+            "Implement add package to cart",
+            "Handle no auth on add to cart button",
+            "If user not login yet, click add cart will prompt user to login"
+          ]
+        },
+        {
+          "status": "done",
+          "title": "Video Add to cart button improvement",
+          "description": "UX enhancements",
+          "points": [
+            "Info user course has been cart",
+            "Disable add to cart button when already in cart"
+          ]
+        },
+        {
+          "status": "done",
+          "title": "Cart total not init",
+          "description": "Bug fix"
+        },
+        {
+          "status": "done",
+          "title": "Refactor cart store",
+          "description": "Store improvements"
+        }
+      ],
       "images": [
         {
           "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
@@ -565,7 +879,38 @@
       "subtitle": [
         "Status: Done"
       ],
-      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">HomePage Layout improvements</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Layout enhancements</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Re structure story, social, user profile</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Architecture improvements</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Integrate with generic comment listing</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Comment system integration</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Story listing, Animation, Tooltip</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Enhanced story features</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Styling improvements</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">UI polish</p>\n              \n            </div>\n          </div>\n        </div>\n      \n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">SVG Component reusable</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Component reusability</p>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "content": [
+        {
+          "status": "done",
+          "title": "HomePage Layout improvements",
+          "description": "Layout enhancements"
+        },
+        {
+          "status": "done",
+          "title": "Re structure story, social, user profile",
+          "description": "Architecture improvements"
+        },
+        {
+          "status": "done",
+          "title": "Integrate with generic comment listing",
+          "description": "Comment system integration"
+        },
+        {
+          "status": "done",
+          "title": "Story listing, Animation, Tooltip",
+          "description": "Enhanced story features"
+        },
+        {
+          "status": "done",
+          "title": "Styling improvements",
+          "description": "UI polish"
+        },
+        {
+          "status": "done",
+          "title": "SVG Component reusable",
+          "description": "Component reusability"
+        }
+      ],
       "images": [
         {
           "url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800",
@@ -611,7 +956,17 @@
       "subtitle": [
         "Status: Done"
       ],
-      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Generic entity header, profile</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Reusable profile components</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Generic header implementation</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Profile display components</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "content": [
+        {
+          "status": "done",
+          "title": "Generic entity header, profile",
+          "description": "Reusable profile components",
+          "points": [
+            "Generic header implementation",
+            "Profile display components"
+          ]
+        }
+      ],
       "images": [
         {
           "url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800",
@@ -638,7 +993,17 @@
       "subtitle": [
         "Status: Done"
       ],
-      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Separate window splash screen</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Splash screen implementation</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Separate window approach</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Improved loading experience</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "content": [
+        {
+          "status": "done",
+          "title": "Separate window splash screen",
+          "description": "Splash screen implementation",
+          "points": [
+            "Separate window approach",
+            "Improved loading experience"
+          ]
+        }
+      ],
       "images": [
         {
           "url": "https://images.unsplash.com/photo-1557683316-973673baf926?w=800",
@@ -664,7 +1029,18 @@
       "subtitle": [
         "Status: Done"
       ],
-      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Implement comment listing and replying</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Core comment functionality</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Comment listing</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Reply functionality</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Integration with generic system</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "content": [
+        {
+          "status": "done",
+          "title": "Implement comment listing and replying",
+          "description": "Core comment functionality",
+          "points": [
+            "Comment listing",
+            "Reply functionality",
+            "Integration with generic system"
+          ]
+        }
+      ],
       "images": [
         {
           "url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800",
@@ -690,7 +1066,17 @@
       "subtitle": [
         "Status: Done"
       ],
-      "content": "<div class=\"grid grid-cols-2 gap-4\">\n        <div class=\"mb-5 p-4 rounded-lg bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-colors\">\n          <div class=\"flex items-start gap-3\">\n            <span class=\"text-2xl text-green-400 flex-shrink-0 mt-0.5\">✅</span>\n            <div class=\"flex-1 min-w-0\">\n              <h4 class=\"text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight\">Implement interaction and reaction button be generic</h4>\n              <p class=\"text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed\">Reusable interaction system</p>\n              \n                <ul class=\"ml-2 mt-2 space-y-1.5\">\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Generic like, comment, view buttons</span>\n                    </li>\n                  \n                    <li class=\"text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2\">\n                      <span class=\"text-primary-400 mt-1.5 flex-shrink-0\">•</span>\n                      <span>Reusable across features</span>\n                    </li>\n                  \n                </ul>\n              \n            </div>\n          </div>\n        </div>\n      </div>",
+      "content": [
+        {
+          "status": "done",
+          "title": "Implement interaction and reaction button be generic",
+          "description": "Reusable interaction system",
+          "points": [
+            "Generic like, comment, view buttons",
+            "Reusable across features"
+          ]
+        }
+      ],
       "images": [
         {
           "url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800",
@@ -745,7 +1131,7 @@
       "subtitle": [
         "For Your Time and Review"
       ],
-      "content": "\n      <div class=\"text-center space-y-6\">\n        <p class=\"text-2xl text-gray-700\">Thank you for reviewing this comprehensive report.</p>\n        <p class=\"text-lg text-gray-600\">Looking forward to continued collaboration and success.</p>\n        <div class=\"mt-8 text-primary font-semibold\">2025 - E-School Cambodia</div>\n      </div>\n    ",
+      "content": "Thank you for reviewing this comprehensive report.\n\nLooking forward to continued collaboration and success.",
       "images": [
         {
           "url": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800",

@@ -1,11 +1,11 @@
 <template>
   <div
     ref="containerRef"
-    class="w-full h-[80vh] overflow-hidden hide-scrollbar p-5"
+    class="w-full h-full p-5 overflow-hidden slides-container"
     tabindex="0"
     @keydown="handleKeyDown"
   >
-    <div ref="slidesWrapperRef" class="flex h-full" style="will-change: transform;">
+    <div ref="slidesWrapperRef" class="flex flex-row h-full" style="will-change: transform;">
       <SlideCardComponent
         v-for="(slide, index) in slides"
         :id="`slide-${index}`"
@@ -15,14 +15,16 @@
         :page-index="index + 1"
         :total-pages="slides.length"
         :is-active="currentIndex === index"
-        class="w-full h-full shrink-0"
+        :enable3-d-hover="enable3DHover"
+        class="h-full shrink-0 slide-item"
+        :style="{ width: slideWidth > 0 ? `${slideWidth}px` : '100%' }"
       />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, watch, nextTick } from "vue";
+import { ref, computed, onMounted, onUnmounted, watch, nextTick } from "vue";
 import { gsap } from "gsap";
 import { Observer } from "gsap/Observer";
 import type { SlideCard } from "@/data/types";
@@ -34,6 +36,7 @@ gsap.registerPlugin(Observer);
 const props = defineProps<{
   slides: SlideCard[];
   initialIndex?: number;
+  enable3DHover?: boolean;
 }>();
 
 const emit = defineEmits<{
@@ -47,6 +50,16 @@ const slideRefs = ref<(HTMLElement | null)[]>(Array.from({ length: props.slides.
 // Use array index (0-based) as single source of truth
 const currentIndex = ref(props.initialIndex ?? 0);
 const isInitialized = ref(false);
+// Container width for slide sizing
+const containerWidth = ref(0);
+
+// Computed slide width (container width minus padding: p-5 = 20px each side = 40px total)
+const slideWidth = computed(() => {
+  if (containerWidth.value > 0) {
+    return containerWidth.value - 40; // Account for p-5 padding (20px * 2)
+  }
+  return 0;
+});
 // GSAP Observer instance
 let observer: Observer | null = null;
 // Debounce timer for touch gestures to prevent rapid slide changes
@@ -209,12 +222,26 @@ onMounted(() => {
     requestAnimationFrame(() => {
       if (!containerRef.value || !slidesWrapperRef.value) return;
 
+      // Update container width
+      containerWidth.value = containerRef.value.clientWidth;
+
       // Set initial position using GSAP
-      const slideWidth = getSlideWidth();
-      if (slideWidth > 0) {
-        const initialX = -(clampedStartIndex * slideWidth);
+      const slideWidthValue = getSlideWidth();
+      if (slideWidthValue > 0) {
+        const initialX = -(clampedStartIndex * slideWidthValue);
         gsap.set(slidesWrapperRef.value, { x: initialX });
       }
+
+      // Update container width on resize
+      const updateContainerWidth = () => {
+        if (containerRef.value) {
+          containerWidth.value = containerRef.value.clientWidth;
+        }
+      };
+      window.addEventListener('resize', updateContainerWidth);
+      
+      // Store cleanup function
+      (window as any).__slidesContainerResizeHandler = updateContainerWidth;
 
       // Initialize GSAP Observer for touch/pointer gestures
       // Only touch and pointer (no wheel scroll)
@@ -291,6 +318,12 @@ onMounted(() => {
 onUnmounted(() => {
   // Clean up event listeners
   window.removeEventListener("keydown", handleKeyDown);
+  
+  // Clean up resize listener
+  if ((window as any).__slidesContainerResizeHandler) {
+    window.removeEventListener('resize', (window as any).__slidesContainerResizeHandler);
+    delete (window as any).__slidesContainerResizeHandler;
+  }
 
   // Kill GSAP Observer
   if (observer) {
@@ -304,5 +337,37 @@ onUnmounted(() => {
     touchDebounceTimer = null;
   }
 });
+
+// Expose navigation methods for parent components
+defineExpose({
+  navigateTo: scrollToIndex,
+  goNext: () => {
+    const maxIndex = props.slides.length - 1;
+    const nextIndex = Math.min(currentIndex.value + 1, maxIndex);
+    if (nextIndex !== currentIndex.value) {
+      scrollToIndex(nextIndex);
+    }
+  },
+  goPrev: () => {
+    const prevIndex = Math.max(currentIndex.value - 1, 0);
+    if (prevIndex !== currentIndex.value) {
+      scrollToIndex(prevIndex);
+    }
+  },
+});
 </script>
+
+<style scoped>
+.slide-item {
+  flex-shrink: 0;
+}
+
+.slides-container:focus {
+  outline: none;
+}
+
+.slides-container:focus-visible {
+  outline: none;
+}
+</style>
 

@@ -17,19 +17,54 @@ export type ImageConfig = {
   local?: boolean;
 };
 
+export type VideoConfig = {
+  url: string;
+  local?: boolean;
+};
+
 export type BackgroundConfig = {
   bgImg?: string;
   bgColor?: string;
   bgOpacity?: number;
 };
 
+export type ContentItem = {
+  status: "done" | "todo" | "in-progress";
+  title: string;
+  description?: string;
+  points?: string[];
+  doneDate?: string;
+};
+
+export type TableRow = {
+  status: "done" | "todo" | "in-progress";
+  title: string;
+  description?: string;
+  slideTitle: string;
+  doneDate?: string;
+  points?: string[];
+};
+
+export type ContentTable = {
+  type: "table";
+  rows: TableRow[];
+};
+
+export type ContentStats = {
+  type: "stats";
+  text?: string;
+  stats: Array<{ value: string | number; label: string }>;
+};
+
 export type SlideCard = {
   title: string;
   subtitle?: string | string[];
-  content: string;
+  content: string | ContentItem[] | ContentStats | ContentTable;
   images?: ImageConfig[];
+  video?: VideoConfig;
   background?: BackgroundConfig;
   imageAlignment?: ImageAlignment;
+  /** @deprecated Image container width is now auto-calculated based on screen height and image aspect ratios. This property is kept for backward compatibility but is ignored. */
   imageContainerWidth?: number;
   animationIn: AnimationType[];
   animationOut: AnimationType[];
@@ -41,6 +76,9 @@ export type PersonInfo = {
   name: string;
   avatar?: string;
   role?: string;
+  email?: string;
+  department?: string;
+  location?: string;
 };
 
 export type MainWrapperData = {
