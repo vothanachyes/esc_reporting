@@ -90,9 +90,14 @@
       ],
       "images": [
         {
-          "url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800",
-          "alt": "forum illustration",
-          "local": false
+          "url": "/src/assets/images/forum/forum_comments.png",
+          "alt": "Forum comments",
+          "local": true
+        },
+        {
+          "url": "/src/assets/images/forum/forum_listing.png",
+          "alt": "Forum listing",
+          "local": true
         }
       ],
       "imageAlignment": "right",
@@ -137,9 +142,14 @@
       ],
       "images": [
         {
-          "url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800",
-          "alt": "social illustration",
-          "local": false
+          "url": "/src/assets/images/social/social_comment.png",
+          "alt": "Social comment",
+          "local": true
+        },
+        {
+          "url": "/src/assets/images/social/social_view.png",
+          "alt": "Social view",
+          "local": true
         }
       ],
       "imageAlignment": "right",
@@ -216,9 +226,9 @@
       ],
       "images": [
         {
-          "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
-          "alt": "video illustration",
-          "local": false
+          "url": "/src/assets/images/video/video_playlist.png",
+          "alt": "Video playlist",
+          "local": true
         }
       ],
       "imageAlignment": "right",
@@ -258,9 +268,9 @@
       ],
       "images": [
         {
-          "url": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800",
-          "alt": "zoom illustration",
-          "local": false
+          "url": "/src/assets/images/zoom/zoom_course_listing.png",
+          "alt": "Zoom course listing",
+          "local": true
         }
       ],
       "imageAlignment": "right",
@@ -296,9 +306,9 @@
       ],
       "images": [
         {
-          "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800",
-          "alt": "library illustration",
-          "local": false
+          "url": "/src/assets/images/library/library_old.png",
+          "alt": "Library",
+          "local": true
         }
       ],
       "imageAlignment": "right",
@@ -525,9 +535,9 @@
       ],
       "images": [
         {
-          "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
-          "alt": "feature illustration",
-          "local": false
+          "url": "/src/assets/images/partner/Partner.png",
+          "alt": "Partner",
+          "local": true
         }
       ],
       "imageAlignment": "right",
@@ -595,9 +605,19 @@
       ],
       "images": [
         {
-          "url": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800",
-          "alt": "pdf illustration",
-          "local": false
+          "url": "/src/assets/images/pdf-viewer/1_pdf_viewer_light_fullscreen_no_pdf.png",
+          "alt": "PDF viewer light fullscreen",
+          "local": true
+        },
+        {
+          "url": "/src/assets/images/pdf-viewer/pdf_viewer_dark_full_screen.png",
+          "alt": "PDF viewer dark full screen",
+          "local": true
+        },
+        {
+          "url": "/src/assets/images/pdf-viewer/pdf_dialog_warm.png",
+          "alt": "PDF dialog warm",
+          "local": true
         }
       ],
       "imageAlignment": "right",

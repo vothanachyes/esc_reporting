@@ -425,7 +425,7 @@
     {
       "title": "PDF Viewer",
       "subtitle": [
-        "Status: Done"
+        "Status: In Progress"
       ],
       "content": [
         {
@@ -441,8 +441,18 @@
       ],
       "images": [
         {
+          "url": "/src/assets/images/pdf-viewer/1_pdf_viewer_light_fullscreen_no_pdf.png",
+          "alt": "PDF viewer light fullscreen",
+          "local": true
+        },
+        {
           "url": "/src/assets/images/pdf-viewer/pdf_viewer_dark_full_screen.png",
           "alt": "PDF viewer dark full screen",
+          "local": true
+        },
+        {
+          "url": "/src/assets/images/pdf-viewer/pdf_dialog_warm.png",
+          "alt": "PDF dialog warm",
           "local": true
         }
       ],
@@ -714,9 +724,9 @@
       "content": "Thank you for reviewing this comprehensive report.\n\nLooking forward to continued collaboration and success.",
       "images": [
         {
-          "url": "/src/assets/images/social/social_page.png",
-          "alt": "Social page",
-          "local": true
+          "url": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800",
+          "alt": "Thank you illustration",
+          "local": false
         }
       ],
       "imageAlignment": "left",
