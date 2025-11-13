@@ -81,6 +81,7 @@
 import { computed, ref } from "vue";
 import type { ImageConfig, ImageAlignment, ImageLayout } from "@/data/types";
 import ImageModal from "@/components/ui/ImageModal.vue";
+import { getImageUrl as getImageUrlUtil } from "@/utils/imageUtils";
 
 const containerRef = ref<HTMLElement | null>(null);
 const isModalVisible = ref(false);
@@ -311,12 +312,7 @@ const gridStyle = computed(() => {
 });
 
 const getImageUrl = (image: ImageConfig): string => {
-  // Handle local images
-  if (image.local) {
-    return image.url.startsWith("/") ? image.url : `/${image.url}`;
-  }
-  // Handle remote URLs
-  return image.url;
+  return getImageUrlUtil(image.url, image.local);
 };
 </script>
 

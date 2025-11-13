@@ -64,6 +64,7 @@
 import { ref, computed, watch, onMounted, onUnmounted } from "vue";
 import { Teleport } from "vue";
 import type { ImageConfig } from "@/data/types";
+import { getImageUrl as getImageUrlUtil } from "@/utils/imageUtils";
 
 const props = defineProps<{
   visible: boolean;
@@ -87,10 +88,7 @@ const currentImage = computed(() => {
 });
 
 const getImageUrl = (image: ImageConfig): string => {
-  if (image.local) {
-    return image.url.startsWith("/") ? image.url : `/${image.url}`;
-  }
-  return image.url;
+  return getImageUrlUtil(image.url, image.local);
 };
 
 const handleClose = () => {

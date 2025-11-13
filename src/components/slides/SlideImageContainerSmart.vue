@@ -98,6 +98,7 @@
 import { computed, ref } from "vue";
 import Image from "primevue/image";
 import type { ImageConfig, ImageAlignment, ImageLayout } from "@/data/types";
+import { getImageUrl as getImageUrlUtil } from "@/utils/imageUtils";
 
 const containerRef = ref<HTMLElement | null>(null);
 
@@ -488,12 +489,7 @@ const getImageItemStyle = (index: number): Record<string, string> => {
 };
 
 const getImageUrl = (image: ImageConfig): string => {
-  // Handle local images
-  if (image.local) {
-    return image.url.startsWith("/") ? image.url : `/${image.url}`;
-  }
-  // Handle remote URLs
-  return image.url;
+  return getImageUrlUtil(image.url, image.local);
 };
 </script>
 

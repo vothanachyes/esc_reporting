@@ -1,5 +1,6 @@
 import { ref, computed, onUnmounted } from "vue";
 import type { ImageConfig } from "@/data/types";
+import { getImageUrl as getImageUrlUtil } from "@/utils/imageUtils";
 
 export interface ImageDimensions {
   width: number;
@@ -21,10 +22,7 @@ export function useImageDimensions(images: ImageConfig[]) {
    * Get image URL (handles local and remote images)
    */
   const getImageUrl = (image: ImageConfig): string => {
-    if (image.local) {
-      return image.url.startsWith("/") ? image.url : `/${image.url}`;
-    }
-    return image.url;
+    return getImageUrlUtil(image.url, image.local);
   };
 
   /**
