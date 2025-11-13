@@ -115,7 +115,7 @@
 import { ref } from "vue";
 import type { ReportLink, LinkType } from "@/data/types";
 
-const props = defineProps<{
+defineProps<{
   isOpen: boolean;
   links?: ReportLink[];
   triggerElement?: HTMLElement | null;

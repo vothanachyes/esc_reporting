@@ -148,7 +148,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted, watch } from "vue";
+import { ref, computed, onUnmounted, watch } from "vue";
 import { getAvatarUrl } from "@/utils/avatarUtils";
 import type { PersonInfo } from "@/data/types";
 import PrimeImage from "primevue/image";

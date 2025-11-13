@@ -1,7 +1,7 @@
 <template>
     <div class="w-full h-full p-6 max-[450px]:p-3 overflow-y-auto bg-gray-50 dark:bg-gray-900 scrollbar-auto">
     <div
-      class="grid gap-4"
+      class="grid gap-4 max-w-[1500px] mx-auto"
       :class="gridColumns"
     >
       <div
@@ -13,7 +13,7 @@
       >
         <!-- Page Badge -->
         <div
-          class="absolute top-2 right-2 w-8 h-8 max-[450px]:w-6 max-[450px]:h-6 bg-primary/80 dark:bg-primary-600 text-white dark:text-gray-100 rounded-full flex items-center justify-center font-bold text-xs max-[450px]:text-[10px] z-10"
+          class="absolute top-2 right-2 w-8 h-8 max-[450px]:w-6 max-[450px]:h-6 min-[1200px]:w-10 min-[1200px]:h-10 bg-primary/80 dark:bg-primary-600 text-white dark:text-gray-100 rounded-full flex items-center justify-center font-bold text-xs max-[450px]:text-[10px] min-[1200px]:text-sm z-10"
         >
           {{ slide.pageIndex }}
         </div>
@@ -23,22 +23,22 @@
           v-if="isVideoSlide(slide)"
           class="absolute inset-0 bg-black/70 dark:bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20"
         >
-          <h3 class="text-lg max-[450px]:text-base font-bold text-white px-4 text-center">
+          <h3 class="text-lg max-[450px]:text-base min-[1200px]:text-xl font-bold text-white px-4 text-center">
             {{ slide.title }}
           </h3>
         </div>
 
         <!-- Card Preview -->
-        <div class="p-4 max-[450px]:p-2">
+        <div class="p-4 max-[450px]:p-2 min-[1200px]:p-5">
           <h3 
             v-if="!isVideoSlide(slide)"
-            class="text-sm max-[450px]:text-xs font-bold mb-2 line-clamp-2 bg-linear-to-r from-gray-900 via-gray-800 to-gray-900 dark:from-gray-100 dark:via-gray-200 dark:to-gray-100 bg-clip-text text-transparent"
+            class="text-sm max-[450px]:text-xs min-[1200px]:text-base font-bold mb-2 line-clamp-2 bg-linear-to-r from-gray-900 via-gray-800 to-gray-900 dark:from-gray-100 dark:via-gray-200 dark:to-gray-100 bg-clip-text text-transparent"
           >
             {{ slide.title }}
           </h3>
           <div
             v-if="!isVideoSlide(slide)"
-            class="text-xs max-[450px]:text-[10px] text-gray-600 dark:text-gray-300 line-clamp-3"
+            class="text-xs max-[450px]:text-[10px] min-[1200px]:text-sm text-gray-600 dark:text-gray-300 line-clamp-3"
           >
             {{ getContentPreview(slide.content) }}
           </div>
@@ -47,7 +47,7 @@
             v-if="isVideoSlide(slide)"
             class="flex items-center justify-center h-32 bg-gray-200 dark:bg-gray-700 rounded"
           >
-            <span class="text-gray-500 dark:text-gray-400 text-xs max-[450px]:text-[10px]">Video: {{ slide.title }}</span>
+            <span class="text-gray-500 dark:text-gray-400 text-xs max-[450px]:text-[10px] min-[1200px]:text-sm">Video: {{ slide.title }}</span>
           </div>
         </div>
       </div>
@@ -57,7 +57,7 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import type { SlideCard, ContentItem, ContentStats } from "@/data/types";
+import type { SlideCard, ContentItem, ContentStats, ContentTable } from "@/data/types";
 
 const props = defineProps<{
   slides: SlideCard[];
@@ -69,18 +69,15 @@ const emit = defineEmits<{
 
 const gridColumns = computed(() => {
   return {
-    "grid-cols-2": true, // < 360px
-    "min-[360px]:grid-cols-3": true, // sm
-    "md:grid-cols-4": true,
-    "lg:grid-cols-5": true,
-    "xl:grid-cols-6": true,
+    "grid-cols-2": true, // sm (default)
+    "md:grid-cols-3": true, // md and above: 3 cols
   };
 });
 
 /**
  * Convert content to a preview string for grid display
  */
-const getContentPreview = (content: string | ContentItem[] | ContentStats): string => {
+const getContentPreview = (content: string | ContentItem[] | ContentStats | ContentTable): string => {
   // If content is a string, return it directly (truncated)
   if (typeof content === "string") {
     // Remove HTML tags for preview
@@ -112,6 +109,25 @@ const getContentPreview = (content: string | ContentItem[] | ContentStats): stri
     return statsText.substring(0, 150);
   }
 
+  // If content is ContentTable
+  if (typeof content === "object" && "type" in content && content.type === "table") {
+    const table = content as ContentTable;
+    if (table.rows && table.rows.length > 0) {
+      const preview = table.rows
+        .slice(0, 3) // Show first 3 rows
+        .map((row) => {
+          let text = row.title || "";
+          if (row.description) {
+            text += `: ${row.description}`;
+          }
+          return text;
+        })
+        .join(". ");
+      return preview.substring(0, 150);
+    }
+    return "Table content";
+  }
+
   return "";
 };
 
@@ -131,14 +147,11 @@ const isVideoSlide = (slide: SlideCard): boolean => {
  * Uses a reasonable default that works for most screen sizes
  */
 const getColumnCount = (): number => {
-  if (typeof window === 'undefined') return 4; // SSR fallback
+  if (typeof window === 'undefined') return 3; // SSR fallback
   
   const width = window.innerWidth;
-  if (width >= 1280) return 6; // xl
-  if (width >= 1024) return 5; // lg
-  if (width >= 768) return 4;  // md
-  if (width >= 360) return 3; // sm
-  return 2; // < 360px
+  if (width >= 768) return 3; // md and above: 3 cols
+  return 2; // sm: 2 cols
 };
 
 /**
