@@ -1,18 +1,22 @@
 <template>
   <footer class="w-full h-[50px] px-6 flex items-center justify-between backdrop-blur-md border-t border-white/10 dark:border-gray-700/30 shadow-lg" :style="footerStyle">
     <div class="flex items-center gap-2">
-      <button
+      <div
         v-for="report in reportConfigs"
         :key="report.jsonPath"
-        :class="[
-          'p-2.5 rounded-xl transition-all duration-200 cursor-pointer shadow-md flex items-center justify-center relative',
-          isActiveReport(report.jsonPath)
-            ? 'bg-gradient-to-r from-primary to-primary-600 dark:from-primary-600 dark:to-primary-700 text-white shadow-lg shadow-primary/30 border-2 border-primary-300/50 dark:border-primary-400/50 scale-105'
-            : 'bg-white/10 dark:bg-gray-800/30 text-gray-700 dark:text-gray-300 hover:bg-white/20 dark:hover:bg-gray-700/50 border-2 border-transparent hover:border-white/20 dark:hover:border-gray-600/50 hover:scale-105'
-        ]"
-        :title="report.label"
-        @click="handleReportChange(report.jsonPath)"
+        class="relative"
       >
+        <button
+          :ref="(el) => setButtonRef(report.jsonPath, el)"
+          :class="[
+            'p-2.5 rounded-xl transition-all duration-200 cursor-pointer shadow-md flex items-center justify-center relative',
+            isActiveReport(report.jsonPath)
+              ? 'bg-gradient-to-r from-primary to-primary-600 dark:from-primary-600 dark:to-primary-700 text-white shadow-lg shadow-primary/30 border-2 border-primary-300/50 dark:border-primary-400/50 scale-105'
+              : 'bg-white/10 dark:bg-gray-800/30 text-gray-700 dark:text-gray-300 hover:bg-white/20 dark:hover:bg-gray-700/50 border-2 border-transparent hover:border-white/20 dark:hover:border-gray-600/50 hover:scale-105'
+          ]"
+          :title="report.label"
+          @click="(e) => handleReportClick(e, report.jsonPath)"
+        >
         <svg
           class="w-5 h-5"
           fill="none"
@@ -37,7 +41,108 @@
         >
           {{ getMonthAbbreviation(report.label) }}
         </span>
-      </button>
+        </button>
+        <!-- Links Popover -->
+        <Popover
+          v-if="isActiveReport(report.jsonPath) && links && links.length > 0"
+          :ref="(el) => setPopoverRef(report.jsonPath, el)"
+        >
+          <div class="flex flex-col gap-1 w-64">
+            <div class="px-4 py-2 border-b border-gray-200/50 dark:border-gray-700/50">
+              <h3 class="text-sm font-semibold text-gray-900 dark:text-white">Resources</h3>
+            </div>
+            <div class="py-1">
+              <a
+                v-for="(link, index) in links"
+                :key="index"
+                :href="link.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full px-4 py-2.5 text-left text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5 dark:hover:from-primary/20 dark:hover:to-primary/10 flex items-center gap-3 cursor-pointer transition-all duration-200 group"
+              >
+                <!-- Icon -->
+                <div class="flex-shrink-0 w-5 h-5 flex items-center justify-center">
+                  <IconProvider :size="20">
+                    <!-- GitLab - Orange #FC6D26 -->
+                    <MdiGitlab
+                      v-if="link.type === 'gitlab'"
+                      color="#FC6D26"
+                    />
+                    <!-- GitHub - Black #181717 (white in dark mode) -->
+                    <MdiGithub
+                      v-else-if="link.type === 'github'"
+                      :color="isDark ? '#FFFFFF' : '#181717'"
+                    />
+                    <!-- Bitbucket - Blue #0052CC -->
+                    <MdiBitbucket
+                      v-else-if="link.type === 'bitbucket'"
+                      color="#0052CC"
+                    />
+                    <!-- Google Sheets - Green #0F9D58 -->
+                    <MdiGoogleSpreadsheet
+                      v-else-if="link.type === 'googleSheet'"
+                      color="#0F9D58"
+                    />
+                    <!-- Demo Link - Primary color -->
+                    <svg
+                      v-else-if="link.type === 'demo'"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      class="w-5 h-5 text-primary"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    </svg>
+                    <!-- Video Demo - Red -->
+                    <svg
+                      v-else-if="link.type === 'videoDemo'"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="w-5 h-5 text-red-600"
+                    >
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                    <!-- Default - Gray -->
+                    <svg
+                      v-else
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      class="w-5 h-5 text-gray-600 dark:text-gray-400"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    </svg>
+                  </IconProvider>
+                </div>
+                
+                <!-- Link Text -->
+                <div class="flex-1 min-w-0">
+                  <span class="group-hover:text-primary transition-colors block truncate">
+                    {{ link.label || getDefaultLabel(link.type) }}
+                  </span>
+                </div>
+
+                <!-- External Link Indicator -->
+                <svg
+                  class="w-4 h-4 text-gray-400 group-hover:text-primary transition-colors flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </Popover>
+      </div>
       <!-- Detail Mode Indicator -->
       <div
         v-if="isDetailMode"
@@ -127,9 +232,13 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { ref, computed } from "vue";
 import { useRouter } from "vue-router";
 import { useDarkMode } from "@/composables/useDarkMode";
+import type { ReportLink, LinkType } from "@/data/types";
+import Popover from "primevue/popover";
+import { IconProvider } from "@twistify/vue3-icons";
+import { MdiGitlab, MdiGithub, MdiBitbucket, MdiGoogleSpreadsheet } from "@twistify/vue3-icons/mdi";
 
 type ReportConfig = {
   jsonPath: string;
@@ -139,6 +248,7 @@ type ReportConfig = {
 const props = defineProps<{
   activeReportPath?: string;
   isDetailMode?: boolean;
+  links?: ReportLink[];
 }>();
 
 const emit = defineEmits<{
@@ -149,6 +259,10 @@ const emit = defineEmits<{
 
 const router = useRouter();
 const { isDark } = useDarkMode();
+
+// Popover state
+const popoverRefs = ref<Record<string, any>>({});
+const buttonRefs = ref<Record<string, HTMLElement | null>>({});
 
 const reportConfigs: ReportConfig[] = [
   { jsonPath: "@/data/octoberReport.json", label: "October" },
@@ -165,9 +279,62 @@ const footerStyle = computed(() => {
   };
 });
 
-const handleReportChange = (jsonPath: string) => {
-  emit("change-report", jsonPath);
+const setButtonRef = (jsonPath: string, el: any) => {
+  if (el && el instanceof HTMLElement) {
+    buttonRefs.value[jsonPath] = el;
+  } else if (el && '$el' in el && el.$el instanceof HTMLElement) {
+    buttonRefs.value[jsonPath] = el.$el;
+  }
 };
+
+const setPopoverRef = (jsonPath: string, el: any) => {
+  if (el) {
+    popoverRefs.value[jsonPath] = el;
+  }
+};
+
+const handleReportClick = (event: MouseEvent, jsonPath: string) => {
+  // If clicking the already active report, toggle popover
+  if (isActiveReport(jsonPath)) {
+    // Only show popover if there are links
+    if (props.links && props.links.length > 0) {
+      const popover = popoverRefs.value[jsonPath];
+      if (popover) {
+        popover.toggle(event);
+      }
+    }
+  } else {
+    // If clicking a different report, close any open popovers and change report
+    // Close all popovers
+    Object.values(popoverRefs.value).forEach((popover) => {
+      if (popover && typeof popover.hide === 'function') {
+        popover.hide();
+      }
+    });
+    emit("change-report", jsonPath);
+  }
+};
+
+const getDefaultLabel = (type: LinkType): string => {
+  switch (type) {
+    case "gitlab":
+      return "GitLab Repository";
+    case "github":
+      return "GitHub Repository";
+    case "bitbucket":
+      return "Bitbucket Repository";
+    case "googleSheet":
+      return "Google Sheet";
+    case "demo":
+      return "Demo Link";
+    case "videoDemo":
+      return "Video Demo";
+    default:
+      return "External Link";
+  }
+};
+
+
 
 const getMonthAbbreviation = (label: string): string => {
   return label.substring(0, 3).toUpperCase();

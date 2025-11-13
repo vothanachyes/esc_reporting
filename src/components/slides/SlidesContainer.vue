@@ -47,6 +47,8 @@ const slideRefs = ref<(HTMLElement | null)[]>(Array.from({ length: props.slides.
 // Use array index (0-based) as single source of truth
 const currentIndex = ref(props.initialIndex ?? 0);
 const isInitialized = ref(false);
+// Flag to prevent watcher from firing during programmatic navigation
+const isNavigatingProgrammatically = ref(false);
 // Container width for slide sizing
 const containerWidth = ref(0);
 
@@ -103,7 +105,7 @@ const getSlideWidth = (): number => {
  * Scroll to a specific slide index using instant positioning
  * Provides instant slide transitions without animation
  */
-const scrollToIndex = (index: number) => {
+const scrollToIndex = (index: number, isProgrammatic = false) => {
   if (!slidesWrapperRef.value) return;
 
   // Force numeric conversion and clamp index to valid range
@@ -117,6 +119,11 @@ const scrollToIndex = (index: number) => {
   const slideWidth = getSlideWidth();
 
   if (slideWidth > 0 && Number.isFinite(slideWidth)) {
+    // Set flag to prevent watcher from interfering
+    if (isProgrammatic) {
+      isNavigatingProgrammatically.value = true;
+    }
+
     // Calculate target position (negative for left movement)
     const targetX = -(clampedIndex * slideWidth);
 
@@ -126,6 +133,13 @@ const scrollToIndex = (index: number) => {
     // Update current index and emit event immediately
     currentIndex.value = clampedIndex;
     emit("slide-change", clampedIndex);
+
+    // Reset flag after a microtask to allow prop updates to complete
+    if (isProgrammatic) {
+      Promise.resolve().then(() => {
+        isNavigatingProgrammatically.value = false;
+      });
+    }
   }
 };
 
@@ -173,6 +187,7 @@ const handleNavigateToPage = (pageNumber: number) => {
  * Watch for changes to initialIndex prop (e.g., from GridView click)
  * Navigates to the specified index without flicker
  * IMPORTANT: Only watches AFTER initialization to prevent race conditions
+ * SKIPS when navigation is programmatic (from buttons) to prevent delay
  */
 watch(
   () => props.initialIndex,
@@ -182,11 +197,13 @@ watch(
     // 2. Different from current
     // 3. Component is fully initialized
     // 4. NOT during the initial mount phase (prevent race conditions)
+    // 5. NOT during programmatic navigation (prevents watcher delay on button clicks)
     if (
       newIndex !== undefined
       && newIndex !== currentIndex.value
       && isInitialized.value
       && containerRef.value
+      && !isNavigatingProgrammatically.value
     ) {
       const clampedIndex = Math.max(0, Math.min(newIndex, props.slides.length - 1));
 
@@ -268,18 +285,18 @@ onUnmounted(() => {
 
 // Expose navigation methods for parent components
 defineExpose({
-  navigateTo: scrollToIndex,
+  navigateTo: (index: number) => scrollToIndex(index, true), // Mark as programmatic
   goNext: () => {
     const maxIndex = props.slides.length - 1;
     const nextIndex = Math.min(currentIndex.value + 1, maxIndex);
     if (nextIndex !== currentIndex.value) {
-      scrollToIndex(nextIndex);
+      scrollToIndex(nextIndex, true); // Mark as programmatic
     }
   },
   goPrev: () => {
     const prevIndex = Math.max(currentIndex.value - 1, 0);
     if (prevIndex !== currentIndex.value) {
-      scrollToIndex(prevIndex);
+      scrollToIndex(prevIndex, true); // Mark as programmatic
     }
   },
 });

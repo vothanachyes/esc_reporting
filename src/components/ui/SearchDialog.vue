@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="isOpen"
-    class="fixed inset-0 z-[100] flex items-start justify-center pt-20 pb-8 px-4 overflow-y-auto"
+    class="fixed inset-0 z-[100] flex items-start justify-center pt-20 pb-8 px-4 overflow-y-auto max-[450px]:pt-0 max-[450px]:pb-0 max-[450px]:px-0"
     @click.self="handleClose"
   >
     <!-- Backdrop -->
@@ -12,14 +12,14 @@
 
     <!-- Dialog -->
     <div
-      class="relative w-full max-w-2xl bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200/50 dark:border-gray-700/50 overflow-hidden"
+      class="relative w-full max-w-2xl bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200/50 dark:border-gray-700/50 overflow-hidden max-[450px]:max-w-none max-[450px]:w-full max-[450px]:h-full max-[450px]:rounded-none max-[450px]:border-0 max-[450px]:shadow-none"
       @keydown.esc="handleClose"
       @keydown.down.prevent="navigateResults(1)"
       @keydown.up.prevent="navigateResults(-1)"
       @keydown.enter.prevent="selectResult"
     >
       <!-- Header -->
-      <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex items-center gap-3">
+      <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex items-center gap-3 max-[450px]:px-4 max-[450px]:py-3">
         <svg
           class="w-5 h-5 text-primary dark:text-primary-400"
           fill="none"
@@ -73,18 +73,18 @@
       </div>
 
       <!-- Results -->
-      <div class="max-h-[60vh] overflow-y-auto">
-        <div v-if="isSearching && searchQuery.length >= 2" class="px-6 py-8 text-center">
+      <div class="max-h-[60vh] overflow-y-auto max-[450px]:max-h-[calc(100vh-140px)]">
+        <div v-if="isSearching && searchQuery.length >= 2" class="px-6 py-8 text-center max-[450px]:px-4 max-[450px]:py-6">
           <div class="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-2"></div>
           <p class="text-gray-500 dark:text-gray-400 text-sm">Searching...</p>
         </div>
         <div
           v-else-if="searchResults.length === 0 && searchQuery.length >= 2"
-          class="px-6 py-8 text-center"
+          class="px-6 py-8 text-center max-[450px]:px-4 max-[450px]:py-6"
         >
           <p class="text-gray-500 dark:text-gray-400">No results found</p>
         </div>
-        <div v-else-if="searchQuery.length < 2" class="px-6 py-8 text-center">
+        <div v-else-if="searchQuery.length < 2" class="px-6 py-8 text-center max-[450px]:px-4 max-[450px]:py-6">
           <p class="text-gray-500 dark:text-gray-400">Type at least 2 characters to search</p>
         </div>
         <div v-else class="divide-y divide-gray-200 dark:divide-gray-700">
@@ -92,7 +92,7 @@
             v-for="(result, index) in searchResults"
             :key="`${result.reportPath}-${result.pageIndex}`"
             :class="[
-              'w-full px-6 py-4 text-left hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors',
+              'w-full px-6 py-4 text-left hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors max-[450px]:px-4 max-[450px]:py-3',
               selectedIndex === index ? 'bg-primary/10 dark:bg-primary/20' : ''
             ]"
             @click="handleResultClick(result)"
@@ -130,7 +130,7 @@
       <!-- Footer -->
       <div
         v-if="searchResults.length > 0"
-        class="px-6 py-3 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 text-xs text-gray-500 dark:text-gray-400 flex items-center justify-between"
+        class="px-6 py-3 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 text-xs text-gray-500 dark:text-gray-400 flex items-center justify-between max-[450px]:px-4"
       >
         <span>{{ searchResults.length }} result{{ searchResults.length !== 1 ? "s" : "" }}</span>
         <span>↑↓ Navigate • Enter Select • Esc Close</span>

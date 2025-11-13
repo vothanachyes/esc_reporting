@@ -17,7 +17,17 @@
       "completedTasks": 0,
       "features": 13,
       "refactorings": 7
-    }
+    },
+    "links": [
+      {
+        "type": "bitbucket",
+        "url": "https://bitbucket.org/eschoolcambodia/esc_desktop_app/commits/branch/develop"
+      },
+      {
+        "type": "googleSheet",
+        "url": "https://docs.google.com/spreadsheets/d/1tHKy6SFYMdseysojq8k19e6-RZJT7XRC/edit?gid=199182931#gid=199182931"
+      }
+    ]
   },
   "slides": [
     {
@@ -1025,7 +1035,7 @@
       "type": "Feature"
     },
     {
-      "title": "Comment Feature",
+      "title": "Comment",
       "subtitle": [
         "Status: Done"
       ],
@@ -1059,10 +1069,10 @@
         "slideUp"
       ],
       "pageIndex": 15,
-      "type": "Feature"
+      "type": "Component"
     },
     {
-      "title": "Interaction & Reaction Feature",
+      "title": "Interaction & Reaction",
       "subtitle": [
         "Status: Done"
       ],
@@ -1100,7 +1110,7 @@
         "slideUp"
       ],
       "pageIndex": 16,
-      "type": "Feature"
+      "type": "Component"
     },
     {
       "title": "Project Showcase",

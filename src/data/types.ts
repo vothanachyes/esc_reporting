@@ -81,6 +81,14 @@ export type PersonInfo = {
   location?: string;
 };
 
+export type LinkType = "gitlab" | "github" | "bitbucket" | "googleSheet" | "demo" | "videoDemo";
+
+export type ReportLink = {
+  type: LinkType;
+  url: string;
+  label?: string;
+};
+
 export type MainWrapperData = {
   title: string;
   handler: PersonInfo;
@@ -92,6 +100,7 @@ export type MainWrapperData = {
     features?: number;
     refactorings?: number;
   };
+  links?: ReportLink[];
 };
 
 export type ReportData = {

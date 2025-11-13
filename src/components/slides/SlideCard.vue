@@ -11,7 +11,7 @@
             ? 'w-full rounded-none p-2 print-card-container'
             : (isImageTypeSlide || isVideoTypeSlide) 
               ? 'w-full rounded-none p-0 h-full' 
-              : 'w-[92%] rounded-3xl max-[450px]:rounded-lg shadow-2xl dark:shadow-gray-900/50 p-5 max-[450px]:p-2 border border-white/10 dark:border-gray-700/30 h-full',
+              : 'w-[92%] max-[450px]:w-[99%] rounded-3xl max-[450px]:rounded-lg shadow-2xl dark:shadow-gray-900/50 p-5 max-[450px]:p-2 border border-white/10 dark:border-gray-700/30 h-full',
           cardBgClass,
           enable3DHover && !props.isPrintMode ? 'card-3d-hover' : ''
         ]"
@@ -110,6 +110,7 @@
             :width="textContainerWidth"
             :is-print-mode="props.isPrintMode"
             :has-images="!!((card.images && card.images.length > 0) || card.video)"
+            :slide-type="card.type"
           />
           </div>
         </div>
@@ -204,6 +205,7 @@
                         :width="textContainerWidth"
                         :is-print-mode="false"
                         :has-images="!!((card.images && card.images.length > 0) || card.video)"
+                        :slide-type="card.type"
                       />
                     </div>
                   </div>

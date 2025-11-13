@@ -28,6 +28,7 @@ declare module 'vue' {
     UiGridView: typeof import('./src/components/ui/GridView.vue')['default']
     UiPinDialog: typeof import('./src/components/ui/PinDialog.vue')['default']
     UiProfileCard: typeof import('./src/components/ui/ProfileCard.vue')['default']
+    UiReportLinksPopover: typeof import('./src/components/ui/ReportLinksPopover.vue')['default']
     UiScreenSizeWarningDialog: typeof import('./src/components/ui/ScreenSizeWarningDialog.vue')['default']
     UiSearchDialog: typeof import('./src/components/ui/SearchDialog.vue')['default']
   }

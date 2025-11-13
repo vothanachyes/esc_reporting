@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@primeuix/themes": "^1.1.2",
+    "@twistify/vue3-icons": "^1.0.6",
     "@vueuse/core": "^13.4.0",
     "fuse.js": "^7.1.0",
     "gsap": "^3.13.0",

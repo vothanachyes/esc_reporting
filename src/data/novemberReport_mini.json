@@ -17,7 +17,17 @@
       "completedTasks": 0,
       "features": 22,
       "refactorings": 8
-    }
+    },
+    "links": [
+      {
+        "type": "bitbucket",
+        "url": "https://bitbucket.org/eschoolcambodia/esc_desktop_app/commits/branch/develop"
+      },
+      {
+        "type": "googleSheet",
+        "url": "https://docs.google.com/spreadsheets/d/1m79hzKap4YcdFW4IdKZfS1nfU9vS57DG/edit?gid=704779173#gid=704779173"
+      }
+    ]
   },
   "slides": [
     {
@@ -376,7 +386,7 @@
       "type": "Feature"
     },
     {
-      "title": "Partner Feature",
+      "title": "Partner Page",
       "subtitle": [
         "Status: In Progress"
       ],
@@ -405,10 +415,10 @@
         "slideUp"
       ],
       "pageIndex": 8,
-      "type": "Feature"
+      "type": "Page"
     },
     {
-      "title": "PDF Viewer Feature",
+      "title": "PDF Viewer",
       "subtitle": [
         "Status: Done"
       ],
@@ -442,10 +452,10 @@
         "slideUp"
       ],
       "pageIndex": 9,
-      "type": "Feature"
+      "type": "Component"
     },
     {
-      "title": "Infrastructure Feature",
+      "title": "Infrastructure",
       "subtitle": [
         "Status: Done"
       ],
@@ -494,10 +504,10 @@
         "scale"
       ],
       "pageIndex": 10,
-      "type": "Feature"
+      "type": "Infrastructure"
     },
     {
-      "title": "Security Feature",
+      "title": "Security & CORS",
       "subtitle": [
         "Status: Done"
       ],
@@ -531,10 +541,10 @@
         "slideUp"
       ],
       "pageIndex": 11,
-      "type": "Feature"
+      "type": "Security"
     },
     {
-      "title": "Real-time Feature",
+      "title": "Real-time Communication",
       "subtitle": [
         "Status: Done"
       ],
@@ -563,10 +573,10 @@
         "slideUp"
       ],
       "pageIndex": 12,
-      "type": "Feature"
+      "type": "Infrastructure"
     },
     {
-      "title": "Code Organization Feature",
+      "title": "Code Organization",
       "subtitle": [
         "Status: Done"
       ],
@@ -625,10 +635,10 @@
         "slideUp"
       ],
       "pageIndex": 13,
-      "type": "Feature"
+      "type": "Refactoring"
     },
     {
-      "title": "Performance Feature",
+      "title": "Performance",
       "subtitle": [
         "Status: Done"
       ],
@@ -657,10 +667,10 @@
         "slideUp"
       ],
       "pageIndex": 14,
-      "type": "Feature"
+      "type": "Performance"
     },
     {
-      "title": "UI/UX Feature",
+      "title": "UI/UX Improvements",
       "subtitle": [
         "Status: Done"
       ],
@@ -689,7 +699,7 @@
         "slideUp"
       ],
       "pageIndex": 15,
-      "type": "Feature"
+      "type": "UI/UX"
     },
     {
       "title": "Thank You",

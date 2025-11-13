@@ -46,37 +46,33 @@
     <!-- Navigation Buttons -->
     <div
       v-if="!isGridView && !isPrintMode"
-      class="absolute bottom-[50px] left-1/2 transform -translate-x-1/2 flex items-center gap-2 z-40"
+      class="absolute bottom-[50px] sm:bottom-[60px] left-1/2 transform -translate-x-1/2 flex items-center gap-3 sm:gap-4 md:gap-5 px-2 sm:px-3 md:px-4 z-40"
     >
-      <PrimeButton
-        icon="pi pi-chevron-left"
+      <button
         :disabled="currentSlideIndex === 0"
-        size="small"
-        rounded
-        text
-        severity="secondary"
-        @click="goToPrevSlide"
-        class="!w-8 !h-8 !min-w-[32px] shadow-md hover:shadow-lg cursor-pointer"
+        @mousedown.prevent="goToPrevSlide"
+        @touchstart.prevent="goToPrevSlide"
+        class="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 min-w-[32px] sm:min-w-[36px] md:min-w-[40px] rounded-full bg-white/10 dark:bg-gray-800/30 text-gray-700 dark:text-gray-300 hover:bg-white/20 dark:hover:bg-gray-700/50 border-2 border-transparent hover:border-white/20 dark:hover:border-gray-600/50 shadow-md hover:shadow-lg cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center transition-none"
         aria-label="Previous slide"
-      />
-      <PrimeButton
-        icon="pi pi-chevron-right"
+      >
+        <i class="pi pi-chevron-left text-sm sm:text-base"></i>
+      </button>
+      <button
         :disabled="currentSlideIndex === slides.length - 1"
-        size="small"
-        rounded
-        text
-        severity="secondary"
-        @click="goToNextSlide"
-        class="!w-8 !h-8 !min-w-[32px] shadow-md hover:shadow-lg cursor-pointer"
+        @mousedown.prevent="goToNextSlide"
+        @touchstart.prevent="goToNextSlide"
+        class="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 min-w-[32px] sm:min-w-[36px] md:min-w-[40px] rounded-full bg-white/10 dark:bg-gray-800/30 text-gray-700 dark:text-gray-300 hover:bg-white/20 dark:hover:bg-gray-700/50 border-2 border-transparent hover:border-white/20 dark:hover:border-gray-600/50 shadow-md hover:shadow-lg cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center transition-none"
         aria-label="Next slide"
-      />
+      >
+        <i class="pi pi-chevron-right text-sm sm:text-base"></i>
+      </button>
     </div>
-    <AppFooter v-if="!isPrintMode" :active-report-path="activeReportPath" :is-detail-mode="!isMiniView" @toggle-view="toggleView" @change-report="handleReportChange" @open-search="handleOpenSearch" />
+    <AppFooter v-if="!isPrintMode" :active-report-path="activeReportPath" :is-detail-mode="!isMiniView" :links="mainWrapperData.links" @toggle-view="toggleView" @change-report="handleReportChange" @open-search="handleOpenSearch" />
     <img 
       v-if="!isPrintMode"
       src="/e-footer.png" 
       alt="Footer decoration" 
-      class="absolute bottom-0 left-0 w-full opacity-20 pointer-events-none"
+      class="absolute bottom-0 left-0 w-full opacity-20 pointer-events-none footer-image-tint"
     />
     <!-- Search Dialog -->
     <SearchDialog
@@ -91,9 +87,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted, nextTick, watch } from "vue";
+import { ref, computed, onMounted, onUnmounted, nextTick, watch, provide } from "vue";
 import type { SlideCard, MainWrapperData } from "@/data/types";
-import PrimeButton from "primevue/button";
 import AppHeader from "./AppHeader.vue";
 import ContentTypeTag from "./ContentTypeTag.vue";
 import AppFooter from "./AppFooter.vue";
@@ -117,6 +112,8 @@ const isGridView = ref(false);
 const currentSlideIndex = ref(0);
 // Track current active report path
 const activeReportPath = ref("@/data/octoberReport.json");
+// Store current slide index for each report path (per-report page numbers)
+const reportPageNumbers = ref<Map<string, number>>(new Map());
 // Reference to SlidesContainer for navigation
 const slidesContainerRef = ref<InstanceType<typeof SlidesContainer> | null>(null);
 // Enable 3D hover effect on cards (set to true to enable)
@@ -239,6 +236,10 @@ try {
   };
   loadReportData(reportData);
   activeReportPath.value = initialReportPath;
+  // Initialize page number for initial report (default to 0)
+  const initialIndex = reportPageNumbers.value.get(initialReportPath) ?? 0;
+  currentSlideIndex.value = Math.max(0, Math.min(initialIndex, allSlides.length - 1));
+  reportPageNumbers.value.set(initialReportPath, currentSlideIndex.value);
 } catch (error) {
   console.error("Failed to parse report data:", error);
   reportData = getDefaultReportData();
@@ -252,11 +253,32 @@ const slides = ref<SlideCard[]>(
 );
 
 /**
+ * Check if switching between Mini and Detail mode for the same report
+ */
+const isModeSwitch = (oldPath: string, newPath: string): boolean => {
+  if (!oldPath) return false;
+  // Normalize paths by removing _mini suffix for comparison
+  const normalizePath = (path: string) => path.replace("_mini.json", ".json");
+  const oldNormalized = normalizePath(oldPath);
+  const newNormalized = normalizePath(newPath);
+  // Same base report but different paths = mode switch
+  return oldNormalized === newNormalized && oldPath !== newPath;
+};
+
+/**
  * Load report data from a JSON file path
  * Uses static mapping to ensure Vite can properly analyze imports
  */
 const loadReportFromPath = async (jsonPath: string) => {
   isLoadingReport.value = true;
+  
+  // Save current slide index for the previous report before switching
+  if (activeReportPath.value) {
+    reportPageNumbers.value.set(activeReportPath.value, currentSlideIndex.value);
+  }
+  
+  // Check if this is a mode switch (Mini <=> Detail)
+  const isSwitchingMode = isModeSwitch(activeReportPath.value, jsonPath);
   
   try {
     // Small delay to show loading indicator (better UX)
@@ -291,25 +313,55 @@ const loadReportFromPath = async (jsonPath: string) => {
     loadReportData(reportDataWithAppendix);
     mainWrapperData.value = parsedData.mainWrapper;
     
-    // Force re-render by updating key
-    slidesKey.value++;
-    
-    // Update slides - use nextTick to ensure DOM updates
-    await nextTick();
-    slides.value = allSlides;
-
-    // Reset slide index to 0 when switching reports
-    currentSlideIndex.value = 0;
-
     // Update active report path
     activeReportPath.value = jsonPath;
 
-    // Wait a bit more for smooth transition
+    // Determine the slide index to use:
+    // - If switching modes (Mini <=> Detail), reset to 0
+    // - Otherwise, restore saved index for this report, or default to 0
+    let targetIndex: number;
+    if (isSwitchingMode) {
+      // Mode switch: reset to 0
+      targetIndex = 0;
+      // Also clear saved index for the new mode to ensure fresh start
+      reportPageNumbers.value.set(jsonPath, 0);
+    } else {
+      // Report switch: restore saved index for this report, or default to 0
+      const savedIndex = reportPageNumbers.value.get(jsonPath) ?? 0;
+      // Clamp to valid range
+      const maxIndex = allSlides.length - 1;
+      targetIndex = Math.max(0, Math.min(savedIndex, maxIndex));
+    }
+    
+    // Update current slide index BEFORE re-rendering component
+    // This ensures the component mounts with the correct initial index
+    currentSlideIndex.value = targetIndex;
+    
+    // Update slides
+    slides.value = allSlides;
+    
+    // Force re-render by updating key (component will mount with correct initialIndex)
+    slidesKey.value++;
+    
+    // Wait for component to re-render and initialize
+    await nextTick();
     await new Promise((resolve) => setTimeout(resolve, 200));
+
+    // Explicitly navigate to the target index to ensure display updates
+    // This is a safety measure in case the component didn't initialize with the correct index
+    if (slidesContainerRef.value && !isGridView.value) {
+      try {
+        (slidesContainerRef.value as any).navigateTo(targetIndex);
+      } catch (error) {
+        console.warn("Failed to navigate to target index:", error);
+      }
+    }
 
     console.log(`Loaded report from ${jsonPath}:`, {
       slidesCount: slides.value.length,
       title: mainWrapperData.value.title,
+      currentIndex: currentSlideIndex.value,
+      isModeSwitch: isSwitchingMode,
     });
   } catch (error) {
     console.error(`Failed to load report from ${jsonPath}:`, error);
@@ -319,6 +371,7 @@ const loadReportFromPath = async (jsonPath: string) => {
     mainWrapperData.value = defaultData.mainWrapper;
     slides.value = defaultData.slides;
     currentSlideIndex.value = 0;
+    reportPageNumbers.value.set(jsonPath, 0);
     slidesKey.value++;
   } finally {
     isLoadingReport.value = false;
@@ -387,14 +440,51 @@ const handleTypeChange = (type: string) => {
 };
 
 /**
+ * Navigate to the first Appendix slide
+ * Used by Introduction slide button
+ */
+const navigateToAppendix = () => {
+  // Find the first slide with type "Appendix"
+  const targetIndex = slides.value.findIndex((slide) => slide.type === "Appendix");
+  
+  if (targetIndex !== -1) {
+    // Navigate to the slide
+    currentSlideIndex.value = targetIndex;
+    
+    // If in grid view, switch to slides view
+    if (isGridView.value) {
+      isGridView.value = false;
+    }
+    
+    // Use SlidesContainer's navigateTo method if available
+    if (slidesContainerRef.value && !isGridView.value) {
+      nextTick(() => {
+        (slidesContainerRef.value as any).navigateTo(targetIndex);
+      });
+    }
+  }
+};
+
+// Provide navigation function for child components
+provide("navigateToAppendix", navigateToAppendix);
+
+/**
  * Handle slide change from SlidesContainer
  * This is called when user scrolls or uses keyboard navigation
  * Index is always 0-based array index
+ * Only updates if different to prevent unnecessary reactive updates
  */
 const handleSlideChange = (index: number) => {
   // Clamp index to valid range
   const clampedIndex = Math.max(0, Math.min(index, slides.value.length - 1));
-  currentSlideIndex.value = clampedIndex;
+  // Only update if different to prevent unnecessary reactive updates and watcher triggers
+  if (currentSlideIndex.value !== clampedIndex) {
+    currentSlideIndex.value = clampedIndex;
+    // Save the current page number for the active report
+    if (activeReportPath.value) {
+      reportPageNumbers.value.set(activeReportPath.value, clampedIndex);
+    }
+  }
 };
 
 /**
@@ -420,19 +510,36 @@ const toggleView = () => {
 
 /**
  * Navigate to next slide
+ * Uses mousedown event for immediate response, bypassing click delay
+ * Directly calls navigateTo for instant navigation matching keyboard behavior
  */
-const goToNextSlide = () => {
+const goToNextSlide = (e?: Event) => {
+  e?.preventDefault();
+  e?.stopPropagation();
   if (slidesContainerRef.value) {
-    (slidesContainerRef.value as any).goNext();
+    const maxIndex = slides.value.length - 1;
+    const nextIndex = Math.min(currentSlideIndex.value + 1, maxIndex);
+    if (nextIndex !== currentSlideIndex.value) {
+      // Direct call to navigateTo - marked as programmatic to prevent watcher interference
+      (slidesContainerRef.value as any).navigateTo(nextIndex);
+    }
   }
 };
 
 /**
  * Navigate to previous slide
+ * Uses mousedown event for immediate response, bypassing click delay
+ * Directly calls navigateTo for instant navigation matching keyboard behavior
  */
-const goToPrevSlide = () => {
+const goToPrevSlide = (e?: Event) => {
+  e?.preventDefault();
+  e?.stopPropagation();
   if (slidesContainerRef.value) {
-    (slidesContainerRef.value as any).goPrev();
+    const prevIndex = Math.max(currentSlideIndex.value - 1, 0);
+    if (prevIndex !== currentSlideIndex.value) {
+      // Direct call to navigateTo - marked as programmatic to prevent watcher interference
+      (slidesContainerRef.value as any).navigateTo(prevIndex);
+    }
   }
 };
 

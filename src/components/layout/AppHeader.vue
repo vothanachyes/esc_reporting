@@ -61,7 +61,7 @@
         </div>
         <span class="hidden sm:inline text-white dark:text-gray-100 font-semibold text-sm drop-shadow-sm group-hover:text-orange-200 transition-colors">{{ data.teamLeader.name }}</span>
       </button>
-      <div class="relative">
+      <div ref="menuContainerRef" class="relative">
         <button
           class="w-9 h-9 flex items-center justify-center text-white dark:text-gray-100 hover:bg-white/15 dark:hover:bg-gray-200/15 rounded-lg transition-all duration-200 cursor-pointer backdrop-blur-sm border border-white/20 dark:border-gray-700/50 shadow-md hover:shadow-lg hover:scale-105"
           @click="toggleMenu"
@@ -240,6 +240,7 @@ const { enablePrintMode } = usePrintMode();
 const router = useRouter();
 const route = useRoute();
 const menuOpen = ref(false);
+const menuContainerRef = ref<HTMLElement | null>(null);
 const handlerProfileOpen = ref(false);
 const teamLeaderProfileOpen = ref(false);
 const companyDialogOpen = ref(false);
@@ -373,8 +374,10 @@ const handleViewSwitch = async () => {
 
 // Close menu when clicking outside
 const handleClickOutside = (event: MouseEvent) => {
+  if (!menuOpen.value) return;
+  
   const target = event.target as HTMLElement;
-  if (!target.closest(".relative")) {
+  if (menuContainerRef.value && !menuContainerRef.value.contains(target)) {
     menuOpen.value = false;
   }
 };

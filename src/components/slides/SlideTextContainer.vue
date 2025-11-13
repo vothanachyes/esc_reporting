@@ -76,6 +76,16 @@
           <div class="text-xs md:text-sm text-gray-300 dark:text-gray-400 mt-1">{{ stat.label }}</div>
         </div>
       </div>
+      <!-- Appendix Navigation Button -->
+      <div v-if="isIntroductionSlide && navigateToAppendix" class="flex justify-center mt-6">
+        <button
+          @click="handleNavigateToAppendix"
+          class="px-6 py-3 bg-primary-600 dark:bg-primary-500 hover:bg-primary-700 dark:hover:bg-primary-600 text-white dark:text-gray-100 rounded-lg font-semibold text-sm md:text-base transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 flex items-center gap-2 cursor-pointer"
+        >
+          <span>View Appendix</span>
+          <i class="pi pi-arrow-right text-xs"></i>
+        </button>
+      </div>
     </div>
     
     <!-- Items content (for feature slides) -->
@@ -171,7 +181,7 @@
 
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, inject } from "vue";
 import type { ContentItem, ContentStats } from "@/data/types";
 
 const props = defineProps<{
@@ -181,7 +191,11 @@ const props = defineProps<{
   width: string;
   isPrintMode?: boolean;
   hasImages?: boolean;
+  slideType?: string;
 }>();
+
+// Inject navigation function from MainWrapper
+const navigateToAppendix = inject<(() => void) | undefined>("navigateToAppendix", undefined);
 
 const widthClass = computed(() => {
   // If width is a class string (like "md:w-auto w-full"), use it directly
@@ -215,6 +229,13 @@ const itemsContent = computed(() => props.content as ContentItem[]);
 const isSingleItem = computed(() => isItemsContent.value && itemsContent.value.length === 1);
 const hasNoImages = computed(() => props.hasImages === false);
 const shouldUseLargeFonts = computed(() => isSingleItem.value || hasNoImages.value);
+const isIntroductionSlide = computed(() => props.slideType === "Introduction");
+
+const handleNavigateToAppendix = () => {
+  if (navigateToAppendix) {
+    navigateToAppendix();
+  }
+};
 
 /**
  * Check if a subtitle is a status subtitle
