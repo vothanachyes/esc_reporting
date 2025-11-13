@@ -11,7 +11,7 @@
           :class="[
             'p-2.5 rounded-xl transition-all duration-200 cursor-pointer shadow-md flex items-center justify-center relative',
             isActiveReport(report.jsonPath)
-              ? 'bg-gradient-to-r from-primary to-primary-600 dark:from-primary-600 dark:to-primary-700 text-white shadow-lg shadow-primary/30 border-2 border-primary-300/50 dark:border-primary-400/50 scale-105'
+              ? 'bg-linear-to-r from-primary to-primary-600 dark:from-primary-600 dark:to-primary-700 text-white shadow-lg shadow-primary/30 border-2 border-primary-300/50 dark:border-primary-400/50 scale-105'
               : 'bg-white/10 dark:bg-gray-800/30 text-gray-700 dark:text-gray-300 hover:bg-white/20 dark:hover:bg-gray-700/50 border-2 border-transparent hover:border-white/20 dark:hover:border-gray-600/50 hover:scale-105'
           ]"
           :title="report.label"
@@ -58,10 +58,10 @@
                 :href="link.url"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="w-full px-4 py-2.5 text-left text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5 dark:hover:from-primary/20 dark:hover:to-primary/10 flex items-center gap-3 cursor-pointer transition-all duration-200 group"
+                class="w-full px-4 py-2.5 text-left text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-linear-to-r hover:from-primary/10 hover:to-primary/5 dark:hover:from-primary/20 dark:hover:to-primary/10 flex items-center gap-3 cursor-pointer transition-all duration-200 group"
               >
                 <!-- Icon -->
-                <div class="flex-shrink-0 w-5 h-5 flex items-center justify-center">
+                <div class="shrink-0 w-5 h-5 flex items-center justify-center">
                   <IconProvider :size="20">
                     <!-- GitLab - Orange #FC6D26 -->
                     <MdiGitlab
@@ -126,7 +126,7 @@
 
                 <!-- External Link Indicator -->
                 <svg
-                  class="w-4 h-4 text-gray-400 group-hover:text-primary transition-colors flex-shrink-0"
+                  class="w-4 h-4 text-gray-400 group-hover:text-primary transition-colors shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -146,7 +146,7 @@
       <!-- Detail Mode Indicator -->
       <div
         v-if="isDetailMode"
-        class="relative px-1.5 py-0.5 sm:px-2 sm:py-1 md:px-2.5 md:py-1.5 rounded-md md:rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 dark:from-amber-600 dark:to-orange-600 text-white text-[9px] sm:text-[10px] md:text-xs font-semibold md:font-bold shadow-md shadow-amber-500/30 border border-amber-300/50 dark:border-amber-400/50 flex items-center gap-0.5 sm:gap-1 md:gap-1.5"
+        class="relative px-1.5 py-0.5 sm:px-2 sm:py-1 md:px-2.5 md:py-1.5 rounded-md md:rounded-lg bg-linear-to-r from-amber-500 to-orange-500 dark:from-amber-600 dark:to-orange-600 text-white text-[9px] sm:text-[10px] md:text-xs font-semibold md:font-bold shadow-md shadow-amber-500/30 border border-amber-300/50 dark:border-amber-400/50 flex items-center gap-0.5 sm:gap-1 md:gap-1.5"
         title="Detail Mode - Full report view"
       >
         <svg
@@ -188,7 +188,7 @@
     </div>
     <div class="flex items-center gap-2">
       <button
-        class="p-2.5 bg-gradient-to-r from-primary to-primary-600 dark:from-primary-600 dark:to-primary-700 text-white dark:text-gray-100 rounded-xl hover:from-primary-600 hover:to-primary-700 dark:hover:from-primary-700 dark:hover:to-primary-800 transition-all duration-200 cursor-pointer shadow-lg shadow-primary/30 border-2 border-primary-300/50 dark:border-primary-400/50 hover:scale-105 flex items-center justify-center"
+        class="p-2.5 bg-linear-to-r from-primary to-primary-600 dark:from-primary-600 dark:to-primary-700 text-white dark:text-gray-100 rounded-xl hover:from-primary-600 hover:to-primary-700 dark:hover:from-primary-700 dark:hover:to-primary-800 transition-all duration-200 cursor-pointer shadow-lg shadow-primary/30 border-2 border-primary-300/50 dark:border-primary-400/50 hover:scale-105 flex items-center justify-center"
         title="Search"
         @click="$emit('open-search')"
       >
@@ -208,7 +208,7 @@
         </svg>
       </button>
       <button
-        class="p-2.5 bg-gradient-to-r from-primary to-primary-600 dark:from-primary-600 dark:to-primary-700 text-white dark:text-gray-100 rounded-xl hover:from-primary-600 hover:to-primary-700 dark:hover:from-primary-700 dark:hover:to-primary-800 transition-all duration-200 cursor-pointer shadow-lg shadow-primary/30 border-2 border-primary-300/50 dark:border-primary-400/50 hover:scale-105 flex items-center justify-center"
+        class="p-2.5 bg-linear-to-r from-primary to-primary-600 dark:from-primary-600 dark:to-primary-700 text-white dark:text-gray-100 rounded-xl hover:from-primary-600 hover:to-primary-700 dark:hover:from-primary-700 dark:hover:to-primary-800 transition-all duration-200 cursor-pointer shadow-lg shadow-primary/30 border-2 border-primary-300/50 dark:border-primary-400/50 hover:scale-105 flex items-center justify-center"
         title="View All"
         @click="$emit('toggle-view')"
       >

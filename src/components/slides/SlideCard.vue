@@ -129,7 +129,7 @@
         :pt="{
           root: { class: 'w-full h-full max-w-full max-h-full m-0' },
           content: { class: 'p-6 h-full flex flex-col' },
-          header: { class: 'flex-shrink-0' },
+          header: { class: 'shrink-0' },
         }"
         @hide="handleMinimize"
       >
@@ -149,7 +149,7 @@
             </div>
             <button
               @click="handleMinimize"
-              class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-white/10 dark:bg-gray-800/50 hover:bg-white/20 dark:hover:bg-gray-700/50 border border-white/20 dark:border-gray-700/50 transition-all duration-200 text-white dark:text-gray-100 hover:scale-105 active:scale-95"
+              class="shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-white/10 dark:bg-gray-800/50 hover:bg-white/20 dark:hover:bg-gray-700/50 border border-white/20 dark:border-gray-700/50 transition-all duration-200 text-white dark:text-gray-100 hover:scale-105 active:scale-95"
               aria-label="Minimize slide"
             >
               <i class="pi pi-window-minimize text-sm"></i>

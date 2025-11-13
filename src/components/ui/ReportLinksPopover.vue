@@ -19,10 +19,10 @@
           :href="link.url"
           target="_blank"
           rel="noopener noreferrer"
-          class="w-full px-4 py-2.5 text-left text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5 dark:hover:from-primary/20 dark:hover:to-primary/10 flex items-center gap-3 cursor-pointer transition-all duration-200 group"
+          class="w-full px-4 py-2.5 text-left text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-linear-to-r hover:from-primary/10 hover:to-primary/5 dark:hover:from-primary/20 dark:hover:to-primary/10 flex items-center gap-3 cursor-pointer transition-all duration-200 group"
         >
           <!-- Icon -->
-          <div class="flex-shrink-0 w-5 h-5 flex items-center justify-center">
+          <div class="shrink-0 w-5 h-5 flex items-center justify-center">
             <svg
               v-if="link.type === 'gitlab'"
               viewBox="0 0 24 24"
@@ -94,7 +94,7 @@
 
           <!-- External Link Indicator -->
           <svg
-            class="w-4 h-4 text-gray-400 group-hover:text-primary transition-colors flex-shrink-0"
+            class="w-4 h-4 text-gray-400 group-hover:text-primary transition-colors shrink-0"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -112,7 +112,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { ref } from "vue";
 import type { ReportLink, LinkType } from "@/data/types";
 
 const props = defineProps<{
@@ -122,18 +122,6 @@ const props = defineProps<{
 }>();
 
 const popoverRef = ref<HTMLElement | null>(null);
-
-// Debug logging
-watch(() => props.isOpen, (newVal) => {
-  console.log('ReportLinksPopover - isOpen changed to:', newVal);
-  console.log('ReportLinksPopover - links:', props.links);
-  console.log('ReportLinksPopover - links.length:', props.links?.length);
-  console.log('ReportLinksPopover - Will render?', newVal && props.links && props.links.length > 0);
-}, { immediate: true });
-
-// Also log when component is created
-console.log('ReportLinksPopover - Component created with isOpen:', props.isOpen, 'links:', props.links);
-
 
 const getDefaultLabel = (type: LinkType): string => {
   switch (type) {

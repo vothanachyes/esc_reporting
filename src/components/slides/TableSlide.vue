@@ -3,10 +3,10 @@
     class="flex flex-col gap-5 w-full"
     :class="props.isPrintMode ? 'min-h-0 overflow-visible print-table-container' : 'h-full overflow-hidden'"
   >
-    <div class="flex flex-col gap-2 flex-shrink-0 relative">
+    <div class="flex flex-col gap-2 shrink-0 relative">
       <div class="flex items-start justify-between gap-4">
         <div class="flex flex-col gap-2 flex-1">
-          <h2 class="text-2xl md:text-3xl font-bold leading-tight bg-gradient-to-r from-white via-gray-100 to-white dark:from-gray-100 dark:via-gray-200 dark:to-gray-100 bg-clip-text text-transparent drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] dark:drop-shadow-[0_2px_4px_rgba(255,255,255,0.2)]">
+          <h2 class="text-2xl md:text-3xl font-bold leading-tight bg-linear-to-r from-white via-gray-100 to-white dark:from-gray-100 dark:via-gray-200 dark:to-gray-100 bg-clip-text text-transparent drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] dark:drop-shadow-[0_2px_4px_rgba(255,255,255,0.2)]">
             {{ title }}
           </h2>
           <div v-if="subtitles.length > 0" class="flex flex-col gap-1.5">
@@ -45,7 +45,7 @@
           >
             <span
               v-if="selectedGroupByLabel"
-              class="inline-block px-3 py-1 bg-gradient-to-r from-[#045174] to-[#0679a8] dark:from-[#045174] dark:to-[#0679a8] text-white dark:text-gray-100 text-xs font-semibold rounded-full shadow-md shadow-primary/30 border border-white/20 dark:border-gray-300/20"
+              class="inline-block px-3 py-1 bg-linear-to-r from-[#045174] to-[#0679a8] dark:from-[#045174] dark:to-[#0679a8] text-white dark:text-gray-100 text-xs font-semibold rounded-full shadow-md shadow-primary/30 border border-white/20 dark:border-gray-300/20"
             >
               {{ selectedGroupByLabel }}
             </span>
@@ -184,17 +184,17 @@
                       <span
                         class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold transition-all shadow-md"
                         :class="{
-                          'bg-gradient-to-r from-green-500/30 to-green-600/30 text-green-300 border-2 border-green-400/50 shadow-green-500/20': data.status === 'done',
-                          'bg-gradient-to-r from-blue-500/30 to-blue-600/30 text-blue-300 border-2 border-blue-400/50 shadow-blue-500/20': data.status === 'in-progress',
-                          'bg-gradient-to-r from-yellow-500/30 to-orange-500/30 text-yellow-300 border-2 border-yellow-400/50 shadow-yellow-500/20': data.status === 'todo',
+                          'bg-linear-to-r from-green-500/30 to-green-600/30 text-green-300 border-2 border-green-400/50 shadow-green-500/20': data.status === 'done',
+                          'bg-linear-to-r from-blue-500/30 to-blue-600/30 text-blue-300 border-2 border-blue-400/50 shadow-blue-500/20': data.status === 'in-progress',
+                          'bg-linear-to-r from-yellow-500/30 to-orange-500/30 text-yellow-300 border-2 border-yellow-400/50 shadow-yellow-500/20': data.status === 'todo',
                         }"
                       >
                         <span
                           class="w-2 h-2 rounded-full shadow-sm"
                           :class="{
-                            'bg-gradient-to-br from-green-400 to-green-600': data.status === 'done',
-                            'bg-gradient-to-br from-blue-400 to-blue-600 animate-pulse': data.status === 'in-progress',
-                            'bg-gradient-to-br from-yellow-400 to-orange-500': data.status === 'todo',
+                            'bg-linear-to-br from-green-400 to-green-600': data.status === 'done',
+                            'bg-linear-to-br from-blue-400 to-blue-600 animate-pulse': data.status === 'in-progress',
+                            'bg-linear-to-br from-yellow-400 to-orange-500': data.status === 'todo',
                           }"
                         ></span>
                         {{ data.status === "in-progress" ? "In Progress" : data.status }}
@@ -287,17 +287,17 @@
               <span
                 class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold transition-all shadow-md"
                 :class="{
-                  'bg-gradient-to-r from-green-500/30 to-green-600/30 text-green-300 border-2 border-green-400/50 shadow-green-500/20': data.status === 'done',
-                  'bg-gradient-to-r from-blue-500/30 to-blue-600/30 text-blue-300 border-2 border-blue-400/50 shadow-blue-500/20': data.status === 'in-progress',
-                  'bg-gradient-to-r from-yellow-500/30 to-orange-500/30 text-yellow-300 border-2 border-yellow-400/50 shadow-yellow-500/20': data.status === 'todo',
+                  'bg-linear-to-r from-green-500/30 to-green-600/30 text-green-300 border-2 border-green-400/50 shadow-green-500/20': data.status === 'done',
+                  'bg-linear-to-r from-blue-500/30 to-blue-600/30 text-blue-300 border-2 border-blue-400/50 shadow-blue-500/20': data.status === 'in-progress',
+                  'bg-linear-to-r from-yellow-500/30 to-orange-500/30 text-yellow-300 border-2 border-yellow-400/50 shadow-yellow-500/20': data.status === 'todo',
                 }"
               >
                 <span
                   class="w-2 h-2 rounded-full shadow-sm"
                   :class="{
-                    'bg-gradient-to-br from-green-400 to-green-600': data.status === 'done',
-                    'bg-gradient-to-br from-blue-400 to-blue-600 animate-pulse': data.status === 'in-progress',
-                    'bg-gradient-to-br from-yellow-400 to-orange-500': data.status === 'todo',
+                    'bg-linear-to-br from-green-400 to-green-600': data.status === 'done',
+                    'bg-linear-to-br from-blue-400 to-blue-600 animate-pulse': data.status === 'in-progress',
+                    'bg-linear-to-br from-yellow-400 to-orange-500': data.status === 'todo',
                   }"
                 ></span>
                 {{ data.status === "in-progress" ? "In Progress" : data.status }}
@@ -369,7 +369,7 @@
         :pt="{
           root: { class: 'w-full h-full max-w-full max-h-full m-0' },
           content: { class: 'p-6 h-full flex flex-col' },
-          header: { class: 'flex-shrink-0' },
+          header: { class: 'shrink-0' },
         }"
         @hide="handleMinimize"
       >
@@ -389,7 +389,7 @@
             </div>
             <button
               @click="handleMinimize"
-              class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-white/10 dark:bg-gray-800/50 hover:bg-white/20 dark:hover:bg-gray-700/50 border border-white/20 dark:border-gray-700/50 transition-all duration-200 text-white dark:text-gray-100 hover:scale-105 active:scale-95"
+              class="shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-white/10 dark:bg-gray-800/50 hover:bg-white/20 dark:hover:bg-gray-700/50 border border-white/20 dark:border-gray-700/50 transition-all duration-200 text-white dark:text-gray-100 hover:scale-105 active:scale-95"
               aria-label="Minimize table"
             >
               <i class="pi pi-window-minimize text-sm"></i>
@@ -415,7 +415,7 @@
                 >
                   <span
                     v-if="selectedGroupByLabel"
-                    class="inline-block px-3 py-1 bg-gradient-to-r from-[#045174] to-[#0679a8] dark:from-[#045174] dark:to-[#0679a8] text-white dark:text-gray-100 text-xs font-semibold rounded-full shadow-md shadow-primary/30 border border-white/20 dark:border-gray-300/20"
+                    class="inline-block px-3 py-1 bg-linear-to-r from-[#045174] to-[#0679a8] dark:from-[#045174] dark:to-[#0679a8] text-white dark:text-gray-100 text-xs font-semibold rounded-full shadow-md shadow-primary/30 border border-white/20 dark:border-gray-300/20"
                   >
                     {{ selectedGroupByLabel }}
                   </span>
@@ -542,17 +542,17 @@
                               <span
                                 class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold transition-all shadow-md"
                                 :class="{
-                                  'bg-gradient-to-r from-green-500/30 to-green-600/30 text-green-300 border-2 border-green-400/50 shadow-green-500/20': data.status === 'done',
-                                  'bg-gradient-to-r from-blue-500/30 to-blue-600/30 text-blue-300 border-2 border-blue-400/50 shadow-blue-500/20': data.status === 'in-progress',
-                                  'bg-gradient-to-r from-yellow-500/30 to-orange-500/30 text-yellow-300 border-2 border-yellow-400/50 shadow-yellow-500/20': data.status === 'todo',
+                                  'bg-linear-to-r from-green-500/30 to-green-600/30 text-green-300 border-2 border-green-400/50 shadow-green-500/20': data.status === 'done',
+                                  'bg-linear-to-r from-blue-500/30 to-blue-600/30 text-blue-300 border-2 border-blue-400/50 shadow-blue-500/20': data.status === 'in-progress',
+                                  'bg-linear-to-r from-yellow-500/30 to-orange-500/30 text-yellow-300 border-2 border-yellow-400/50 shadow-yellow-500/20': data.status === 'todo',
                                 }"
                               >
                                 <span
                                   class="w-2 h-2 rounded-full shadow-sm"
                                   :class="{
-                                    'bg-gradient-to-br from-green-400 to-green-600': data.status === 'done',
-                                    'bg-gradient-to-br from-blue-400 to-blue-600 animate-pulse': data.status === 'in-progress',
-                                    'bg-gradient-to-br from-yellow-400 to-orange-500': data.status === 'todo',
+                                    'bg-linear-to-br from-green-400 to-green-600': data.status === 'done',
+                                    'bg-linear-to-br from-blue-400 to-blue-600 animate-pulse': data.status === 'in-progress',
+                                    'bg-linear-to-br from-yellow-400 to-orange-500': data.status === 'todo',
                                   }"
                                 ></span>
                                 {{ data.status === "in-progress" ? "In Progress" : data.status }}
@@ -635,17 +635,17 @@
                       <span
                         class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold transition-all shadow-md"
                         :class="{
-                          'bg-gradient-to-r from-green-500/30 to-green-600/30 text-green-300 border-2 border-green-400/50 shadow-green-500/20': data.status === 'done',
-                          'bg-gradient-to-r from-blue-500/30 to-blue-600/30 text-blue-300 border-2 border-blue-400/50 shadow-blue-500/20': data.status === 'in-progress',
-                          'bg-gradient-to-r from-yellow-500/30 to-orange-500/30 text-yellow-300 border-2 border-yellow-400/50 shadow-yellow-500/20': data.status === 'todo',
+                          'bg-linear-to-r from-green-500/30 to-green-600/30 text-green-300 border-2 border-green-400/50 shadow-green-500/20': data.status === 'done',
+                          'bg-linear-to-r from-blue-500/30 to-blue-600/30 text-blue-300 border-2 border-blue-400/50 shadow-blue-500/20': data.status === 'in-progress',
+                          'bg-linear-to-r from-yellow-500/30 to-orange-500/30 text-yellow-300 border-2 border-yellow-400/50 shadow-yellow-500/20': data.status === 'todo',
                         }"
                       >
                         <span
                           class="w-2 h-2 rounded-full shadow-sm"
                           :class="{
-                            'bg-gradient-to-br from-green-400 to-green-600': data.status === 'done',
-                            'bg-gradient-to-br from-blue-400 to-blue-600 animate-pulse': data.status === 'in-progress',
-                            'bg-gradient-to-br from-yellow-400 to-orange-500': data.status === 'todo',
+                            'bg-linear-to-br from-green-400 to-green-600': data.status === 'done',
+                            'bg-linear-to-br from-blue-400 to-blue-600 animate-pulse': data.status === 'in-progress',
+                            'bg-linear-to-br from-yellow-400 to-orange-500': data.status === 'todo',
                           }"
                         ></span>
                         {{ data.status === "in-progress" ? "In Progress" : data.status }}

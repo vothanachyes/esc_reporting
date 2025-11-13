@@ -10,12 +10,12 @@
     >
       <div
         v-if="isOpen"
-        class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 dark:bg-black/70 backdrop-blur-sm"
+        class="fixed inset-0 z-100 flex items-center justify-center p-4 bg-black/50 dark:bg-black/70 backdrop-blur-sm"
         @click.self="close"
       >
         <div
           ref="cardRef"
-          class="relative w-full max-w-md bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl shadow-2xl border border-gray-200/50 dark:border-gray-700/50 overflow-hidden profile-card-3d"
+          class="relative w-full max-w-md bg-linear-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl shadow-2xl border border-gray-200/50 dark:border-gray-700/50 overflow-hidden profile-card-3d"
           :style="cardStyle"
           @mouseleave="resetCardRotation"
         >
@@ -40,7 +40,7 @@
             <div class="flex flex-col items-center mb-6">
               <!-- Avatar -->
               <div class="relative mb-4">
-                <div class="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 dark:from-primary-500 dark:to-primary-700 p-1 shadow-xl overflow-hidden">
+                <div class="w-24 h-24 md:w-28 md:h-28 rounded-full bg-linear-to-br from-primary-400 to-primary-600 dark:from-primary-500 dark:to-primary-700 p-1 shadow-xl overflow-hidden">
                   <PrimeImage
                     v-if="profile.avatar && avatarUrl"
                     :src="avatarUrl"
@@ -55,7 +55,7 @@
                   />
                   <div
                     v-else
-                    class="w-full h-full rounded-full bg-gradient-to-br from-primary-300 to-primary-500 dark:from-primary-400 dark:to-primary-600 flex items-center justify-center border-4 border-white dark:border-gray-800"
+                    class="w-full h-full rounded-full bg-linear-to-br from-primary-300 to-primary-500 dark:from-primary-400 dark:to-primary-600 flex items-center justify-center border-4 border-white dark:border-gray-800"
                   >
                     <span class="text-3xl md:text-4xl font-bold text-white">
                       {{ getInitials(profile.name) }}
@@ -65,7 +65,7 @@
                 <!-- Status Badge -->
                 <div
                   v-if="isTeamLeader"
-                  class="absolute -bottom-1 -right-1 w-8 h-8 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 flex items-center justify-center shadow-lg border-2 border-white dark:border-gray-800 z-10"
+                  class="absolute -bottom-1 -right-1 w-8 h-8 rounded-full bg-linear-to-r from-orange-500 to-amber-500 flex items-center justify-center shadow-lg border-2 border-white dark:border-gray-800 z-10"
                 >
                   <span class="text-white text-xs font-bold">TL</span>
                 </div>
@@ -77,7 +77,7 @@
               </h2>
 
               <!-- Role -->
-              <div class="px-4 py-1.5 rounded-full bg-gradient-to-r from-primary/20 to-primary/10 dark:from-primary/30 dark:to-primary/20 border border-primary/30 mb-4">
+              <div class="px-4 py-1.5 rounded-full bg-linear-to-r from-primary/20 to-primary/10 dark:from-primary/30 dark:to-primary/20 border border-primary/30 mb-4">
                 <span class="text-sm md:text-base font-semibold text-primary dark:text-primary-300">
                   {{ profile.role || (isTeamLeader ? "Technical Director" : "Desktop Senior Developer") }}
                 </span>
@@ -102,7 +102,7 @@
             <div class="space-y-3">
               <!-- Email -->
               <div v-if="profile.email" class="flex items-center gap-3 p-3 rounded-xl bg-white/50 dark:bg-gray-800/50 border border-gray-200/50 dark:border-gray-700/50">
-                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 dark:from-primary/30 dark:to-primary/20 flex items-center justify-center flex-shrink-0">
+                <div class="w-10 h-10 rounded-lg bg-linear-to-br from-primary/20 to-primary/10 dark:from-primary/30 dark:to-primary/20 flex items-center justify-center shrink-0">
                   <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
@@ -115,7 +115,7 @@
 
               <!-- Department -->
               <div v-if="profile.department" class="flex items-center gap-3 p-3 rounded-xl bg-white/50 dark:bg-gray-800/50 border border-gray-200/50 dark:border-gray-700/50">
-                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 dark:from-primary/30 dark:to-primary/20 flex items-center justify-center flex-shrink-0">
+                <div class="w-10 h-10 rounded-lg bg-linear-to-br from-primary/20 to-primary/10 dark:from-primary/30 dark:to-primary/20 flex items-center justify-center shrink-0">
                   <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
@@ -128,7 +128,7 @@
 
               <!-- Location -->
               <div v-if="profile.location" class="flex items-center gap-3 p-3 rounded-xl bg-white/50 dark:bg-gray-800/50 border border-gray-200/50 dark:border-gray-700/50">
-                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 dark:from-primary/30 dark:to-primary/20 flex items-center justify-center flex-shrink-0">
+                <div class="w-10 h-10 rounded-lg bg-linear-to-br from-primary/20 to-primary/10 dark:from-primary/30 dark:to-primary/20 flex items-center justify-center shrink-0">
                   <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />

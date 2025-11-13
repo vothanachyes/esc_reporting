@@ -10,7 +10,7 @@
     <div class="flex flex-col gap-2">
       <h2 
         :class="[
-          'font-bold leading-tight bg-gradient-to-r from-white via-gray-100 to-white dark:from-gray-100 dark:via-gray-200 dark:to-gray-100 bg-clip-text text-transparent drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] dark:drop-shadow-[0_2px_4px_rgba(255,255,255,0.2)]',
+          'font-bold leading-tight bg-linear-to-r from-white via-gray-100 to-white dark:from-gray-100 dark:via-gray-200 dark:to-gray-100 bg-clip-text text-transparent drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] dark:drop-shadow-[0_2px_4px_rgba(255,255,255,0.2)]',
           hasNoImages ? 'text-3xl md:text-4xl' : 'text-2xl md:text-3xl'
         ]"
       >
@@ -106,7 +106,7 @@
       >
         <div class="flex items-start gap-3 md:gap-4">
           <!-- Modern Status Badge -->
-          <div class="flex-shrink-0 mt-0.5">
+          <div class="shrink-0 mt-0.5">
             <span
               v-if="item.status === 'done'"
               :class="[
@@ -168,7 +168,7 @@
                   shouldUseLargeFonts ? 'text-sm md:text-base' : 'text-xs md:text-sm'
                 ]"
               >
-                <span class="text-primary-400 mt-1.5 flex-shrink-0">•</span>
+                <span class="text-primary-400 mt-1.5 shrink-0">•</span>
                 <span>{{ point }}</span>
               </li>
             </ul>
@@ -258,16 +258,16 @@ const getStatusBadgeClass = (subtitle: string): string => {
   const statusText = getStatusText(subtitle).toLowerCase();
   
   if (statusText === "done") {
-    return "bg-gradient-to-r from-green-500/30 to-green-600/30 text-green-300 border-2 border-green-400/50 shadow-green-500/20 dark:from-green-500/40 dark:to-green-600/40 dark:text-green-200 dark:border-green-400/60";
+    return "bg-linear-to-r from-green-500/30 to-green-600/30 text-green-300 border-2 border-green-400/50 shadow-green-500/20 dark:from-green-500/40 dark:to-green-600/40 dark:text-green-200 dark:border-green-400/60";
   } else if (statusText === "todo") {
-    return "bg-gradient-to-r from-yellow-500/30 to-orange-500/30 text-yellow-300 border-2 border-yellow-400/50 shadow-yellow-500/20 dark:from-yellow-500/40 dark:to-orange-500/40 dark:text-yellow-200 dark:border-yellow-400/60";
+    return "bg-linear-to-r from-yellow-500/30 to-orange-500/30 text-yellow-300 border-2 border-yellow-400/50 shadow-yellow-500/20 dark:from-yellow-500/40 dark:to-orange-500/40 dark:text-yellow-200 dark:border-yellow-400/60";
   } else if (statusText.includes("almost done") || statusText.includes("mostly done")) {
-    return "bg-gradient-to-r from-blue-500/30 to-cyan-500/30 text-blue-300 border-2 border-blue-400/50 shadow-blue-500/20 dark:from-blue-500/40 dark:to-cyan-500/40 dark:text-blue-200 dark:border-blue-400/60";
+    return "bg-linear-to-r from-blue-500/30 to-cyan-500/30 text-blue-300 border-2 border-blue-400/50 shadow-blue-500/20 dark:from-blue-500/40 dark:to-cyan-500/40 dark:text-blue-200 dark:border-blue-400/60";
   } else if (statusText.includes("partially done") || statusText.includes("in progress")) {
-    return "bg-gradient-to-r from-purple-500/30 to-pink-500/30 text-purple-300 border-2 border-purple-400/50 shadow-purple-500/20 dark:from-purple-500/40 dark:to-pink-500/40 dark:text-purple-200 dark:border-purple-400/60 animate-pulse";
+    return "bg-linear-to-r from-purple-500/30 to-pink-500/30 text-purple-300 border-2 border-purple-400/50 shadow-purple-500/20 dark:from-purple-500/40 dark:to-pink-500/40 dark:text-purple-200 dark:border-purple-400/60 animate-pulse";
   } else {
     // Default for other statuses
-    return "bg-gradient-to-r from-gray-500/30 to-gray-600/30 text-gray-300 border-2 border-gray-400/50 shadow-gray-500/20 dark:from-gray-500/40 dark:to-gray-600/40 dark:text-gray-200 dark:border-gray-400/60";
+    return "bg-linear-to-r from-gray-500/30 to-gray-600/30 text-gray-300 border-2 border-gray-400/50 shadow-gray-500/20 dark:from-gray-500/40 dark:to-gray-600/40 dark:text-gray-200 dark:border-gray-400/60";
   }
 };
 

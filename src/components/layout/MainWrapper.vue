@@ -356,13 +356,6 @@ const loadReportFromPath = async (jsonPath: string) => {
         console.warn("Failed to navigate to target index:", error);
       }
     }
-
-    console.log(`Loaded report from ${jsonPath}:`, {
-      slidesCount: slides.value.length,
-      title: mainWrapperData.value.title,
-      currentIndex: currentSlideIndex.value,
-      isModeSwitch: isSwitchingMode,
-    });
   } catch (error) {
     console.error(`Failed to load report from ${jsonPath}:`, error);
     // Fallback to default data
@@ -751,8 +744,6 @@ const handleSelectSearchResult = async (result: SearchResult) => {
 };
 
 onMounted(() => {
-  console.log("Loaded slides:", slides.value.length);
-  
   // Start gradient rotation animation - smooth change every 100ms
   gradientInterval = setInterval(() => {
     gradientAngle.value = (gradientAngle.value + 1.5) % 360;

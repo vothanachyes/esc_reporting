@@ -41,7 +41,7 @@
         class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 dark:bg-gray-800/30 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 shadow-md hover:bg-white/15 dark:hover:bg-gray-800/40 transition-all duration-200 cursor-pointer group"
       >
         <span
-          class="hidden sm:inline-flex items-center justify-center px-2 py-0.5 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white text-[10px] font-bold shadow-md shadow-orange-500/30 border border-orange-300/50"
+          class="hidden sm:inline-flex items-center justify-center px-2 py-0.5 rounded-full bg-linear-to-r from-orange-500 to-amber-500 text-white text-[10px] font-bold shadow-md shadow-orange-500/30 border border-orange-300/50"
         >
           TL
         </span>
@@ -87,7 +87,7 @@
           class="absolute right-0 mt-2 w-56 bg-white/95 dark:bg-gray-800/95 backdrop-blur-md rounded-xl shadow-2xl border border-gray-200/50 dark:border-gray-700/50 py-2 z-50 overflow-hidden"
         >
           <button
-            class="w-full px-4 py-2.5 text-left text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5 dark:hover:from-primary/20 dark:hover:to-primary/10 flex items-center gap-3 cursor-pointer transition-all duration-200 group"
+            class="w-full px-4 py-2.5 text-left text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-linear-to-r hover:from-primary/10 hover:to-primary/5 dark:hover:from-primary/20 dark:hover:to-primary/10 flex items-center gap-3 cursor-pointer transition-all duration-200 group"
             @click="handlePrint"
           >
             <svg
@@ -106,7 +106,7 @@
             <span class="group-hover:text-primary transition-colors">Print</span>
           </button>
           <button
-            class="w-full px-4 py-2.5 text-left text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5 dark:hover:from-primary/20 dark:hover:to-primary/10 flex items-center gap-3 cursor-pointer transition-all duration-200 group"
+            class="w-full px-4 py-2.5 text-left text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-linear-to-r hover:from-primary/10 hover:to-primary/5 dark:hover:from-primary/20 dark:hover:to-primary/10 flex items-center gap-3 cursor-pointer transition-all duration-200 group"
             @click="handleShare"
           >
             <svg
@@ -126,7 +126,7 @@
           </button>
           <div class="border-t border-gray-200/50 dark:border-gray-700/50 my-1.5" />
           <button
-            class="w-full px-4 py-2.5 text-left text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5 dark:hover:from-primary/20 dark:hover:to-primary/10 flex items-center justify-between gap-2 cursor-pointer transition-all duration-200 group"
+            class="w-full px-4 py-2.5 text-left text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-linear-to-r hover:from-primary/10 hover:to-primary/5 dark:hover:from-primary/20 dark:hover:to-primary/10 flex items-center justify-between gap-2 cursor-pointer transition-all duration-200 group"
             @click="handleViewSwitch"
           >
             <div class="flex items-center gap-3">
@@ -145,13 +145,13 @@
               </svg>
               <span class="group-hover:text-primary transition-colors">Switch to {{ targetViewLabel }}</span>
             </div>
-            <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-gradient-to-r from-primary/20 to-primary/10 dark:from-primary/30 dark:to-primary/20 text-primary border border-primary/30">
+            <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-linear-to-r from-primary/20 to-primary/10 dark:from-primary/30 dark:to-primary/20 text-primary border border-primary/30">
               {{ currentViewLabel }}
             </span>
           </button>
           <div class="border-t border-gray-200/50 dark:border-gray-700/50 my-1.5" />
           <button
-            class="w-full px-4 py-2.5 text-left text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5 dark:hover:from-primary/20 dark:hover:to-primary/10 flex items-center justify-between gap-2 cursor-pointer transition-all duration-200 group"
+            class="w-full px-4 py-2.5 text-left text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-linear-to-r hover:from-primary/10 hover:to-primary/5 dark:hover:from-primary/20 dark:hover:to-primary/10 flex items-center justify-between gap-2 cursor-pointer transition-all duration-200 group"
             @click="toggleDarkMode"
           >
             <div class="flex items-center gap-3">
@@ -185,7 +185,7 @@
               </svg>
               <span class="group-hover:text-primary transition-colors">{{ isDark ? "Dark Mode" : "Light Mode" }}</span>
             </div>
-            <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-gradient-to-r from-primary/20 to-primary/10 dark:from-primary/30 dark:to-primary/20 text-primary border border-primary/30">
+            <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-linear-to-r from-primary/20 to-primary/10 dark:from-primary/30 dark:to-primary/20 text-primary border border-primary/30">
               {{ isDark ? "ON" : "OFF" }}
             </span>
           </button>

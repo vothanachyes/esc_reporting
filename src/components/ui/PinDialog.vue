@@ -38,7 +38,7 @@
       <div v-if="isLockedOut" class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-2">
         <div class="flex items-start gap-2">
           <svg
-            class="w-4 h-4 text-red-600 dark:text-red-400 mt-0.5 flex-shrink-0"
+            class="w-4 h-4 text-red-600 dark:text-red-400 mt-0.5 shrink-0"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -86,7 +86,7 @@
         <div v-if="errorMessage" class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-2">
           <div class="flex items-start gap-2">
             <svg
-              class="w-4 h-4 text-red-600 dark:text-red-400 mt-0.5 flex-shrink-0"
+              class="w-4 h-4 text-red-600 dark:text-red-400 mt-0.5 shrink-0"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

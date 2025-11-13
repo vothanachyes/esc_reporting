@@ -15,7 +15,7 @@
       >
         <div
           ref="cardRef"
-          class="relative w-full max-w-2xl max-h-[90vh] bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl shadow-2xl border border-gray-200/50 dark:border-gray-700/50 overflow-hidden company-card-3d flex flex-col"
+          class="relative w-full max-w-2xl max-h-[90vh] bg-linear-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl shadow-2xl border border-gray-200/50 dark:border-gray-700/50 overflow-hidden company-card-3d flex flex-col"
           :style="cardStyle"
           @mouseleave="resetCardRotation"
         >
@@ -41,7 +41,7 @@
               <div class="flex flex-col items-center mb-6">
                 <!-- Company Logo -->
                 <div class="relative mb-4">
-                  <div class="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 dark:from-primary-500 dark:to-primary-700 p-1 shadow-xl overflow-hidden">
+                  <div class="w-24 h-24 md:w-28 md:h-28 rounded-full bg-linear-to-br from-primary-400 to-primary-600 dark:from-primary-500 dark:to-primary-700 p-1 shadow-xl overflow-hidden">
                     <img
                       v-if="companyLogoUrl"
                       :src="companyLogoUrl"
@@ -50,7 +50,7 @@
                     />
                     <div
                       v-else
-                      class="w-full h-full rounded-full bg-gradient-to-br from-primary-300 to-primary-500 dark:from-primary-400 dark:to-primary-600 flex items-center justify-center border-4 border-white dark:border-gray-800"
+                      class="w-full h-full rounded-full bg-linear-to-br from-primary-300 to-primary-500 dark:from-primary-400 dark:to-primary-600 flex items-center justify-center border-4 border-white dark:border-gray-800"
                     >
                       <span class="text-3xl md:text-4xl font-bold text-white">ES</span>
                     </div>
@@ -67,7 +67,7 @@
                   :href="companyInfo.website"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/20 to-primary/10 dark:from-primary/30 dark:to-primary/20 border border-primary/30 hover:from-primary/30 hover:to-primary/20 dark:hover:from-primary/40 dark:hover:to-primary/30 transition-all duration-200 mb-4 group"
+                  class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-linear-to-r from-primary/20 to-primary/10 dark:from-primary/30 dark:to-primary/20 border border-primary/30 hover:from-primary/30 hover:to-primary/20 dark:hover:from-primary/40 dark:hover:to-primary/30 transition-all duration-200 mb-4 group"
                 >
                   <svg class="w-4 h-4 text-primary group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -87,7 +87,7 @@
               <div class="space-y-3 mb-6">
                 <!-- Email -->
                 <div v-if="companyInfo.contact?.email" class="flex items-center gap-3 p-3 rounded-xl bg-white/50 dark:bg-gray-800/50 border border-gray-200/50 dark:border-gray-700/50">
-                  <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 dark:from-primary/30 dark:to-primary/20 flex items-center justify-center flex-shrink-0">
+                  <div class="w-10 h-10 rounded-lg bg-linear-to-br from-primary/20 to-primary/10 dark:from-primary/30 dark:to-primary/20 flex items-center justify-center shrink-0">
                     <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
@@ -105,7 +105,7 @@
 
                 <!-- Phone -->
                 <div v-if="companyInfo.contact?.phones && companyInfo.contact.phones.length > 0" class="flex items-center gap-3 p-3 rounded-xl bg-white/50 dark:bg-gray-800/50 border border-gray-200/50 dark:border-gray-700/50">
-                  <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 dark:from-primary/30 dark:to-primary/20 flex items-center justify-center flex-shrink-0">
+                  <div class="w-10 h-10 rounded-lg bg-linear-to-br from-primary/20 to-primary/10 dark:from-primary/30 dark:to-primary/20 flex items-center justify-center shrink-0">
                     <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
@@ -127,7 +127,7 @@
 
                 <!-- Address -->
                 <div v-if="companyInfo.address" class="flex items-start gap-3 p-3 rounded-xl bg-white/50 dark:bg-gray-800/50 border border-gray-200/50 dark:border-gray-700/50">
-                  <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 dark:from-primary/30 dark:to-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="w-10 h-10 rounded-lg bg-linear-to-br from-primary/20 to-primary/10 dark:from-primary/30 dark:to-primary/20 flex items-center justify-center shrink-0 mt-0.5">
                     <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
