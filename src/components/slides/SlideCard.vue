@@ -11,7 +11,7 @@
             ? 'w-full rounded-none p-2 print-card-container'
             : (isImageTypeSlide || isVideoTypeSlide) 
               ? 'w-full rounded-none p-0 h-full' 
-              : 'w-[92%] max-[450px]:w-[99%] rounded-3xl max-[450px]:rounded-lg shadow-2xl dark:shadow-gray-900/50 p-5 max-[450px]:p-2 border border-white/10 dark:border-gray-700/30 h-full',
+              : 'w-[92%] max-[450px]:w-[95%] rounded-3xl max-[450px]:rounded-xl shadow-2xl dark:shadow-gray-900/50 p-5 max-[450px]:p-3 border border-white/10 dark:border-gray-700/30 h-full',
           cardBgClass,
           enable3DHover && !props.isPrintMode ? 'card-3d-hover' : ''
         ]"
@@ -50,7 +50,7 @@
 
         <!-- Maximize Button - Positioned to avoid page number badge -->
         <button
-          v-if="!props.isPrintMode && !isGlobalMaximized.value"
+          v-if="!props.isPrintMode && !isGlobalMaximized"
           @click="handleMaximize"
           class="absolute top-[5px] right-[50px] sm:right-[55px] md:right-[60px] w-7 h-7 flex items-center justify-center rounded-lg bg-white/10 dark:bg-gray-800/50 hover:bg-white/20 dark:hover:bg-gray-700/50 border border-white/20 dark:border-gray-700/50 transition-all duration-200 text-white dark:text-gray-100 hover:scale-105 active:scale-95 cursor-pointer z-20"
           aria-label="Maximize slide"

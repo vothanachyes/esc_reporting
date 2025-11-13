@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full p-6 overflow-y-auto bg-gray-50 dark:bg-gray-900 scrollbar-auto">
+    <div class="w-full h-full p-6 max-[450px]:p-3 overflow-y-auto bg-gray-50 dark:bg-gray-900 scrollbar-auto">
     <div
       class="grid gap-4"
       :class="gridColumns"
@@ -13,7 +13,7 @@
       >
         <!-- Page Badge -->
         <div
-          class="absolute top-2 right-2 w-8 h-8 bg-primary/80 dark:bg-primary-600 text-white dark:text-gray-100 rounded-full flex items-center justify-center font-bold text-xs z-10"
+          class="absolute top-2 right-2 w-8 h-8 max-[450px]:w-6 max-[450px]:h-6 bg-primary/80 dark:bg-primary-600 text-white dark:text-gray-100 rounded-full flex items-center justify-center font-bold text-xs max-[450px]:text-[10px] z-10"
         >
           {{ slide.pageIndex }}
         </div>
@@ -23,22 +23,22 @@
           v-if="isVideoSlide(slide)"
           class="absolute inset-0 bg-black/70 dark:bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20"
         >
-          <h3 class="text-xl font-bold text-white px-4 text-center">
+          <h3 class="text-lg max-[450px]:text-base font-bold text-white px-4 text-center">
             {{ slide.title }}
           </h3>
         </div>
 
         <!-- Card Preview -->
-        <div class="p-4">
+        <div class="p-4 max-[450px]:p-2">
           <h3 
             v-if="!isVideoSlide(slide)"
-            class="text-lg font-bold mb-2 line-clamp-2 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 dark:from-gray-100 dark:via-gray-200 dark:to-gray-100 bg-clip-text text-transparent"
+            class="text-sm max-[450px]:text-xs font-bold mb-2 line-clamp-2 bg-linear-to-r from-gray-900 via-gray-800 to-gray-900 dark:from-gray-100 dark:via-gray-200 dark:to-gray-100 bg-clip-text text-transparent"
           >
             {{ slide.title }}
           </h3>
           <div
             v-if="!isVideoSlide(slide)"
-            class="text-sm text-gray-600 dark:text-gray-300 line-clamp-3"
+            class="text-xs max-[450px]:text-[10px] text-gray-600 dark:text-gray-300 line-clamp-3"
           >
             {{ getContentPreview(slide.content) }}
           </div>
@@ -47,7 +47,7 @@
             v-if="isVideoSlide(slide)"
             class="flex items-center justify-center h-32 bg-gray-200 dark:bg-gray-700 rounded"
           >
-            <span class="text-gray-500 dark:text-gray-400 text-sm">Video: {{ slide.title }}</span>
+            <span class="text-gray-500 dark:text-gray-400 text-xs max-[450px]:text-[10px]">Video: {{ slide.title }}</span>
           </div>
         </div>
       </div>
@@ -69,7 +69,8 @@ const emit = defineEmits<{
 
 const gridColumns = computed(() => {
   return {
-    "grid-cols-3": true, // sm
+    "grid-cols-2": true, // < 360px
+    "min-[360px]:grid-cols-3": true, // sm
     "md:grid-cols-4": true,
     "lg:grid-cols-5": true,
     "xl:grid-cols-6": true,
@@ -136,7 +137,8 @@ const getColumnCount = (): number => {
   if (width >= 1280) return 6; // xl
   if (width >= 1024) return 5; // lg
   if (width >= 768) return 4;  // md
-  return 3; // sm
+  if (width >= 360) return 3; // sm
+  return 2; // < 360px
 };
 
 /**

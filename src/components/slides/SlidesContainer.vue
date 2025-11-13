@@ -1,7 +1,7 @@
 <template>
   <div
     ref="containerRef"
-    class="w-full h-full p-5 overflow-hidden slides-container"
+    class="w-full h-full p-5 max-[450px]:p-3 overflow-hidden slides-container"
     tabindex="0"
     @keydown="handleKeyDown"
   >
