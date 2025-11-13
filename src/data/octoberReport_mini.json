@@ -52,9 +52,9 @@
       },
       "images": [
         {
-          "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
-          "alt": "Welcome illustration",
-          "local": false
+          "url": "/src/assets/images/social/social_page.png",
+          "alt": "Social page",
+          "local": true
         }
       ],
       "imageAlignment": "right",
@@ -152,34 +152,24 @@
       ],
       "images": [
         {
-          "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
-          "alt": "video illustration",
-          "local": false
+          "url": "/src/assets/images/video/course_listing.png",
+          "alt": "Course listing",
+          "local": true
         },
         {
-          "url": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800",
-          "alt": "quiz illustration",
-          "local": false
+          "url": "/src/assets/images/video/video_2.png",
+          "alt": "Video player",
+          "local": true
         },
         {
-          "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800",
-          "alt": "course illustration",
-          "local": false
+          "url": "/src/assets/images/video/video_locked.png",
+          "alt": "Locked video",
+          "local": true
         },
         {
-          "url": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
-          "alt": "cart illustration",
-          "local": false
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800",
-          "alt": "profile illustration",
-          "local": false
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
-          "alt": "refactoring illustration",
-          "local": false
+          "url": "/src/assets/images/video/video_playlist.png",
+          "alt": "Video playlist",
+          "local": true
         }
       ],
       "imageAlignment": "right",
@@ -221,14 +211,14 @@
       ],
       "images": [
         {
-          "url": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800",
-          "alt": "quiz illustration",
-          "local": false
+          "url": "/src/assets/images/quiz/doing_quiz.png",
+          "alt": "Doing quiz",
+          "local": true
         },
         {
-          "url": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
-          "alt": "ui illustration",
-          "local": false
+          "url": "/src/assets/images/quiz/quiz_passed.png",
+          "alt": "Quiz passed",
+          "local": true
         }
       ],
       "imageAlignment": "right",
@@ -263,14 +253,14 @@
       ],
       "images": [
         {
-          "url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800",
-          "alt": "forum illustration",
-          "local": false
+          "url": "/src/assets/images/forum/forum_comments.png",
+          "alt": "Forum comments",
+          "local": true
         },
         {
-          "url": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
-          "alt": "ui illustration",
-          "local": false
+          "url": "/src/assets/images/forum/forum_listing.png",
+          "alt": "Forum listing",
+          "local": true
         }
       ],
       "imageAlignment": "right",
@@ -304,14 +294,9 @@
       ],
       "images": [
         {
-          "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
-          "alt": "video illustration",
-          "local": false
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800",
-          "alt": "zoom illustration",
-          "local": false
+          "url": "/src/assets/images/zoom/zoom_course_listing.png",
+          "alt": "Zoom course listing",
+          "local": true
         }
       ],
       "imageAlignment": "right",
@@ -341,9 +326,9 @@
       ],
       "images": [
         {
-          "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800",
-          "alt": "library illustration",
-          "local": false
+          "url": "/src/assets/images/library/library_old.png",
+          "alt": "Library",
+          "local": true
         }
       ],
       "imageAlignment": "right",
@@ -430,34 +415,9 @@
       ],
       "images": [
         {
-          "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
-          "alt": "video illustration",
-          "local": false
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800",
-          "alt": "zoom illustration",
-          "local": false
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800",
-          "alt": "course illustration",
-          "local": false
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
-          "alt": "cart illustration",
-          "local": false
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
-          "alt": "refactoring illustration",
-          "local": false
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
-          "alt": "ui illustration",
-          "local": false
+          "url": "/src/assets/images/video/course_listing.png",
+          "alt": "Course listing",
+          "local": true
         }
       ],
       "imageAlignment": "right",
@@ -554,29 +514,19 @@
       ],
       "images": [
         {
-          "url": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800",
-          "alt": "story illustration",
-          "local": false
+          "url": "/src/assets/images/story/all_stories.png",
+          "alt": "All stories",
+          "local": true
         },
         {
-          "url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800",
-          "alt": "profile illustration",
-          "local": false
+          "url": "/src/assets/images/story/own_story.png",
+          "alt": "Own story",
+          "local": true
         },
         {
-          "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
-          "alt": "interaction illustration",
-          "local": false
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
-          "alt": "refactoring illustration",
-          "local": false
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
-          "alt": "ui illustration",
-          "local": false
+          "url": "/src/assets/images/story/story_view.png",
+          "alt": "Story view",
+          "local": true
         }
       ],
       "imageAlignment": "right",
@@ -644,34 +594,9 @@
       ],
       "images": [
         {
-          "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
-          "alt": "video illustration",
-          "local": false
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800",
-          "alt": "course illustration",
-          "local": false
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
-          "alt": "cart illustration",
-          "local": false
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800",
-          "alt": "profile illustration",
-          "local": false
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
-          "alt": "refactoring illustration",
-          "local": false
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800",
-          "alt": "composable illustration",
-          "local": false
+          "url": "/src/assets/images/cart/add_to_cart.png",
+          "alt": "Add to cart",
+          "local": true
         }
       ],
       "imageAlignment": "right",
@@ -754,34 +679,24 @@
       ],
       "images": [
         {
-          "url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800",
-          "alt": "forum illustration",
-          "local": false
+          "url": "/src/assets/images/social/comment_from_social.png",
+          "alt": "Comment from social",
+          "local": true
         },
         {
-          "url": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800",
-          "alt": "story illustration",
-          "local": false
+          "url": "/src/assets/images/social/reply_comment.png",
+          "alt": "Reply comment",
+          "local": true
         },
         {
-          "url": "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=800",
-          "alt": "home illustration",
-          "local": false
+          "url": "/src/assets/images/social/social_comment.png",
+          "alt": "Social comment",
+          "local": true
         },
         {
-          "url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800",
-          "alt": "profile illustration",
-          "local": false
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
-          "alt": "ui illustration",
-          "local": false
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
-          "alt": "interaction illustration",
-          "local": false
+          "url": "/src/assets/images/social/social_view.png",
+          "alt": "Social view",
+          "local": true
         }
       ],
       "imageAlignment": "right",
@@ -815,9 +730,9 @@
       ],
       "images": [
         {
-          "url": "https://images.unsplash.com/photo-1557683316-973673baf926?w=800",
-          "alt": "splash illustration",
-          "local": false
+          "url": "/src/assets/images/splash_screen.png",
+          "alt": "Splash screen",
+          "local": true
         }
       ],
       "imageAlignment": "right",
@@ -832,30 +747,6 @@
       ],
       "pageIndex": 10,
       "type": "Feature"
-    },
-    {
-      "title": "Project Showcase",
-      "subtitle": [],
-      "content": "",
-      "images": [
-        {
-          "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200",
-          "alt": "Project showcase image",
-          "local": false
-        }
-      ],
-      "imageAlignment": "left",
-      "imageContainerWidth": 90,
-      "animationIn": [
-        "fade",
-        "scale"
-      ],
-      "animationOut": [
-        "fade",
-        "scale"
-      ],
-      "pageIndex": 11,
-      "type": "Image"
     },
     {
       "title": "Thank You",
@@ -880,7 +771,7 @@
         "fade",
         "scale"
       ],
-      "pageIndex": 12,
+      "pageIndex": 11,
       "type": "Closing"
     }
   ]
