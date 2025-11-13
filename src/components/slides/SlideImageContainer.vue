@@ -1,22 +1,29 @@
 <template>
   <div
-    class="flex items-start md:items-center w-full overflow-hidden image-container-responsive"
-    :class="containerClass"
+    class="flex items-start md:items-center w-full image-container-responsive"
+    :class="[
+      containerClass,
+      props.isPrintMode ? 'overflow-visible min-h-0 print-image-container' : 'overflow-hidden'
+    ]"
     :style="containerStyle"
     ref="containerRef"
   >
     <!-- Single Image -->
-    <div v-if="layout === 'single' && images.length === 1" class="w-full h-full cursor-pointer flex items-center justify-center">
+    <div 
+      v-if="layout === 'single' && images.length === 1" 
+      class="w-full cursor-pointer flex items-center justify-center"
+      :class="props.isPrintMode ? 'min-h-0 print-image-single' : 'h-full'"
+    >
       <Image
         :src="getImageUrl(images[0])"
         :alt="images[0].alt || 'Slide image'"
-        class="w-full h-full object-contain rounded-md"
-        preview
+        :class="props.isPrintMode ? 'w-full h-auto object-contain rounded-lg' : 'w-full h-full object-contain rounded-lg'"
+        :preview="!props.isPrintMode"
         :pt="{
-          root: { class: 'h-full w-full rounded-md overflow-hidden' },
-          image: { class: 'rounded-md w-full h-full object-contain overflow-hidden' },
-          mask: { class: '!bg-black/90 rounded-md' },
-          previewMask: { class: '!bg-black/5 rounded-md' },
+          root: { class: 'h-full w-full rounded-lg overflow-hidden' },
+          image: { class: 'rounded-lg w-full h-full object-contain overflow-hidden' },
+          mask: { class: '!bg-black/90 rounded-lg' },
+          previewMask: { class: '!bg-black/5 rounded-lg' },
         }"
       />
     </div>
@@ -24,7 +31,10 @@
     <!-- Grid Layout for Multiple Images -->
     <div
       v-else-if="layout === 'grid'"
-      class="w-full h-full min-h-0 overflow-y-auto overflow-x-hidden scrollbar-auto image-grid"
+      class="w-full image-grid"
+      :class="props.isPrintMode 
+        ? 'min-h-0 overflow-visible print-image-grid' 
+        : 'h-full min-h-0 overflow-y-auto overflow-x-hidden scrollbar-auto'"
       :style="gridStyle"
     >
       <div
@@ -35,13 +45,13 @@
         <Image
           :src="getImageUrl(image)"
           :alt="image.alt || `Slide image ${index + 1}`"
-          class="w-full h-auto rounded-md object-cover"
+          class="w-full h-auto rounded-lg object-cover"
           preview
           :pt="{
-            root: { class: 'w-full rounded-md overflow-hidden' },
-            image: { class: 'rounded-md w-full h-auto overflow-hidden' },
-            mask: { class: '!bg-black/90 rounded-md' },
-            previewMask: { class: '!bg-black/5 rounded-md' },
+            root: { class: 'w-full rounded-lg overflow-hidden' },
+            image: { class: 'rounded-lg w-full h-auto overflow-hidden' },
+            mask: { class: '!bg-black/90 rounded-lg' },
+            previewMask: { class: '!bg-black/5 rounded-lg' },
           }"
         />
       </div>
@@ -50,7 +60,10 @@
     <!-- Scrollable Layout for Many Images -->
     <div
       v-else-if="layout === 'scrollable'"
-      class="w-full h-full min-h-0 overflow-y-auto overflow-x-hidden scrollbar-auto image-scrollable"
+      class="w-full image-scrollable"
+      :class="props.isPrintMode 
+        ? 'min-h-0 overflow-visible print-image-scrollable' 
+        : 'h-full min-h-0 overflow-y-auto overflow-x-hidden scrollbar-auto'"
     >
       <div
         v-for="(image, index) in images"
@@ -89,6 +102,7 @@ const props = defineProps<{
   availableHeight?: number; // Available height for image container
   aspectRatios?: number[]; // Aspect ratios for all images
   cardHeight?: number; // Card height for max-height constraint
+  isPrintMode?: boolean;
 }>();
 
 const containerClass = computed(() => {
@@ -202,6 +216,16 @@ const calculatedDimensions = computed(() => {
 });
 
 const containerStyle = computed(() => {
+  // In print mode, allow auto height
+  if (props.isPrintMode) {
+    return {
+      width: "100%",
+      height: "auto",
+      minHeight: "0",
+      maxHeight: "none",
+    };
+  }
+
   const dims = calculatedDimensions.value;
   
   // Mobile: full width (handled by w-full class)
@@ -338,14 +362,14 @@ const getImageUrl = (image: ImageConfig): string => {
   width: 100%;
   height: auto;
   min-height: 100px;
-  border-radius: 0.375rem;
+  border-radius: 0.5rem;
   object-fit: cover;
   aspect-ratio: auto;
   display: block;
 }
 
 .image-grid-item :deep(.p-image-preview-container) {
-  border-radius: 0.375rem;
+  border-radius: 0.5rem;
 }
 
 /* Desktop: adjust columns */
@@ -380,19 +404,40 @@ const getImageUrl = (image: ImageConfig): string => {
 .image-scrollable-item :deep(.p-image img) {
   width: 100%;
   height: auto;
-  border-radius: 0.375rem;
+  border-radius: 0.5rem;
   object-fit: cover;
   aspect-ratio: auto;
 }
 
 .image-scrollable-item :deep(.p-image-preview-container) {
-  border-radius: 0.375rem;
+  border-radius: 0.5rem;
 }
 
 @media (min-width: 768px) {
   .image-scrollable {
     gap: 0.75rem;
   }
+}
+
+/* Print mode styles */
+.print-image-container {
+  height: auto;
+  min-height: 0;
+}
+
+.print-image-single {
+  height: auto;
+  min-height: 0;
+}
+
+.print-image-grid {
+  height: auto;
+  min-height: 0;
+}
+
+.print-image-scrollable {
+  height: auto;
+  min-height: 0;
 }
 </style>
 

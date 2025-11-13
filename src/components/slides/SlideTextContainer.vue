@@ -1,7 +1,19 @@
 <template>
-  <div class="flex flex-col gap-5 w-full" :class="widthClass" :style="widthStyle">
+  <div 
+    class="flex flex-col gap-5" 
+    :class="[
+      widthClass,
+      hasNoImages ? 'w-full mx-auto max-w-4xl' : 'w-full'
+    ]" 
+    :style="widthStyle"
+  >
     <div class="flex flex-col gap-2">
-      <h2 class="text-2xl md:text-3xl font-bold leading-tight bg-gradient-to-r from-white via-gray-100 to-white dark:from-gray-100 dark:via-gray-200 dark:to-gray-100 bg-clip-text text-transparent drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] dark:drop-shadow-[0_2px_4px_rgba(255,255,255,0.2)]">
+      <h2 
+        :class="[
+          'font-bold leading-tight bg-gradient-to-r from-white via-gray-100 to-white dark:from-gray-100 dark:via-gray-200 dark:to-gray-100 bg-clip-text text-transparent drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] dark:drop-shadow-[0_2px_4px_rgba(255,255,255,0.2)]',
+          hasNoImages ? 'text-3xl md:text-4xl' : 'text-2xl md:text-3xl'
+        ]"
+      >
         {{ title }}
       </h2>
       <div v-if="subtitles.length > 0" class="flex flex-col gap-1.5">
@@ -12,8 +24,11 @@
           <!-- Modern Status Badge for Status subtitles -->
           <span
             v-if="isStatusSubtitle(subtitle)"
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm md:text-base font-semibold shadow-lg transition-all"
-            :class="getStatusBadgeClass(subtitle)"
+            :class="[
+              'inline-flex items-center gap-2 px-4 py-2 rounded-full font-semibold shadow-lg transition-all',
+              hasNoImages ? 'text-base md:text-lg' : 'text-sm md:text-base',
+              getStatusBadgeClass(subtitle)
+            ]"
           >
             <span
               class="w-2 h-2 rounded-full shadow-sm"
@@ -24,7 +39,10 @@
           <!-- Regular subtitle for non-status subtitles -->
           <h3
             v-else
-            class="text-base md:text-lg text-gray-200 dark:text-gray-300 font-medium"
+            :class="[
+              'text-gray-200 dark:text-gray-300 font-medium',
+              hasNoImages ? 'text-lg md:text-xl' : 'text-base md:text-lg'
+            ]"
           >
             {{ subtitle }}
           </h3>
@@ -35,7 +53,10 @@
     <!-- Simple text content -->
     <div
       v-if="isStringContent"
-      class="text-sm md:text-base text-gray-100 dark:text-gray-200 leading-relaxed"
+      :class="[
+        'text-gray-100 dark:text-gray-200 leading-relaxed',
+        hasNoImages ? 'text-base md:text-lg' : 'text-sm md:text-base'
+      ]"
     >
       {{ content }}
     </div>
@@ -58,52 +79,84 @@
     </div>
     
     <!-- Items content (for feature slides) -->
-    <div v-else-if="isItemsContent" class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+    <div 
+      v-else-if="isItemsContent" 
+      :class="[
+        'grid gap-3 md:gap-4',
+        isSingleItem ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2'
+      ]"
+    >
       <div
         v-for="(item, index) in itemsContent"
         :key="index"
-        class="p-3 md:p-4 rounded-xl bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:border-primary/30"
+        :class="[
+          'rounded-xl bg-white/5 dark:bg-gray-800/30 border border-white/10 dark:border-gray-700/50 hover:bg-white/10 dark:hover:bg-gray-800/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:border-primary/30',
+          shouldUseLargeFonts ? 'p-4 md:p-6' : 'p-3 md:p-4'
+        ]"
       >
         <div class="flex items-start gap-3 md:gap-4">
           <!-- Modern Status Badge -->
           <div class="flex-shrink-0 mt-0.5">
             <span
               v-if="item.status === 'done'"
-              class="inline-flex items-center justify-center w-8 h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-br from-green-400 to-green-600 dark:from-green-500 dark:to-green-700 text-white shadow-lg shadow-green-500/30 border-2 border-green-300/50 dark:border-green-400/50"
+              :class="[
+                'inline-flex items-center justify-center rounded-full bg-gradient-to-br from-green-400 to-green-600 dark:from-green-500 dark:to-green-700 text-white shadow-lg shadow-green-500/30 border-2 border-green-300/50 dark:border-green-400/50',
+                shouldUseLargeFonts ? 'w-10 h-10 md:w-12 md:h-12' : 'w-8 h-8 md:w-9 md:h-9'
+              ]"
             >
-              <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg :class="shouldUseLargeFonts ? 'w-5 h-5 md:w-6 md:h-6' : 'w-4 h-4 md:w-5 md:h-5'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
               </svg>
             </span>
             <span
               v-else-if="item.status === 'todo'"
-              class="inline-flex items-center justify-center w-8 h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 dark:from-yellow-500 dark:to-orange-600 text-white shadow-lg shadow-yellow-500/30 border-2 border-yellow-300/50 dark:border-yellow-400/50"
+              :class="[
+                'inline-flex items-center justify-center rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 dark:from-yellow-500 dark:to-orange-600 text-white shadow-lg shadow-yellow-500/30 border-2 border-yellow-300/50 dark:border-yellow-400/50',
+                shouldUseLargeFonts ? 'w-10 h-10 md:w-12 md:h-12' : 'w-8 h-8 md:w-9 md:h-9'
+              ]"
             >
-              <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg :class="shouldUseLargeFonts ? 'w-5 h-5 md:w-6 md:h-6' : 'w-4 h-4 md:w-5 md:h-5'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </span>
             <span
               v-else
-              class="inline-flex items-center justify-center w-8 h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 dark:from-blue-500 dark:to-blue-700 text-white shadow-lg shadow-blue-500/30 border-2 border-blue-300/50 dark:border-blue-400/50 animate-pulse"
+              :class="[
+                'inline-flex items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-blue-600 dark:from-blue-500 dark:to-blue-700 text-white shadow-lg shadow-blue-500/30 border-2 border-blue-300/50 dark:border-blue-400/50 animate-pulse',
+                shouldUseLargeFonts ? 'w-10 h-10 md:w-12 md:h-12' : 'w-8 h-8 md:w-9 md:h-9'
+              ]"
             >
-              <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg :class="shouldUseLargeFonts ? 'w-5 h-5 md:w-6 md:h-6' : 'w-4 h-4 md:w-5 md:h-5'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
               </svg>
             </span>
           </div>
           <div class="flex-1 min-w-0">
-            <h4 class="text-sm md:text-base font-bold text-white dark:text-gray-100 mb-1 leading-tight">
+            <h4 
+              :class="[
+                'font-bold text-white dark:text-gray-100 mb-1 leading-tight',
+                shouldUseLargeFonts ? 'text-base md:text-xl' : 'text-sm md:text-base'
+              ]"
+            >
               {{ item.title }}
             </h4>
-            <p v-if="item.description" class="text-xs md:text-sm text-gray-300 dark:text-gray-400 mb-2 leading-relaxed">
+            <p 
+              v-if="item.description" 
+              :class="[
+                'text-gray-300 dark:text-gray-400 mb-2 leading-relaxed',
+                shouldUseLargeFonts ? 'text-sm md:text-base' : 'text-xs md:text-sm'
+              ]"
+            >
               {{ item.description }}
             </p>
             <ul v-if="item.points && item.points.length > 0" class="ml-2 mt-2 space-y-1">
               <li
                 v-for="(point, pointIndex) in item.points"
                 :key="pointIndex"
-                class="text-xs md:text-sm text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2"
+                :class="[
+                  'text-gray-200 dark:text-gray-300 leading-relaxed flex items-start gap-2',
+                  shouldUseLargeFonts ? 'text-sm md:text-base' : 'text-xs md:text-sm'
+                ]"
               >
                 <span class="text-primary-400 mt-1.5 flex-shrink-0">•</span>
                 <span>{{ point }}</span>
@@ -126,6 +179,8 @@ const props = defineProps<{
   subtitles: string[];
   content: string | ContentItem[] | ContentStats;
   width: string;
+  isPrintMode?: boolean;
+  hasImages?: boolean;
 }>();
 
 const widthClass = computed(() => {
@@ -157,6 +212,9 @@ const isItemsContent = computed(() => Array.isArray(props.content));
 
 const statsContent = computed(() => props.content as ContentStats);
 const itemsContent = computed(() => props.content as ContentItem[]);
+const isSingleItem = computed(() => isItemsContent.value && itemsContent.value.length === 1);
+const hasNoImages = computed(() => props.hasImages === false);
+const shouldUseLargeFonts = computed(() => isSingleItem.value || hasNoImages.value);
 
 /**
  * Check if a subtitle is a status subtitle

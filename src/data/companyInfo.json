@@ -1,0 +1,106 @@
+{
+  "name": "E-School Cambodia",
+  "website": "https://e-schoolcambodia.com/",
+  "description": {
+    "main": "ការសិក្សាបែបទំនើប - មិនថាអ្នកកំពុងស្ថិតនៅទីណា ឬក៏ពេលវេលាណានោះទេ។ តាមរយៈ E-SCHOOL អ្នកអាចធ្វើការអភិវឌ្ឍន៍នូវចំណេះដឹងរបស់ខ្លួនបានជារៀងរាល់ថ្ងៃ។ បន្ថែមពីលើនេះទៅទៀត អ្នកក៏អាចធ្វើការសួរនូវសំនួរមកកាន់ក្រុមការងាររបស់ពួកយើង បើសិនជាអ្នកមានចម្ងល់ បានផងដែរ។",
+    "english": "Modern Learning - No matter where you are or what time it is. Through E-SCHOOL, you can develop your knowledge every day. In addition, you can also ask questions to our team if you have any questions."
+  },
+  "contact": {
+    "email": "info@e-schoolcambodia.com",
+    "phones": [
+      "015 372 363",
+      "085 372 363",
+      "060 372 363"
+    ]
+  },
+  "address": {
+    "khmer": "អគារការិយាល័យ Kings View ផ្លូវកែវចិន្ដា ភូមិ ៣ សង្កាត់ជ្រោយចង្វា ខណ្ឌជ្រោយចង្វា រាជធានីភ្នំពេញ, ព្រះរាជាណាចក្រកម្ពុជា",
+    "english": "Kings View Office Building, Keo Chenda Street, Village 3, Chroy Changvar Commune, Chroy Changvar District, Phnom Penh, Kingdom of Cambodia"
+  },
+  "features": [
+    {
+      "title": "ទទួលចំណេះដឹងថ្មីជារៀងរាល់ថ្ងៃ",
+      "english": "Receive New Knowledge Every Day",
+      "description": "ក្រុមការងាររបស់ E-SCHOOL រួមទាំងសហស្ថាបនិក របស់ E-SCHOOL ទាំងអស់ នឹងធ្វើការបញ្ចូលនូវ វីដេអូមេរៀនទាំង ៥ មុខវិជ្ជា ជារៀងរាល់ថ្ងៃ។",
+      "descriptionEnglish": "The E-SCHOOL team, including all E-SCHOOL co-founders, will upload 5 subject lesson videos every day."
+    },
+    {
+      "title": "សាស្រ្តាចារ្យល្បីៗ",
+      "english": "Famous Teachers",
+      "description": "លោកអ្នកនឹងមានឱកាសសិក្សាជាមួយ សាស្រ្តាចារ្យល្បីៗ និងមានបទពិសោធយូរឆ្នាំ និងធ្លាប់ទទួលបានលិខិតសរសើរពីក្រសួងអប់រំ។",
+      "descriptionEnglish": "You will have the opportunity to study with famous teachers with years of experience and have received commendation letters from the Ministry of Education."
+    },
+    {
+      "title": "វិញ្ញាសាថ្មីៗ",
+      "english": "New Exams",
+      "description": "តាមរយៈ E-SCHOOL លោកអ្នកនឹងទទួលបាននូវ ការសិក្សា វិញ្ញាសាថ្មីៗ សំរាប់ត្រៀមប្រលង សញ្ញាបត្រទុតិយភូមិ ជារៀងរាល់ថ្ងៃ។",
+      "descriptionEnglish": "Through E-SCHOOL, you will receive new exam studies to prepare for the high school diploma exam every day."
+    },
+    {
+      "title": "គ្រប់ពេល & គ្រប់ទីកន្លែង",
+      "english": "Anytime & Anywhere",
+      "description": "E-SCHOOL អនុញ្ញាតអោយសិស្សានុសិស្ស សិក្សាបានគ្រប់ពេល និងគ្រប់ទីកន្លែង។",
+      "descriptionEnglish": "E-SCHOOL allows students to study anytime and anywhere."
+    }
+  ],
+  "teachers": [
+    {
+      "name": "សាស្រ្តាចារ្យ ជ័យ ថាវី",
+      "english": "Professor Chey Thavy",
+      "subject": "គីមីវិទ្យា",
+      "subjectEnglish": "Chemistry"
+    },
+    {
+      "name": "សាស្រ្តាចារ្យ ឡុង សារិន",
+      "english": "Professor Long Sarin",
+      "subject": "អក្សរសាស្រ្តខ្មែរ",
+      "subjectEnglish": "Khmer Literature"
+    },
+    {
+      "name": "សាស្រ្តាចារ្យ ម៉ៅ វណ្ណនី",
+      "english": "Professor Mao Vannary",
+      "subject": "ជីវវិទ្យា",
+      "subjectEnglish": "Biology"
+    },
+    {
+      "name": "សាស្រ្តាចារ្យ ទាង ប៉ាង",
+      "english": "Professor Tang Pang",
+      "subject": "រូបវិទ្យា",
+      "subjectEnglish": "Physics"
+    },
+    {
+      "name": "សាស្រ្តាចារ្យ សុខ ធី",
+      "english": "Professor Sok Thy",
+      "subject": "គណិតវិទ្យា",
+      "subjectEnglish": "Mathematics"
+    }
+  ],
+  "philosophy": [
+    {
+      "quote": "បានស្តាប់ ១០០ដង មិនស្មើនឹងបានឃើញ ១០ដង មិនស្មើនឹងបានអនុវត្តម្តង !",
+      "author": "សាស្រ្តាចារ្យ ជ័យ ថាវី",
+      "authorEnglish": "Professor Chey Thavy"
+    },
+    {
+      "quote": "ការអប់រំគឺជា អាវុធដែលមានកំលាំងដ៏មហិមា អាចធ្វើអោយអ្វីៗគ្រប់យ៉ាងប្រែប្រួលបាន !",
+      "author": "សាស្រ្តាចារ្យ ទាង ប៉ាង",
+      "authorEnglish": "Professor Tang Pang"
+    },
+    {
+      "quote": "គណិតវិទ្យា គឺជាគ្រឹះសំរាប់សិក្សាមុខវិជ្ជាផ្សេងទៀត រៀនហើយរៀនទៀត ធ្វើហើយធ្វើទៀត នោះលទ្ធផលល្អនឹងមក !",
+      "author": "សាស្រ្តាចារ្យ សុខ ធី",
+      "authorEnglish": "Professor Sok Thy"
+    },
+    {
+      "quote": "ក្រអ្វីមិនស្មើក្រគំនិត គិតបែបណាផលបែបនោះ !",
+      "author": "សាស្ត្រាចារ្យ ឡុង សារិន",
+      "authorEnglish": "Professor Long Sarin"
+    },
+    {
+      "quote": "ស្តាប់ គិត សួរ កត់ជាលក្ខណៈរបស់អ្នកប្រាជ្ញ។ អានច្រើនកើនចំណេះ ឈ្នះអវិជ្ជា !",
+      "author": "សាស្ត្រាចារ្យ ម៉ៅ វណ្ណនី",
+      "authorEnglish": "Professor Mao Vannary"
+    }
+  ]
+}
+

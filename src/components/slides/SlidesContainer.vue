@@ -18,6 +18,7 @@
         :enable3-d-hover="enable3DHover"
         class="h-full shrink-0 slide-item"
         :style="{ width: slideWidth > 0 ? `${slideWidth}px` : '100%' }"
+        @navigate-to-page="handleNavigateToPage"
       />
     </div>
   </div>
@@ -26,12 +27,8 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted, watch, nextTick } from "vue";
 import { gsap } from "gsap";
-import { Observer } from "gsap/Observer";
 import type { SlideCard } from "@/data/types";
 import SlideCardComponent from "./SlideCard.vue";
-
-// Register Observer plugin
-gsap.registerPlugin(Observer);
 
 const props = defineProps<{
   slides: SlideCard[];
@@ -60,10 +57,6 @@ const slideWidth = computed(() => {
   }
   return 0;
 });
-// GSAP Observer instance
-let observer: Observer | null = null;
-// Debounce timer for touch gestures to prevent rapid slide changes
-let touchDebounceTimer: ReturnType<typeof setTimeout> | null = null;
 
 /**
  * Set slide element reference
@@ -167,6 +160,16 @@ const handleKeyDown = (e: KeyboardEvent) => {
 };
 
 /**
+ * Handle navigation to a specific page number from SlideCard
+ * Converts 1-based page number to 0-based array index
+ */
+const handleNavigateToPage = (pageNumber: number) => {
+  // Convert 1-based page number to 0-based index
+  const targetIndex = pageNumber - 1;
+  scrollToIndex(targetIndex);
+};
+
+/**
  * Watch for changes to initialIndex prop (e.g., from GridView click)
  * Navigates to the specified index without flicker
  * IMPORTANT: Only watches AFTER initialization to prevent race conditions
@@ -217,7 +220,7 @@ onMounted(() => {
   const clampedStartIndex = Math.max(0, Math.min(Math.floor(startIndex), props.slides.length - 1));
   currentIndex.value = clampedStartIndex;
 
-  // Initialize GSAP Observer and position after DOM is ready
+  // Initialize position after DOM is ready
   nextTick(() => {
     requestAnimationFrame(() => {
       if (!containerRef.value || !slidesWrapperRef.value) return;
@@ -243,71 +246,8 @@ onMounted(() => {
       // Store cleanup function
       (window as any).__slidesContainerResizeHandler = updateContainerWidth;
 
-      // Initialize GSAP Observer for touch/pointer gestures
-      // Only touch and pointer (no wheel scroll)
-      // Increased tolerance to prevent accidental multi-slide scrolling
-      observer = Observer.create({
-        target: containerRef.value,
-        type: "touch,pointer",
-        onUp: () => {
-          if (!isInitialized.value) return;
-          // Debounce to prevent rapid slide changes
-          if (touchDebounceTimer) return;
-          touchDebounceTimer = setTimeout(() => {
-            touchDebounceTimer = null;
-          }, 500); // 500ms debounce
-          const prevIndex = Math.max(currentIndex.value - 1, 0);
-          if (prevIndex !== currentIndex.value) {
-            scrollToIndex(prevIndex);
-          }
-        },
-        onDown: () => {
-          if (!isInitialized.value) return;
-          // Debounce to prevent rapid slide changes
-          if (touchDebounceTimer) return;
-          touchDebounceTimer = setTimeout(() => {
-            touchDebounceTimer = null;
-          }, 500); // 500ms debounce
-          const maxIndex = props.slides.length - 1;
-          const nextIndex = Math.min(currentIndex.value + 1, maxIndex);
-          if (nextIndex !== currentIndex.value) {
-            scrollToIndex(nextIndex);
-          }
-        },
-        onLeft: () => {
-          if (!isInitialized.value) return;
-          // Debounce to prevent rapid slide changes
-          if (touchDebounceTimer) return;
-          touchDebounceTimer = setTimeout(() => {
-            touchDebounceTimer = null;
-          }, 500); // 500ms debounce
-          const prevIndex = Math.max(currentIndex.value - 1, 0);
-          if (prevIndex !== currentIndex.value) {
-            scrollToIndex(prevIndex);
-          }
-        },
-        onRight: () => {
-          if (!isInitialized.value) return;
-          // Debounce to prevent rapid slide changes
-          if (touchDebounceTimer) return;
-          touchDebounceTimer = setTimeout(() => {
-            touchDebounceTimer = null;
-          }, 500); // 500ms debounce
-          const maxIndex = props.slides.length - 1;
-          const nextIndex = Math.min(currentIndex.value + 1, maxIndex);
-          if (nextIndex !== currentIndex.value) {
-            scrollToIndex(nextIndex);
-          }
-        },
-        tolerance: 100, // Increased from 10 to require more significant swipe (100px)
-        preventDefault: true,
-      });
-
-      // Mark as initialized after Observer is created
-      // Use a small delay to ensure Observer is fully set up
-      setTimeout(() => {
-        isInitialized.value = true;
-      }, 50);
+      // Mark as initialized
+      isInitialized.value = true;
 
       // Focus container for keyboard events
       containerRef.value.focus();
@@ -323,18 +263,6 @@ onUnmounted(() => {
   if ((window as any).__slidesContainerResizeHandler) {
     window.removeEventListener('resize', (window as any).__slidesContainerResizeHandler);
     delete (window as any).__slidesContainerResizeHandler;
-  }
-
-  // Kill GSAP Observer
-  if (observer) {
-    observer.kill();
-    observer = null;
-  }
-
-  // Clear touch debounce timer
-  if (touchDebounceTimer) {
-    clearTimeout(touchDebounceTimer);
-    touchDebounceTimer = null;
   }
 });
 

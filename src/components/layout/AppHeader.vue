@@ -5,9 +5,13 @@
   >
     <!-- Left: Logo + Handler -->
     <div class="flex items-center gap-3">
-      <div class="w-8 h-8 bg-gradient-to-br from-white to-gray-100 dark:from-gray-100 dark:to-gray-200 rounded-full flex items-center justify-center shadow-lg shadow-primary/20 ring-2 ring-white/50 dark:ring-gray-300/50">
+      <button
+        @click="openCompanyDialog"
+        class="w-8 h-8 bg-gradient-to-br from-white to-gray-100 dark:from-gray-100 dark:to-gray-200 rounded-full flex items-center justify-center shadow-lg shadow-primary/20 ring-2 ring-white/50 dark:ring-gray-300/50 hover:scale-110 hover:shadow-xl hover:shadow-primary/30 transition-all duration-200 cursor-pointer"
+        title="Company Information"
+      >
         <img src="@/assets/images/logo.png" alt="Logo" class="w-7 h-7 rounded-full" />
-      </div>
+      </button>
       <button
         @click="openHandlerProfile"
         class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 dark:bg-gray-800/30 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 shadow-md hover:bg-white/15 dark:hover:bg-gray-800/40 transition-all duration-200 cursor-pointer group"
@@ -123,6 +127,31 @@
           <div class="border-t border-gray-200/50 dark:border-gray-700/50 my-1.5" />
           <button
             class="w-full px-4 py-2.5 text-left text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5 dark:hover:from-primary/20 dark:hover:to-primary/10 flex items-center justify-between gap-2 cursor-pointer transition-all duration-200 group"
+            @click="handleViewSwitch"
+          >
+            <div class="flex items-center gap-3">
+              <svg
+                class="w-5 h-5 text-primary group-hover:scale-110 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+              <span class="group-hover:text-primary transition-colors">Switch to {{ targetViewLabel }}</span>
+            </div>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-gradient-to-r from-primary/20 to-primary/10 dark:from-primary/30 dark:to-primary/20 text-primary border border-primary/30">
+              {{ currentViewLabel }}
+            </span>
+          </button>
+          <div class="border-t border-gray-200/50 dark:border-gray-700/50 my-1.5" />
+          <button
+            class="w-full px-4 py-2.5 text-left text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5 dark:hover:from-primary/20 dark:hover:to-primary/10 flex items-center justify-between gap-2 cursor-pointer transition-all duration-200 group"
             @click="toggleDarkMode"
           >
             <div class="flex items-center gap-3">
@@ -179,28 +208,53 @@
       :company-logo="companyLogoUrl"
       @close="closeTeamLeaderProfile"
     />
+
+    <!-- Company Dialog -->
+    <CompanyDialog
+      v-if="companyInfo"
+      :company-info="companyInfo"
+      :is-open="companyDialogOpen"
+      @close="closeCompanyDialog"
+    />
   </header>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted } from "vue";
-import type { MainWrapperData, PersonInfo } from "@/data/types";
+import { ref, computed, onMounted, onUnmounted, nextTick } from "vue";
+import type { MainWrapperData, PersonInfo, CompanyInfo } from "@/data/types";
 import { useDarkMode } from "@/composables/useDarkMode";
+import { usePrintMode } from "@/composables/usePrintMode";
+import { useRouter, useRoute } from "vue-router";
 import { getAvatarUrl } from "@/utils/avatarUtils";
 import ProfileCard from "../ui/ProfileCard.vue";
+import CompanyDialog from "../ui/CompanyDialog.vue";
 import companyLogo from "@/assets/images/logo.png";
+import companyInfoDataRaw from "@/data/companyInfo.json?raw";
 
 const props = defineProps<{
   data: MainWrapperData;
 }>();
 
 const { isDark, toggle } = useDarkMode();
+const { enablePrintMode } = usePrintMode();
+const router = useRouter();
+const route = useRoute();
 const menuOpen = ref(false);
 const handlerProfileOpen = ref(false);
 const teamLeaderProfileOpen = ref(false);
+const companyDialogOpen = ref(false);
+
+// Check if we're in mini or detail view
+const isMiniView = computed(() => route.path === "/" || route.meta.viewType === "mini");
+const currentViewLabel = computed(() => (isMiniView.value ? "Mini" : "Detail"));
+const targetViewLabel = computed(() => (isMiniView.value ? "Detail" : "Mini"));
+const targetViewPath = computed(() => (isMiniView.value ? "/detail" : "/"));
 
 // Company logo URL - E-School Cambodia logo
 const companyLogoUrl = companyLogo;
+
+// Company information
+const companyInfo = computed<CompanyInfo>(() => JSON.parse(companyInfoDataRaw) as CompanyInfo);
 
 // Extended profile info with defaults
 const handlerProfile = computed<PersonInfo>(() => ({
@@ -266,14 +320,33 @@ const closeTeamLeaderProfile = () => {
   teamLeaderProfileOpen.value = false;
 };
 
+const openCompanyDialog = () => {
+  companyDialogOpen.value = true;
+  menuOpen.value = false;
+};
+
+const closeCompanyDialog = () => {
+  companyDialogOpen.value = false;
+};
+
 const toggleDarkMode = () => {
   toggle();
   menuOpen.value = false;
 };
 
-const handlePrint = () => {
-  window.print();
+const handlePrint = async () => {
   menuOpen.value = false;
+  
+  // Enable print mode
+  enablePrintMode();
+  
+  // Wait for DOM to update with print view
+  await nextTick();
+  
+  // Small delay to ensure print view is rendered
+  setTimeout(() => {
+    window.print();
+  }, 100);
 };
 
 const handleShare = () => {
@@ -289,6 +362,13 @@ const handleShare = () => {
     alert("Link copied to clipboard!");
   }
   menuOpen.value = false;
+};
+
+const handleViewSwitch = async () => {
+  menuOpen.value = false;
+  // Small delay to allow menu to close smoothly
+  await nextTick();
+  router.push(targetViewPath.value);
 };
 
 // Close menu when clicking outside

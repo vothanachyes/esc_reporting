@@ -99,3 +99,37 @@ export type ReportData = {
   slides: SlideCard[];
 };
 
+export type CompanyInfo = {
+  name: string;
+  website: string;
+  description?: {
+    main?: string;
+    english?: string;
+  };
+  contact?: {
+    email?: string;
+    phones?: string[];
+  };
+  address?: {
+    khmer?: string;
+    english?: string;
+  };
+  features?: Array<{
+    title: string;
+    english?: string;
+    description?: string;
+    descriptionEnglish?: string;
+  }>;
+  teachers?: Array<{
+    name: string;
+    english?: string;
+    subject: string;
+    subjectEnglish?: string;
+  }>;
+  philosophy?: Array<{
+    quote: string;
+    author: string;
+    authorEnglish?: string;
+  }>;
+};
+

@@ -4,11 +4,13 @@ import Aura from "@primeuix/themes/aura";
 import PrimeVue from "primevue/config";
 import Tooltip from "primevue/tooltip";
 import App from "./App.vue";
+import router from "./router";
 import "./assets/css/main.css";
 
 // Initialize dark mode from localStorage before app mounts
+// Default to dark mode if no preference is stored
 const stored = window.localStorage.getItem("app-color-scheme");
-const prefersDark = stored ? stored === "true" : true; // Default to dark
+const prefersDark = stored !== null ? stored === "true" : true; // Default to dark
 if (prefersDark) {
   window.document.documentElement.classList.add("dark");
 } else {
@@ -64,6 +66,9 @@ const Noir = definePreset(Aura, {
 });
 
 const app = createApp(App);
+
+// Use router
+app.use(router);
 
 // Configure PrimeVue
 app.use(PrimeVue, {

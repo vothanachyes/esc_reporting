@@ -151,3 +151,171 @@ body {
     background-color: #333333;
   }
 }
+
+/* Print styles */
+@media print {
+  /* Page setup */
+  @page {
+    size: A4;
+    margin: 0.5cm;
+  }
+
+  /* Hide non-essential elements */
+  .print-mode header,
+  .print-mode .absolute.bottom-\\[50px\\],
+  .print-mode footer,
+  .print-mode img[alt="Footer decoration"],
+  .print-mode .relative.z-50,
+  .print-mode button,
+  .print-mode .cursor-pointer {
+    display: none !important;
+  }
+
+  /* Ensure print mode container is visible */
+  .print-mode-container {
+    display: block !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  /* Print slides container */
+  .print-slides-container {
+    display: block !important;
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Each slide on its own page */
+  .print-slide-item {
+    page-break-after: always;
+    page-break-inside: avoid;
+    break-after: page;
+    break-inside: avoid;
+    min-height: auto;
+    height: auto;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  /* Last slide doesn't need page break */
+  .print-slide-item:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  /* Card styles for print */
+  .print-card-container {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    background: white !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0.3cm !important;
+    margin: 0 !important;
+  }
+
+  .print-card-inner {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  .print-content-container {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Image container print styles */
+  .print-image-container,
+  .print-image-single,
+  .print-image-grid,
+  .print-image-scrollable {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    max-height: none !important;
+  }
+
+  /* Table print styles */
+  .print-table-container,
+  .print-table-wrapper {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Ensure all content is visible */
+  * {
+    overflow: visible !important;
+    max-height: none !important;
+  }
+
+  /* Force print-friendly colors */
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Remove gradients and transparency for better print quality */
+  .bg-gradient-to-r,
+  .bg-gradient-to-br,
+  .backdrop-blur-sm {
+    background: white !important;
+    backdrop-filter: none !important;
+  }
+
+  /* Ensure text is readable */
+  h1, h2, h3, h4, h5, h6,
+  p, span, div, li {
+    color: black !important;
+  }
+
+  /* Remove shadows for cleaner print */
+  .shadow-lg,
+  .shadow-md,
+  .shadow-2xl {
+    box-shadow: none !important;
+  }
+
+  /* Ensure images print properly */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Table print optimizations */
+  table {
+    page-break-inside: auto;
+  }
+
+  tr {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Prevent content from being cut off */
+  .line-clamp-2,
+  .line-clamp-3 {
+    -webkit-line-clamp: unset !important;
+    display: block !important;
+  }
+}
+
+/* Screen styles for print mode preview */
+.print-mode {
+  background: white !important;
+}
+
+.print-mode .print-mode-container {
+  background: white !important;
+}

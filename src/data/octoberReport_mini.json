@@ -1,0 +1,877 @@
+{
+  "mainWrapper": {
+    "title": "October Task Report - October 1-31, 2025",
+    "handler": {
+      "name": "Vothana CHY",
+      "avatar": "/src/assets/images/vothana.jpg",
+      "role": "Desktop Senior Developer"
+    },
+    "teamLeader": {
+      "name": "Daro SAY",
+      "avatar": "/src/assets/images/teamLead.jpg",
+      "role": "Technical Director"
+    },
+    "period": "October 1-31, 2025",
+    "statistics": {
+      "totalTasks": 0,
+      "completedTasks": 0,
+      "features": 13,
+      "refactorings": 7
+    }
+  },
+  "slides": [
+    {
+      "title": "Welcome, Vothana CHY!",
+      "subtitle": [
+        "Monthly Report - October 1-31, 2025",
+        "October 2025 Work Summary"
+      ],
+      "content": {
+        "type": "stats",
+        "text": "This report showcases the comprehensive work completed during October 1-31, 2025.",
+        "stats": [
+          {
+            "value": "13",
+            "label": "Features"
+          },
+          {
+            "value": "7",
+            "label": "Types"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+          "alt": "Welcome illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 40,
+      "animationIn": [
+        "fade",
+        "scale",
+        "slideUp"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 0,
+      "type": "Introduction"
+    },
+    {
+      "title": "Video Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": [
+        {
+          "status": "done",
+          "title": "Handle no video to play",
+          "description": "Implemented proper error handling when no video is available"
+        },
+        {
+          "status": "done",
+          "title": "Check video can be play or not",
+          "description": "Added video playback validation and privilege checks",
+          "points": [
+            "Next button functionality",
+            "Proper access control",
+            "Video playback validation"
+          ]
+        },
+        {
+          "status": "done",
+          "title": "Prompt on lock video/quiz",
+          "description": "Added user prompts when content is locked",
+          "points": [
+            "Add to cart functionality integration"
+          ]
+        },
+        {
+          "status": "done",
+          "title": "Video listing and filtering",
+          "description": "Enhanced video listing with filtering capabilities"
+        },
+        {
+          "status": "done",
+          "title": "Video listing refactoring and improvement",
+          "description": "Code improvements and optimizations"
+        },
+        {
+          "status": "done",
+          "title": "Videos in package listing",
+          "description": "Package-based video organization"
+        },
+        {
+          "status": "done",
+          "title": "Videos in module listing",
+          "description": "Module-based video organization"
+        },
+        {
+          "status": "done",
+          "title": "Course detail and videos playlist",
+          "description": "Integrated playlist functionality"
+        },
+        {
+          "status": "done",
+          "title": "Hide/display packages on user scroll-up/down",
+          "description": "UX enhancement for package visibility"
+        },
+        {
+          "status": "done",
+          "title": "Add on start typing sensor and handle no data display",
+          "description": "Search functionality with real-time feedback"
+        },
+        {
+          "status": "done",
+          "title": "Remove all unused components",
+          "description": "Code cleanup and optimization"
+        },
+        {
+          "status": "done",
+          "title": "Make useVideoPlayer isolate and compose",
+          "description": "Refactored to reusable composable",
+          "points": [
+            "Can be used across most screens",
+            "Better separation of concerns"
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
+          "alt": "video illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800",
+          "alt": "quiz illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800",
+          "alt": "course illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
+          "alt": "cart illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800",
+          "alt": "profile illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+          "alt": "refactoring illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "fade",
+        "slideUp"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 1,
+      "type": "Feature"
+    },
+    {
+      "title": "Quiz Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": [
+        {
+          "status": "done",
+          "title": "Implement quiz system",
+          "description": "Core quiz system implementation"
+        },
+        {
+          "status": "done",
+          "title": "Implement quiz component, data handle, rich features",
+          "description": "Comprehensive quiz functionality",
+          "points": [
+            "Generic quiz components",
+            "Reusable quiz logic",
+            "Flexible quiz system architecture",
+            "Rich feature set",
+            "Data handling and state management"
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800",
+          "alt": "quiz illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
+          "alt": "ui illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "fade",
+        "slideDown"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 2,
+      "type": "Feature"
+    },
+    {
+      "title": "Forum Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": [
+        {
+          "status": "done",
+          "title": "Designing and Integration API forum",
+          "description": "New UI implementation",
+          "points": [
+            "Forum API integration",
+            "Modern UI design",
+            "Collaboration with B Chakriya"
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800",
+          "alt": "forum illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
+          "alt": "ui illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "fade",
+        "scale"
+      ],
+      "animationOut": [
+        "fade",
+        "scale"
+      ],
+      "pageIndex": 3,
+      "type": "Feature"
+    },
+    {
+      "title": "Zoom Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": [
+        {
+          "status": "done",
+          "title": "Zoom Videos",
+          "description": "Video listing and management",
+          "points": [
+            "Zoom listing functionality",
+            "Video integration"
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
+          "alt": "video illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800",
+          "alt": "zoom illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "slideLeft",
+        "fade"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 4,
+      "type": "Feature"
+    },
+    {
+      "title": "Library Feature",
+      "subtitle": [
+        "Status: In Progress"
+      ],
+      "content": [
+        {
+          "status": "todo",
+          "title": "Library Page",
+          "description": "Initial planning and setup"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800",
+          "alt": "library illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "slideRight",
+        "fade"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 5,
+      "type": "Feature"
+    },
+    {
+      "title": "Course Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": [
+        {
+          "status": "done",
+          "title": "Course detail, module and video listing",
+          "description": "Comprehensive course detail page",
+          "points": [
+            "Module organization",
+            "Video listing integration"
+          ]
+        },
+        {
+          "status": "done",
+          "title": "Course detail, video listing and enhance video player",
+          "description": "Enhanced video player integration"
+        },
+        {
+          "status": "done",
+          "title": "Go course detail in course package list",
+          "description": "Navigation from package to detail"
+        },
+        {
+          "status": "done",
+          "title": "Clickable course to detail",
+          "description": "Navigation improvements"
+        },
+        {
+          "status": "done",
+          "title": "Add tooltip to each icon of course",
+          "description": "UX enhancements"
+        },
+        {
+          "status": "done",
+          "title": "Improve add cart button, back button, title of course",
+          "description": "UI/UX improvements"
+        },
+        {
+          "status": "done",
+          "title": "Course Package",
+          "description": "Package management"
+        },
+        {
+          "status": "done",
+          "title": "Recommended Course",
+          "description": "Course recommendations"
+        },
+        {
+          "status": "done",
+          "title": "Refactor components to be reusable/dynamic",
+          "description": "Component reusability",
+          "points": [
+            "For video/package/zoom and more"
+          ]
+        },
+        {
+          "status": "done",
+          "title": "Re-structuring video views to features",
+          "description": "Architecture improvements"
+        },
+        {
+          "status": "todo",
+          "title": "Add new tab for course Overview",
+          "description": "New tab implementation"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
+          "alt": "video illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800",
+          "alt": "zoom illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800",
+          "alt": "course illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
+          "alt": "cart illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+          "alt": "refactoring illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
+          "alt": "ui illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "slideUp",
+        "scale"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 6,
+      "type": "Feature"
+    },
+    {
+      "title": "Story Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": [
+        {
+          "status": "done",
+          "title": "Story listing, Animation, Tooltip",
+          "description": "Enhanced story listing with animations"
+        },
+        {
+          "status": "done",
+          "title": "Auto fill out stories",
+          "description": "Automatic story population"
+        },
+        {
+          "status": "done",
+          "title": "Story List",
+          "description": "Story listing functionality"
+        },
+        {
+          "status": "done",
+          "title": "Story view",
+          "description": "Story viewing with full screen image"
+        },
+        {
+          "status": "done",
+          "title": "Story View improve",
+          "description": "Enhanced viewing experience"
+        },
+        {
+          "status": "done",
+          "title": "Your story view",
+          "description": "Personal story management"
+        },
+        {
+          "status": "done",
+          "title": "Dynamic viewing stories",
+          "description": "Dynamic story viewing",
+          "points": [
+            "New route accepting userId",
+            "View all stories",
+            "View own stories (can delete)"
+          ]
+        },
+        {
+          "status": "done",
+          "title": "Auto scroll to full-visible viewing story element",
+          "description": "Enhanced UX"
+        },
+        {
+          "status": "done",
+          "title": "Reactive story deleted/added",
+          "description": "Real-time updates",
+          "points": [
+            "If user deleted viewing story =&gt; not re-render",
+            "Add new to the first index of story"
+          ]
+        },
+        {
+          "status": "done",
+          "title": "Refactor/Replace modern UI &amp; handle actions",
+          "description": "UI modernization",
+          "points": [
+            "Story &amp; Gallery refactoring"
+          ]
+        },
+        {
+          "status": "todo",
+          "title": "Viewed and reaction story",
+          "description": "Analytics and reactions"
+        },
+        {
+          "status": "todo",
+          "title": "Create story",
+          "description": "Story creation functionality"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800",
+          "alt": "story illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800",
+          "alt": "profile illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
+          "alt": "interaction illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+          "alt": "refactoring illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
+          "alt": "ui illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "rotate",
+        "fade"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 7,
+      "type": "Feature"
+    },
+    {
+      "title": "Cart Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": [
+        {
+          "status": "done",
+          "title": "Implement composable on cart mutation, global access popover",
+          "description": "Code organization",
+          "points": [
+            "Composable cart mutation",
+            "Global popover access"
+          ]
+        },
+        {
+          "status": "done",
+          "title": "Transform cart from vuex to pinia",
+          "description": "State management migration"
+        },
+        {
+          "status": "done",
+          "title": "Add to cart button",
+          "description": "Button implementation",
+          "points": [
+            "Implement add package to cart",
+            "Handle no auth on add to cart button",
+            "If user not login yet, click add cart will prompt user to login"
+          ]
+        },
+        {
+          "status": "done",
+          "title": "Video Add to cart button improvement",
+          "description": "UX enhancements",
+          "points": [
+            "Info user course has been cart",
+            "Disable add to cart button when already in cart"
+          ]
+        },
+        {
+          "status": "done",
+          "title": "Cart total not init",
+          "description": "Bug fix"
+        },
+        {
+          "status": "done",
+          "title": "Refactor cart store",
+          "description": "Store improvements"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
+          "alt": "video illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800",
+          "alt": "course illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
+          "alt": "cart illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800",
+          "alt": "profile illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+          "alt": "refactoring illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800",
+          "alt": "composable illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "fade",
+        "slideUp"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 8,
+      "type": "Feature"
+    },
+    {
+      "title": "Social Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": [
+        {
+          "status": "done",
+          "title": "HomePage Layout improvements",
+          "description": "Layout enhancements"
+        },
+        {
+          "status": "done",
+          "title": "Re structure story, social, user profile",
+          "description": "Architecture improvements"
+        },
+        {
+          "status": "done",
+          "title": "Integrate with generic comment listing",
+          "description": "Comment system integration"
+        },
+        {
+          "status": "done",
+          "title": "Story listing, Animation, Tooltip",
+          "description": "Enhanced story features"
+        },
+        {
+          "status": "done",
+          "title": "Styling improvements",
+          "description": "UI polish"
+        },
+        {
+          "status": "done",
+          "title": "SVG Component reusable",
+          "description": "Component reusability"
+        },
+        {
+          "status": "done",
+          "title": "Generic entity header, profile",
+          "description": "Reusable profile components",
+          "points": [
+            "Generic header implementation",
+            "Profile display components"
+          ]
+        },
+        {
+          "status": "done",
+          "title": "Implement comment listing and replying",
+          "description": "Core comment functionality",
+          "points": [
+            "Comment listing",
+            "Reply functionality",
+            "Integration with generic system"
+          ]
+        },
+        {
+          "status": "done",
+          "title": "Implement interaction and reaction button be generic",
+          "description": "Reusable interaction system",
+          "points": [
+            "Generic like, comment, view buttons",
+            "Reusable across features"
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800",
+          "alt": "forum illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800",
+          "alt": "story illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=800",
+          "alt": "home illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800",
+          "alt": "profile illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
+          "alt": "ui illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
+          "alt": "interaction illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "fade",
+        "slideDown"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 9,
+      "type": "Feature"
+    },
+    {
+      "title": "Splash Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": [
+        {
+          "status": "done",
+          "title": "Separate window splash screen",
+          "description": "Splash screen implementation",
+          "points": [
+            "Separate window approach",
+            "Improved loading experience"
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1557683316-973673baf926?w=800",
+          "alt": "splash illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "fade",
+        "scale"
+      ],
+      "animationOut": [
+        "fade",
+        "scale"
+      ],
+      "pageIndex": 10,
+      "type": "Feature"
+    },
+    {
+      "title": "Project Showcase",
+      "subtitle": [],
+      "content": "",
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200",
+          "alt": "Project showcase image",
+          "local": false
+        }
+      ],
+      "imageAlignment": "left",
+      "imageContainerWidth": 90,
+      "animationIn": [
+        "fade",
+        "scale"
+      ],
+      "animationOut": [
+        "fade",
+        "scale"
+      ],
+      "pageIndex": 11,
+      "type": "Image"
+    },
+    {
+      "title": "Thank You",
+      "subtitle": [
+        "For Your Time and Review"
+      ],
+      "content": "Thank you for reviewing this comprehensive report.\n\nLooking forward to continued collaboration and success.",
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800",
+          "alt": "Thank you illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "left",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "fade",
+        "scale"
+      ],
+      "animationOut": [
+        "fade",
+        "scale"
+      ],
+      "pageIndex": 12,
+      "type": "Closing"
+    }
+  ]
+}

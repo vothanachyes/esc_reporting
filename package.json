@@ -15,31 +15,32 @@
     "pnpm": ">=10.11.1"
   },
   "dependencies": {
-    "vue": "^3.5.17",
+    "@primeuix/themes": "^1.1.2",
+    "@vueuse/core": "^13.4.0",
+    "fuse.js": "^7.1.0",
     "gsap": "^3.13.0",
     "marked": "^12.0.0",
-    "@vueuse/core": "^13.4.0",
-    "primevue": "^4.3.5",
-    "@primeuix/themes": "^1.1.2",
     "primeicons": "^7.0.0",
-    "tailwindcss-primeui": "^0.6.1"
+    "primevue": "^4.3.5",
+    "tailwindcss-primeui": "^0.6.1",
+    "vue": "^3.5.17",
+    "vue-router": "^4.6.3"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^6.0.0",
-    "vite": "^7.1.3",
-    "typescript": "~5.8.0",
-    "vue-tsc": "^2.2.10",
-    "tailwindcss": "^4.1.12",
-    "@tailwindcss/vite": "^4.1.12",
     "@primevue/auto-import-resolver": "^4.3.5",
-    "unplugin-vue-components": "^0.28.0",
-    "@types/node": "^22.15.32",
+    "@tailwindcss/vite": "^4.1.12",
     "@types/marked": "^6.0.0",
-    "eslint": "^9.29.0",
-    "eslint-plugin-vue": "~10.2.0",
+    "@types/node": "^22.15.32",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
-    "vue-eslint-parser": "^9.4.0"
+    "@vitejs/plugin-vue": "^6.0.0",
+    "eslint": "^9.29.0",
+    "eslint-plugin-vue": "~10.2.0",
+    "tailwindcss": "^4.1.12",
+    "typescript": "~5.8.0",
+    "unplugin-vue-components": "^0.28.0",
+    "vite": "^7.1.3",
+    "vue-eslint-parser": "^9.4.0",
+    "vue-tsc": "^2.2.10"
   }
 }
-

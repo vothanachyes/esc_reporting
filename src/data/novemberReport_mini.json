@@ -1,0 +1,721 @@
+{
+  "mainWrapper": {
+    "title": "November Task Report - November 1-11, 2025",
+    "handler": {
+      "name": "Vothana CHY",
+      "avatar": "/src/assets/images/vothana.jpg",
+      "role": "Desktop Senior Developer"
+    },
+    "teamLeader": {
+      "name": "Daro SAY",
+      "avatar": "/src/assets/images/teamLead.jpg",
+      "role": "Technical Director"
+    },
+    "period": "November 1-11, 2025",
+    "statistics": {
+      "totalTasks": 0,
+      "completedTasks": 0,
+      "features": 22,
+      "refactorings": 8
+    }
+  },
+  "slides": [
+    {
+      "title": "Welcome, Vothana CHY!",
+      "subtitle": [
+        "Monthly Report - November 1-11, 2025",
+        "November 2025 Work Summary"
+      ],
+      "content": {
+        "type": "stats",
+        "text": "This report showcases the comprehensive work completed during November 1-11, 2025.",
+        "stats": [
+          {
+            "value": "22",
+            "label": "Features"
+          },
+          {
+            "value": "8",
+            "label": "Types"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+          "alt": "Welcome illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 40,
+      "animationIn": [
+        "fade",
+        "scale",
+        "slideUp"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 0,
+      "type": "Introduction"
+    },
+    {
+      "title": "Forum Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": [
+        {
+          "status": "done",
+          "title": "Forum section implement",
+          "description": "Core forum implementation"
+        },
+        {
+          "status": "done",
+          "title": "Handle forum actions",
+          "description": "Forum interaction functionality"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800",
+          "alt": "forum illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "fade",
+        "slideUp"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 1,
+      "type": "Feature"
+    },
+    {
+      "title": "Social Feature",
+      "subtitle": [
+        "Status: In Progress"
+      ],
+      "content": [
+        {
+          "status": "done",
+          "title": "Create user own socials page",
+          "description": "User social profile page"
+        },
+        {
+          "status": "done",
+          "title": "Implement generic image cropper and uploader",
+          "description": "Reusable media components"
+        },
+        {
+          "status": "done",
+          "title": "Add other API methods and types",
+          "description": "Social API enhancements"
+        },
+        {
+          "status": "done",
+          "title": "Enhance entity header",
+          "description": "Entity header improvements"
+        },
+        {
+          "status": "todo",
+          "title": "My Favorite",
+          "description": "User favorites management page"
+        },
+        {
+          "status": "todo",
+          "title": "Relative",
+          "description": "User relatives management"
+        },
+        {
+          "status": "todo",
+          "title": "Post",
+          "description": "User posts management"
+        },
+        {
+          "status": "done",
+          "title": "Improve generic comment structure and props",
+          "description": "Comment enhancements"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800",
+          "alt": "social illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+          "alt": "feature illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "fade",
+        "slideDown"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 2,
+      "type": "Feature"
+    },
+    {
+      "title": "Quiz Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": [
+        {
+          "status": "done",
+          "title": "Enhance quiz system and UI",
+          "description": "Quiz improvements"
+        },
+        {
+          "status": "done",
+          "title": "Replace rich content component with composable",
+          "description": "Code refactoring"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800",
+          "alt": "quiz illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
+          "alt": "ui illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "fade",
+        "scale"
+      ],
+      "animationOut": [
+        "fade",
+        "scale"
+      ],
+      "pageIndex": 3,
+      "type": "Feature"
+    },
+    {
+      "title": "Video Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": [
+        {
+          "status": "done",
+          "title": "Video playlist",
+          "description": "Playlist functionality"
+        },
+        {
+          "status": "done",
+          "title": "Improve player and lazy image components",
+          "description": "Component enhancements"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
+          "alt": "video illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "slideLeft",
+        "fade"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 4,
+      "type": "Feature"
+    },
+    {
+      "title": "Zoom Feature",
+      "subtitle": [
+        "Status: In Progress"
+      ],
+      "content": [
+        {
+          "status": "done",
+          "title": "Add zoom detail pages",
+          "description": "Zoom detail implementation"
+        },
+        {
+          "status": "done",
+          "title": "Refactor zoom stores",
+          "description": "Store improvements"
+        },
+        {
+          "status": "todo",
+          "title": "Zoom Page",
+          "description": "Zoom page implementation"
+        },
+        {
+          "status": "todo",
+          "title": "My Zoom",
+          "description": "User zoom courses management page"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800",
+          "alt": "zoom illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "slideRight",
+        "fade"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 5,
+      "type": "Feature"
+    },
+    {
+      "title": "Library Feature",
+      "subtitle": [
+        "Status: In Progress"
+      ],
+      "content": [
+        {
+          "status": "done",
+          "title": "Improve search and filter components",
+          "description": "Search and filter enhancements"
+        },
+        {
+          "status": "todo",
+          "title": "Library Page",
+          "description": "Full library page implementation"
+        },
+        {
+          "status": "todo",
+          "title": "My Library",
+          "description": "User library management page"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800",
+          "alt": "library illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "slideUp",
+        "scale"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 6,
+      "type": "Feature"
+    },
+    {
+      "title": "Course Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": [
+        {
+          "status": "done",
+          "title": "Refactor course components and stores",
+          "description": "Course refactoring"
+        },
+        {
+          "status": "todo",
+          "title": "My Course",
+          "description": "User course management page"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800",
+          "alt": "course illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "rotate",
+        "fade"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 7,
+      "type": "Feature"
+    },
+    {
+      "title": "Partner Feature",
+      "subtitle": [
+        "Status: In Progress"
+      ],
+      "content": [
+        {
+          "status": "todo",
+          "title": "Partner Page",
+          "description": "Partner management page"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+          "alt": "feature illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "fade",
+        "slideUp"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 8,
+      "type": "Feature"
+    },
+    {
+      "title": "PDF Viewer Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": [
+        {
+          "status": "in_progress",
+          "title": "Add PDF viewer generic component (WIP)",
+          "description": "PDF viewer implementation"
+        },
+        {
+          "status": "in_progress",
+          "title": "Improve PDF viewer components (WIP)",
+          "description": "PDF viewer enhancements"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800",
+          "alt": "pdf illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "fade",
+        "slideDown"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 9,
+      "type": "Feature"
+    },
+    {
+      "title": "Infrastructure Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": [
+        {
+          "status": "done",
+          "title": "Restructure Electron build system and add auto-update support",
+          "description": "Build system refactoring"
+        },
+        {
+          "status": "done",
+          "title": "Add useElectronApi composable with web fallbacks",
+          "description": "Electron API abstraction"
+        },
+        {
+          "status": "done",
+          "title": "Update about page and store",
+          "description": "About page improvements"
+        },
+        {
+          "status": "done",
+          "title": "Add testing infrastructure and test files",
+          "description": "Testing setup"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800",
+          "alt": "infrastructure illustration",
+          "local": false
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+          "alt": "testing illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "fade",
+        "scale"
+      ],
+      "animationOut": [
+        "fade",
+        "scale"
+      ],
+      "pageIndex": 10,
+      "type": "Feature"
+    },
+    {
+      "title": "Security Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": [
+        {
+          "status": "done",
+          "title": "Add security and CORS configuration",
+          "description": "Security enhancements"
+        },
+        {
+          "status": "done",
+          "title": "Apply resolveUrl globally to all external URLs",
+          "description": "URL resolution implementation"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800",
+          "alt": "security illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "slideLeft",
+        "fade"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 11,
+      "type": "Feature"
+    },
+    {
+      "title": "Real-time Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": [
+        {
+          "status": "done",
+          "title": "Implement Socket.io real-time communication infrastructure",
+          "description": "Real-time communication setup"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+          "alt": "communication illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "slideRight",
+        "fade"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 12,
+      "type": "Feature"
+    },
+    {
+      "title": "Code Organization Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": [
+        {
+          "status": "done",
+          "title": "Restructure components and update naming conventions",
+          "description": "Component restructuring"
+        },
+        {
+          "status": "done",
+          "title": "Reorganize composables structure and improve naming consistency",
+          "description": "Composables reorganization"
+        },
+        {
+          "status": "done",
+          "title": "Standardize import aliases and improve type safety",
+          "description": "Import standardization"
+        },
+        {
+          "status": "done",
+          "title": "Add text rich content component",
+          "description": "Rich content component"
+        },
+        {
+          "status": "done",
+          "title": "Update types, constants, locales and config",
+          "description": "Configuration updates"
+        },
+        {
+          "status": "done",
+          "title": "Add missing translation",
+          "description": "Locale improvements"
+        },
+        {
+          "status": "done",
+          "title": "Update ESLint config, course playlist, sandbox component and remove socket types",
+          "description": "Configuration cleanup"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+          "alt": "code illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "slideUp",
+        "scale"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 13,
+      "type": "Feature"
+    },
+    {
+      "title": "Performance Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": [
+        {
+          "status": "done",
+          "title": "Add HTTP rate limiting system",
+          "description": "Rate limiting implementation"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800",
+          "alt": "performance illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "rotate",
+        "fade"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 14,
+      "type": "Feature"
+    },
+    {
+      "title": "UI/UX Feature",
+      "subtitle": [
+        "Status: Done"
+      ],
+      "content": [
+        {
+          "status": "done",
+          "title": "Add custom hovering scrollbar",
+          "description": "Scrollbar enhancement"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
+          "alt": "ui illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "right",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "fade",
+        "slideUp"
+      ],
+      "animationOut": [
+        "fade",
+        "slideUp"
+      ],
+      "pageIndex": 15,
+      "type": "Feature"
+    },
+    {
+      "title": "Thank You",
+      "subtitle": [
+        "For Your Time and Review"
+      ],
+      "content": "Thank you for reviewing this comprehensive report.\n\nLooking forward to continued collaboration and success.",
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800",
+          "alt": "Thank you illustration",
+          "local": false
+        }
+      ],
+      "imageAlignment": "left",
+      "imageContainerWidth": 35,
+      "animationIn": [
+        "fade",
+        "scale"
+      ],
+      "animationOut": [
+        "fade",
+        "scale"
+      ],
+      "pageIndex": 16,
+      "type": "Closing"
+    }
+  ]
+}

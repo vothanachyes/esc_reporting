@@ -97,3 +97,5 @@ This slideshow system was designed to be reusable for future monthly reports, wi
 
 MIT
 
+
+node scripts/generatePinEncryption.js <6-digit-pin>

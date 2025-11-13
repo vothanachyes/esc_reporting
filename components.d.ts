@@ -13,7 +13,9 @@ declare module 'vue' {
     LayoutMainWrapper: typeof import('./src/components/layout/MainWrapper.vue')['default']
     PrimeButton: typeof import('primevue/button')['default']
     PrimeImage: typeof import('primevue/image')['default']
+    PrimeSelect: typeof import('primevue/select')['default']
     PrimeTag: typeof import('primevue/tag')['default']
+    PrintPrintSlidesContainer: typeof import('./src/components/print/PrintSlidesContainer.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SlidesSlideCard: typeof import('./src/components/slides/SlideCard.vue')['default']
@@ -22,8 +24,11 @@ declare module 'vue' {
     SlidesSlideTextContainer: typeof import('./src/components/slides/SlideTextContainer.vue')['default']
     SlidesSlideVideoContainer: typeof import('./src/components/slides/SlideVideoContainer.vue')['default']
     SlidesTableSlide: typeof import('./src/components/slides/TableSlide.vue')['default']
+    UiCompanyDialog: typeof import('./src/components/ui/CompanyDialog.vue')['default']
     UiGridView: typeof import('./src/components/ui/GridView.vue')['default']
+    UiPinDialog: typeof import('./src/components/ui/PinDialog.vue')['default']
     UiProfileCard: typeof import('./src/components/ui/ProfileCard.vue')['default']
     UiScreenSizeWarningDialog: typeof import('./src/components/ui/ScreenSizeWarningDialog.vue')['default']
+    UiSearchDialog: typeof import('./src/components/ui/SearchDialog.vue')['default']
   }
 }
