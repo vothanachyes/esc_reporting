@@ -93,7 +93,7 @@
       v-else-if="isItemsContent" 
       :class="[
         'grid gap-3 md:gap-4',
-        isSingleItem ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2'
+        hasTwoOrFewerItems ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2'
       ]"
     >
       <div
@@ -227,6 +227,7 @@ const isItemsContent = computed(() => Array.isArray(props.content));
 const statsContent = computed(() => props.content as ContentStats);
 const itemsContent = computed(() => props.content as ContentItem[]);
 const isSingleItem = computed(() => isItemsContent.value && itemsContent.value.length === 1);
+const hasTwoOrFewerItems = computed(() => isItemsContent.value && itemsContent.value.length <= 2);
 const hasNoImages = computed(() => props.hasImages === false);
 const shouldUseLargeFonts = computed(() => isSingleItem.value || hasNoImages.value);
 const isIntroductionSlide = computed(() => props.slideType === "Introduction");
